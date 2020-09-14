@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="../../plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+</div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">I got your message bro</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">The subject goes here</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="index3.html" class="brand-link">
+          <img src="../../dist/img/LogoVitalis.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+               style="opacity: .8">
+          <span class="brand-text font-weight-light">ADMINISTRADOR</span>
+        </a>
+    
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+              <a href="#" class="d-block">Fabian Barrera</a>
+            </div>
+          </div>
+    
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+              
+            
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-users"></i>
+                  <p>
+                    Usuarios
+                    <i class="fas fa-angle-left right"></i>
+                    <span class="badge badge-info right">2</span>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="registrar-usuario-admin.html" class="nav-link">
+                      <i class="far fa-edit nav-icon"></i>
+                      <p>Registrar</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="ver-usuarios-admin.html" class="nav-link">
+                      <i class="far fa-eye nav-icon"></i>
+                      <p>Ver</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              
+            
+              <!-- <li class="nav-header">EXAMPLES</li>
+          
+              <li class="nav-header">MISCELLANEOUS</li>
+   
+              <li class="nav-header">MULTI LEVEL EXAMPLE</li>
+       
+         
+              <li class="nav-header">LABELS</li>
+           -->
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Solicitud de personal</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Solicitud de personal</a></li>
+              <li class="breadcrumb-item active">Administrador</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+  <section class="container">
+    <div class="container-fluid">
+          <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">REQUISICIÓN DE PERSONAL A DESARROLLO HUMANO</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+
+              <form> 
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 text-center">
+                    <div class="col form-group"><label for="ciudad">Ciudad/Municipio</label>
+                        <select class="custom-select" id="ciudad">
+                            <option selected value="">Ciudad/Municipio..</option>
+                            <option value="1">Bogotá</option>
+                            <option value="2">Sopo</option>
+                            <option value="3">Medellin</option>
+                            <option value="4">Bucaramanga</option>
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted">Ciudad/Municipio</small>
+                    </div>
+                    <div class="col form-group">
+                        <label for="fecha_solicitud">Fecha creación solicitud</label>
+                        <input type="date" class="form-control" name="fecha_solicitud"id="fecha_solicitud" required>
+                        <small id="fecha_exp_documentoHelp" class="form-text text-muted">Fecha de solicitud</small>
+                    </div>
+                    <div class="col form-group"><label for="descriptipo">Tipo de Ingreso</label>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="">Seleccione...</option>
+                            <option value="NU">Nuevo</option>
+                            <option value="TD">Temporal a Directo</option>
+                            <option value="RI">Reingreso</option>
+                            <option value="RE">Reemplazo</option>
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted">Tipo de Ingreso</small>
+                    </div>
+                    <div class="col form-group"><label for="horario_id">Horario</label>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="">Seleccione...</option>
+                            <option value="RT">Rotativo</option>
+                            <option value="ADSINRE">Administrativo(Sin recargos)</option>
+                            <option value="ADCONRE">Administrativo(Con recargos)</option>
+                           
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted">Horario</small>
+                    </div>
+                    <div class="col form-group"><label for="descriptipo">Centro de costos</label>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="">Seleccione...</option>
+                            <option value="#">10101001-PENICILINICO PL1</option>
+                            <option value="#">10101002-PENICILINICO ELU PL1</option>
+                            <option value="#">10101003-MANO DE OBRA DIRECTA PL1</option>
+                            <option value="#">10101004-MANO DE OBRA INDIRECTA PL1</option>
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted">Seleccione el centro de costos</small>
+                    </div>
+                    <div class="col form-group"><label for="descriptipo">Area personal</label>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="">Seleccione...</option>
+                            <option value="#">MANO DE OBRA DIRECTA</option>
+                            <option value="#">MANO DE OBRA INDIRECTA</option>
+                            <option value="#">ADMINISTRACIÓN</option>
+                            <option value="#">COMERCIAL</option>
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted">Seleccione el area</small>
+                    </div>
+                    <div class="col form-group">
+                        <label for="Nombres">Cargo solicitado</label>
+                        <input type="text" class="form-control" name="Nombres"id="Nombres" required>
+                        <small id="NombresHelp" class="form-text text-muted">Cargo solicitado</small>
+                    </div>
+                    <div class="col form-group">
+                        <label for="Nombres">Motivo</label>
+                        <input type="text" class="form-control" name="Nombres"id="Nombres" required>
+                        <small id="NombresHelp" class="form-text text-muted">Motivo de la solicitud</small>
+                    </div>
+                    <div class="col form-group"><label for="descriptipo">Formación academica solicitada</label>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="">Seleccione...</option>
+                            <option value="#">BACHILLER</option>
+                            <option value="#">TÉCNICO</option>
+                            <option value="#">TECNÓLOGO</option>
+                            <option value="#">PROFESIONAL</option>
+                            <option value="#">POSGRADO</option>
+                            <option value="#">OTRO-ESCRIBALO EN OBSERVACIONES</option>
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted"> Seleccione la formación academica</small>
+                    </div>
+                    
+                    <div class="col form-group"><label for="descriptipo">Genero</label>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="">Seleccione...</option>
+                            <option value="#">MASCULINO</option>
+                            <option value="#">FEMENINO</option>
+                            <option value="#">INDIFERENTE</option>
+
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted"> Seleccione el genero</small>
+                    </div>
+
+                    <div class="col form-group"><label for="descriptipo">Requiere experiencia laboral</label>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="">Seleccione...</option>
+                            <option value="#">SI</option>
+                            <option value="#">NO</option>
+                            <option value="#">INDIFERENTE</option>
+
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted"> Requiere experiencia laboral</small>
+                    </div>
+
+                    <div class="col form-group">
+                        <label for="lugar_exp_documento">Tiempo de experiencia</label>
+                        <input type="number" class="form-control" name="lugar_exp_documento"id="lugar_exp_documento"  placeholder="Tiempo en meses/Sin experiencia, No llenar" required>
+                        <small id="lugar_exp_documentoHelp" class="form-text text-muted">Digite los meses de experiencia</small>
+                    </div>
+                    <div class="col form-group">
+                        <label for="Documento">Requiere experiencia en</label>
+                        <input type="text" class="form-control" name="Documento"id="Documento" required>
+                        <small id="DocumentoHelp" class="form-text text-muted">Requiere experiencia en</small>
+                    </div>
+                    <div class="col form-group"><label for="descriptipo">Ciudad/Municipio donde laborará</label>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="">Seleccione...</option>
+                            <option value="#">Bogotá</option>
+                            <option value="#">Sopo</option>
+                            <option value="#">Medellin</option>
+
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted">Ciudad/Municipio donde laborará</small>
+                    </div>
+                    <div class="col form-group"><label for="descriptipo">Asignación salarial</label>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="">Seleccione...</option>
+                            <option value="#">SALARIO MÍNIMO LEGAL VIGENTE</option>
+                            <option value="#">SALARIO MÍNIMO VITALIS S.A.C.I.</option>
+                            <option value="#">SALARIO MÍNIMO INTEGRAL</option>
+                            <option value="#">OTRO-ESCRIBALO EN OBSERVACIONES</option>
+
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted">Asignación salarial</small>
+                    </div>
+                    <div class="col form-group"><label for="descriptipo">Tipo de contrato</label>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected value="">Seleccione...</option>
+                            <option value="#">FIJO A TRES MESES</option>
+                            <option value="#">INDEFINIDO</option>
+                            <option value="#">APRENDIZAJE</option>
+                            <option value="#">OTRO-ESCRIBALO EN OBSERVACIONES</option>
+
+                        </select>
+                        <small id="descriptipo" class="form-text text-muted">Tipo de contrato</small>
+                    </div>
+                    <div class="col form-group">
+                        <label for="lugar_exp_documento">Nombre del solicitante</label>
+                        <input type="text" class="form-control" value= "Magreth Angulo" name="lugar_exp_documento"id="lugar_exp_documento" required readonly>
+                        <small id="lugar_exp_documentoHelp" class="form-text text-muted">Nombre del solicitante</small>
+                    </div>
+                    <div class="col form-group">
+                        <label for="lugar_exp_documento">Nombre del director o gerente de área</label>
+                        <input type="text" class="form-control" value= "Jhony Montesino" name="lugar_exp_documento"id="lugar_exp_documento" required readonly>
+                        <small id="lugar_exp_documentoHelp" class="form-text text-muted">Nombre del director o gerente de área</small>
+                    </div>
+                </div>       
+                    <div class="row">
+                        <div class="col-md-12 align-self-center form-group text-center">
+                            <label for="exampleFormControlTextarea1">Observaciones</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                            <small id="lugar_exp_documentoHelp" class="form-text text-muted">Registre las observaciones que considere Importante para la solicitud</small>
+                          </div> 
+                    </div>                        
+                
+                        <div class="row justify-content-center">
+                            <div class="col-md-1 py-4 text-center">
+                                <button type="submit" class="btn btn-primary  mb-2 text-center">Enviar</button>
+                            </div>
+                        </div>
+        </form>
+
+              <!-- <form role="form" action="../../controller/insertUsers.php" method="POST" enctype="multipart/form-data">
+
+                <div class="card-body">
+
+                <div class="row">
+                    <div class="form-group col-md-6 ">
+                        <label for="nombre">Nombres</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ej:Fabian Enrique" required="">
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        <label for="apellido">Apellidos</label>
+                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Ej:Barrera Maldonado" required="">
+                    </div>
+                </div>
+
+                  <div class="row">
+                  <div class="form-group col-md-6 ">
+                    <label for="correo">Email</label>
+                    <input type="email" class="form-control" name="correo" id="correo" placeholder="fabian.Barrera@vitalis.com.co" required="">
+                  </div>
+                  <div class="form-group col-md-6 ">
+                    <label for="contraseña">Clave</label>
+                    <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="Alfa numerica min 8 caracteres" required="">
+                </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-md-6 ">
+                        <label for="telefono">Telefono</label>
+                        <input type="text" class="form-control" name="telefono" id="telefono" placeholder="3007614919" required="">
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        <label for="area">Area</label>
+                        <input type="text" class="form-control" name="area" id="area" placeholder="Producción" required="">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-md-6 ">
+                        <label for="rol">Rol</label>
+                        <select class="form-control" name="rol" id="rol" required="">
+                              <option>Seleccione un Rol</option>
+                              <option value="1">Administrador</option>
+                              <option value="2">Gerente</option>
+                              <option value="3">Jefe de Area</option>
+                              <option value="4">D.H</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-6 ">
+                        <label for="estado">Estatus</label>
+                        <select class="form-control" name="estado"  id="estado" required="">
+                              <option>Activar Usuario</option>
+                              <option value="0">Desactivar</option>
+                              <option value="1">Activar</option>
+                        </select>
+                  </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 ">
+                            <label for="foto">Foto </label><br>
+                            <input type="file" name="foto"  id="foto" required="">
+                          </div>
+                          <div class="form-group col-md-6 ">
+                            <label for="firma">Firma Digital </label><br>
+                            <input type="file" name="firma"  id="firma" required="">
+                          </div>
+                    </div>
+
+                  </div>
+                
+                <div class="card-footer text-center">
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+              </form> -->
+
+            </div> 
+          </div>   
+        </div>
+    </div>    
+  </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    <div class="p-3">
+      <h5>Title</h5>
+      <p>Sidebar content</p>
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+
+    <!-- <div class="float-right d-none d-sm-inline">
+      Anything you want
+    </div> -->
+
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2020 <a href="#">Vitalis/Solicitud-personal.com</a>.</strong> All rights reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../../plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="../../plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="../../plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="../../plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="../../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="../../plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="../../plugins/moment/moment.min.js"></script>
+<script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../../dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+</body>
+</html>
