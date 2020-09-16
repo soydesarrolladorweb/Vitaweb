@@ -111,7 +111,7 @@
 
       <div class="modal-content">
 
-        <form role="form" method="post" enctype="multipart/form-data">
+        <form role="form" action="#" method="POST" enctype="multipart/form-data">
 
           <!-- CABEZA DEL MODAL -->
 
@@ -149,8 +149,8 @@
                     <input type="number" class="form-control" name="nuevoUsuario" id="usuario" placeholder="UsuarioSap" required="">
                   </div>
                   <div class="form-group col-md-6 ">
-                    <label for="password">Clave</label>
-                    <input type="password" class="form-control" name="nuevoPassword" id="password" placeholder="Alfa numerica min 8 caracteres" required="">
+                    <label for="contraseña">Clave</label>
+                    <input type="password" class="form-control" name="nuevoPassword" id="contraseña" placeholder="Alfa numerica min 8 caracteres" required="">
                   </div>
                 </div>
 
@@ -196,12 +196,12 @@
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="firma">Firma Digital </label><br>
-                    <input type="file" name="nuevaFirma" id="firma">
+                    <input type="file" name="firma" id="nuevaFirma" required="">
                     <small>Peso maximo de la firma 200 MB</small>
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="foto">Foto </label><br>
-                    <input type="file" name="nuevaFoto" id="foto">
+                    <input type="file" name="foto" id="nuevaFoto" required="">
                     <small>Peso maximo de la foto 200 MB</small>
                     <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail">
                   </div>
@@ -221,13 +221,6 @@
             <button type="submit" class="btn btn-primary">Guardar</button>
 
           </div>
-
-          <?php
-          $crearUsuario = new ControladorUsuarios();
-          $crearUsuario -> ctrCrearUsuario();
-
-          ?>
-
         </form>
 
       </div>

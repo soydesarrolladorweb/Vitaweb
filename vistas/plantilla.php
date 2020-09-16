@@ -83,10 +83,15 @@ session_start();
 
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.js"></script>
+  
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="vistas/dist/js/pages/dashboard.js"></script>
+
   <!-- AdminLTE for demo purposes -->
   <script src="vistas/dist/js/demo.js"></script>
+  
+  <!-- SweetAlert2 -->
+  <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
 
   <!-- page script -->
   <script>
