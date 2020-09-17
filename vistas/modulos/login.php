@@ -7,7 +7,7 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">INICIAR SESION</p>
+      <p class="login-box-msg">INICIAR SESIÓN</p>
 
       <form action="" method="post">
             <div class="input-group mb-3">

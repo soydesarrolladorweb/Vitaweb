@@ -135,22 +135,22 @@
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="nombre">Nombre completo</label>
-                    <input type="text" class="form-control" name="nuevoNombre" id="nombre" placeholder="Fabian Enrique Barrera Maldonado" required="">
+                    <input type="text" class="form-control" name="nuevoNombre" id="nuevoNombre"  placeholder="Fabian Enrique Barrera Maldonado" required="">
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="correo">Email</label>
-                    <input type="email" class="form-control" name="nuevoCorreo" id="correo" placeholder="pasante.ti@vitalis.com.co" required="">
+                    <input type="email" class="form-control" name="nuevoCorreo" id="nuevoCorreo" placeholder="pasante.ti@vitalis.com.co" required="">
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="usuario">Usuario SAP</label>
-                    <input type="number" class="form-control" name="nuevoUsuario" id="usuario" placeholder="UsuarioSap" required="">
+                    <input type="text" class="form-control" name="nuevoUsuario" id="nuevoUsuario" placeholder="UsuarioSap" required="">
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="password">Clave</label>
-                    <input type="password" class="form-control" name="nuevoPassword" id="password" placeholder="Alfa numerica min 8 caracteres" required="">
+                    <input type="password" class="form-control" name="nuevoPassword" id="nuevoPassword" placeholder="Alfa numerica min 8 caracteres" required="">
                   </div>
                 </div>
 
@@ -175,7 +175,7 @@
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="perfil">Perfil</label>
-                    <select class="form-control" name="nuevoPerfil" id="perfil" required="">
+                    <select class="form-control" name="nuevoPerfil" id="nuevoPerfil" required="">
                       <option>Seleccione un Rol</option>
                       <option value="1">Administrador</option>
                       <option value="2">Gerente</option>
@@ -184,14 +184,16 @@
                       <option value="4">Desarrollo Humano</option>
                     </select>
                   </div>
-                  <div class="form-group col-md-6 ">
+
+                  <!-- <div class="form-group col-md-6 ">
                     <label for="estado">Estatus</label>
                     <select class="form-control" name="nuevoEstado" id="estado" required="">
                       <option>Activar Usuario</option>
                       <option value="0">Desactivar</option>
                       <option value="1">Activar</option>
                     </select>
-                  </div>
+                  </div> -->
+
                 </div>
                 <div class="row">
                   <div class="form-group col-md-6 ">
@@ -203,7 +205,7 @@
                     <label for="foto">Foto </label><br>
                     <input type="file" name="nuevaFoto" id="foto">
                     <small>Peso maximo de la foto 200 MB</small>
-                    <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail">
+                    <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail" width="100px">
                   </div>
                 </div>
               </div>
@@ -233,3 +235,4 @@
       </div>
     </div>
   </div>
+  

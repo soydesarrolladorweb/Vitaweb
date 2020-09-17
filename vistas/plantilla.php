@@ -74,15 +74,15 @@ session_start();
   <script src="vistas/plugins/summernote/summernote-bs4.min.js"></script>
   <!-- overlayScrollbars -->
   <script src="vistas/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  
+  <!-- AdminLTE App -->
+  <script src="vistas/dist/js/adminlte.js"></script>
+
   <!-- DataTables -->
   <script src="vistas/plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="vistas/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="vistas/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
   <script src="vistas/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-
-
-  <!-- AdminLTE App -->
-  <script src="vistas/dist/js/adminlte.js"></script>
   
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="vistas/dist/js/pages/dashboard.js"></script>
@@ -91,7 +91,7 @@ session_start();
   <script src="vistas/dist/js/demo.js"></script>
   
   <!-- SweetAlert2 -->
-  <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
+  <script src="vistas/plugins/sweetalertPersonalizado2/sweetalert2.min.js"></script>
 
   <!-- page script -->
   <script>

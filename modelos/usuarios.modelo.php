@@ -12,7 +12,7 @@ class ModeloUsuarios{
 
 	static public function mdlMostrarUsuarios($tabla, $item, $valor){
 
-        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = $item");
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
         $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -20,7 +20,8 @@ class ModeloUsuarios{
 
         return $stmt -> fetch();
 
-        $stmt -> close();
+		$stmt -> close();
+		
         $stmt = null;
 
 
@@ -29,35 +30,32 @@ class ModeloUsuarios{
 	REGISTRO DE USUARIO
 	=============================================*/
 
-	// static public function mdlIngresarUsuario($tabla, $datos){
+	static public function mdlIngresarUsuario($tabla, $datos){
 
-	// 	$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, usuario, password, perfil, area, estado, foto, firma, telefono) VALUES (:nombre, :usuario, :password, :perfil, :area, :estado, :foto, :firma, :telefono)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, usuario, password, perfil, area, telefono) VALUES (:nombre, :usuario, :password, :perfil, :area, :telefono)");
 
-	// 	$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-	// 	$stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
-	// 	$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
-	// 	$stmt->bindParam(":perfil", $datos["perfil"], PDO::PARAM_STR);
-	// 	$stmt->bindParam(":area", $datos["area"], PDO::PARAM_STR);
-	// 	$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
-	// 	$stmt->bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
-	// 	$stmt->bindParam(":firma", $datos["firma"], PDO::PARAM_STR);
-	// 	$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+	    $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+		$stmt->bindParam(":usuario", $datos["usuario"], PDO::PARAM_STR);
+		$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
+		$stmt->bindParam(":perfil", $datos["perfil"], PDO::PARAM_STR);
+		$stmt->bindParam(":area", $datos["area"], PDO::PARAM_STR);
+		$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
 
-	// 	if($stmt->execute()){
+	if($stmt->execute()){
 
-	// 		return "ok";	
+	 		return "ok";	
 
-	// 	}else{
+		}else{
 
-	// 		return "error";
+			return "error";
 		
-	// 	}
+		}
 
-	// 	$stmt->close();
+	 	$stmt->close();
 		
-	// 	$stmt = null;
+	 	$stmt = null;
 
-	// }
+	 }
 
 
 }    
