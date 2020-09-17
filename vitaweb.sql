@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-09-2020 a las 01:18:19
--- Versión del servidor: 10.3.16-MariaDB
--- Versión de PHP: 7.3.7
+-- Tiempo de generación: 18-09-2020 a las 00:24:54
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -33,7 +32,6 @@ CREATE TABLE `areapersonal` (
   `descriparea` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `fecha_area` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
--- Error leyendo datos de la tabla vitaweb.areapersonal: #1064 - Algo está equivocado en su sintax cerca 'FROM `vitaweb`.`areapersonal`' en la linea 1
 
 -- --------------------------------------------------------
 
@@ -116,7 +114,6 @@ CREATE TABLE `horario` (
   `descriphorario` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `fecha_horario` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
--- Error leyendo datos de la tabla vitaweb.horario: #1064 - Algo está equivocado en su sintax cerca 'FROM `vitaweb`.`horario`' en la linea 1
 
 -- --------------------------------------------------------
 
@@ -211,8 +208,9 @@ CREATE TABLE `tiposdeingreso` (
 CREATE TABLE `usuarios` (
   `iduser` int(11) NOT NULL,
   `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `usuario` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `password` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `correo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `usuario` text COLLATE utf8_spanish_ci DEFAULT NULL,
+  `password` text COLLATE utf8_spanish_ci NOT NULL,
   `perfil` text COLLATE utf8_spanish_ci NOT NULL,
   `area` text COLLATE utf8_spanish_ci NOT NULL,
   `estado` int(11) NOT NULL,
@@ -227,8 +225,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`iduser`, `nombre`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `firma`, `telefono`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', '20782', '12345', 'Administrador', 'TI', 1, '2020-09-10 17:48:00', '', '', 3007614919, '2020-09-10 00:00:00');
+INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `firma`, `telefono`, `ultimologin`) VALUES
+(1, 'Fabian Barrera', '', '20782', '54321', 'Administrador', 'TI', 1, '2020-09-10 17:48:00', '', '', 3007614919, '2020-09-10 00:00:00'),
+(2, 'Usuario Prueba Registro', '', '9876', '6789', '3', '2', 0, '2020-09-17 22:03:41', '', '', 345678, NULL),
+(3, 'Usuario Prueba Registro 2', '', '741852', '12345', '2', '2', 0, '2020-09-17 22:07:24', '', '', 98754, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -293,7 +293,7 @@ ALTER TABLE `tiposdeingreso`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`iduser`),
-  ADD KEY `usuario` (`usuario`);
+  ADD KEY `usuario` (`usuario`(1024));
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -357,7 +357,7 @@ ALTER TABLE `tiposdeingreso`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
