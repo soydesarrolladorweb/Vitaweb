@@ -198,14 +198,14 @@
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="firma">Firma Digital </label><br>
-                    <input type="file" name="nuevaFirma" id="firma">
+                    <input type="file" class="nuevaFirma" name="nuevaFirma" id="firma">
                     <small>Peso maximo de la firma 200 MB</small>
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="foto">Foto </label><br>
-                    <input type="file" name="nuevaFoto" id="foto">
-                    <small>Peso maximo de la foto 200 MB</small>
-                    <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail" width="100px">
+                    <input type="file" class="nuevaFoto"  name="nuevaFoto" id="foto">
+                    <small>Peso maximo de la foto 2MB</small>
+                    <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail previsualizar" width="100px">
                   </div>
                 </div>
               </div>
