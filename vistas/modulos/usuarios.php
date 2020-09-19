@@ -163,11 +163,12 @@
                     <label for="area">Área</label>
                     <select class="form-control" name="nuevaArea" id="area" required="">
                       <option>Seleccione el área a la que pertenece</option>
-                      <option value="1">Administrativa y Financiera</option>
-                      <option value="2">Comercial</option>
-                      <option value="2">Operaciones</option>
-                      <option value="3">Calidad</option>
-                      <option value="4">Control</option>
+                      <option value="Administrativa y Financiera">Administrativa y Financiera</option>
+                      <option value="Comercial">Comercial</option>
+                      <option value="Operaciones">Operaciones</option>
+                      <option value="Calidad">Calidad</option>
+                      <option value="Alta Dirección">Alta Dirección</option>
+                      <option value="Desarrollo de Negocios">Desarrollo de Negocios</option>
                     </select>
                   </div>
                 </div>
@@ -177,11 +178,11 @@
                     <label for="perfil">Perfil</label>
                     <select class="form-control" name="nuevoPerfil" id="nuevoPerfil" required="">
                       <option>Seleccione un Rol</option>
-                      <option value="1">Administrador</option>
-                      <option value="2">Gerente</option>
-                      <option value="2">Dirección Financiera</option>
-                      <option value="3">Jefe de Area</option>
-                      <option value="4">Desarrollo Humano</option>
+                      <option value="Administrador">Administrador</option>
+                      <option value="Gerente">Gerente</option>
+                      <option value="Dirección Financiera">Dirección Financiera</option>
+                      <option value="Jefe de Area">Jefe de Area</option>
+                      <option value="Desarrollo Humano">Desarrollo Humano</option>
                     </select>
                   </div>
 
@@ -199,7 +200,8 @@
                   <div class="form-group col-md-6 ">
                     <label for="firma">Firma Digital </label><br>
                     <input type="file" class="nuevaFirma" name="nuevaFirma" id="firma">
-                    <small>Peso maximo de la firma 200 MB</small>
+                    <small>Peso maximo de la firma 2MB</small>
+                    <img src="vistas/img/usuarios/default/IconoFirma.png" class="img-thumbnail visualizando" width="100px">
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="foto">Foto </label><br>
