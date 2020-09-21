@@ -199,13 +199,13 @@
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="firma">Firma Digital </label><br>
-                    <input type="file" class="nuevaFirma" name="nuevaFirma" id="firma">
+                    <input type="file" class="nuevaFirma" name="nuevaFirma" id="nuevaFirma">
                     <small>Peso maximo de la firma 2MB</small>
-                    <img src="vistas/img/usuarios/default/IconoFirma.png" class="img-thumbnail visualizando" width="100px">
+                    <img src="vistas/img/usuarios/default/iconFirma.png" class="img-thumbnail visualizando" width="100px">
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="foto">Foto </label><br>
-                    <input type="file" class="nuevaFoto"  name="nuevaFoto" id="foto">
+                    <input type="file" class="nuevaFoto"  name="nuevaFoto" id="nuevaFoto">
                     <small>Peso maximo de la foto 2MB</small>
                     <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail previsualizar" width="100px">
                   </div>
