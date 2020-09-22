@@ -97,3 +97,39 @@ $(".nuevaFirma").change(function(){
         })
     }
 })
+
+   /*=============================================
+	EDITAR USUARIOS
+    =============================================*/
+    
+    $(".btnEditarUsuario").click(function(){
+
+        var idUsuario = $(this).attr("idUsuario");
+
+        var datos = new FormData();
+        datos.append("idUsuario",idUsuario);
+
+        $.ajax({
+
+            url:"ajax/usuarios.ajax.php",
+            method: "POST",
+            data: datos,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: "json",
+            success: function(respuesta){
+
+                $("#editarNombre").val(respuesta["nombre"]);
+                $("#editarCorreo").val(respuesta["correo"]);
+                $("#editarUsuario").val(respuesta["usuario"]);
+                $("#editarTelefono").val(respuesta["telefono"]);
+                $("#editarArea").html(respuesta["area"]);
+                $("#editarPerfil").html(respuesta["perfil"]);
+                
+            }
+
+
+
+        })
+    })
