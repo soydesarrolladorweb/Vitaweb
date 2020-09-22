@@ -18,17 +18,47 @@
          <!-- Notifications Dropdown Menu -->
          <li class="nav-item dropdown user-menu">
              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                 <img src="vistas/img/usuarios/user1.jpg" class="img-size-50 mr-3 img-circle">
-                 <span class="d-none d-md-inline">FABIAN BARRERA</span>
+
+
+             <?php
+
+                    if ($_SESSION["foto"] != ""){
+                        
+                    echo '<img src="'.$_SESSION["foto"].'"class="img-size-50 mr-3 img-circle">';
+
+                    }else {
+                        
+                    echo '<img src="vistas/img/usuarios/user1.jpg" class="img-size-50 mr-3 img-circle">';
+                    }
+
+                    ?>
+
+
+
+
+                 
+                 <span class="d-none d-md-inline"> <?php echo $_SESSION["nombre"]; ?></span>
              </a>
              <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
                  <!-- User image -->
                  <li class="user-header bg-teal">
-                     <img src="vistas/img/usuarios/user5.png" class="img-circle elevation-2" alt="User Image">
+
+                <?php
+
+                   if ($_SESSION["foto"] != ""){
+                       
+                    echo '<img src="'.$_SESSION["foto"].'"class="img-circle elevation-2">';
+
+                   }else {
+                       
+                    echo '<img src="vistas/img/usuarios/user5.png" class="img-circle elevation-2" alt="User Image">';
+                   }
+
+                ?>
 
                      <p>
-                         Fabian Barrera
-                         <small>WEB - DEVELOPER</small>
+                     <?php echo $_SESSION["nombre"]; ?>
+                         <small><?php echo $_SESSION["perfil"]; ?></small>
                      </p>
                  </li>
                  <!-- Menu Body -->

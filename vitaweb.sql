@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2020 a las 00:24:54
+-- Tiempo de generación: 22-09-2020 a las 19:53:11
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -227,8 +227,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `firma`, `telefono`, `ultimologin`) VALUES
 (1, 'Fabian Barrera', '', '20782', '54321', 'Administrador', 'TI', 1, '2020-09-10 17:48:00', '', '', 3007614919, '2020-09-10 00:00:00'),
-(2, 'Usuario Prueba Registro', '', '9876', '6789', '3', '2', 0, '2020-09-17 22:03:41', '', '', 345678, NULL),
-(3, 'Usuario Prueba Registro 2', '', '741852', '12345', '2', '2', 0, '2020-09-17 22:07:24', '', '', 98754, NULL);
+(22, 'Usuario Prueba', 'prueba@vitalis.com.co', '20787', '20787', 'Jefe de Area', 'Operaciones', 0, '2020-09-22 16:11:24', 'vistas/img/usuarios/20787/647.png', 'vistas/img/usuarios/20787/207.png', 3005555555, NULL),
+(23, 'Fabian Barrera M', 'Fabian@vitalis.com.co', '20788', '$2a$07$asxx54ahjppf45sd87a5auDP2eF62QnRQEoxFzyoR7nCQ3rv4Yq4i', 'Gerente', 'Desarrollo de Negocios', 0, '2020-09-22 17:00:55', 'vistas/img/usuarios/20788/836.png', 'vistas/img/usuarios/20788/670.png', 3004444444, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -357,7 +357,7 @@ ALTER TABLE `tiposdeingreso`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

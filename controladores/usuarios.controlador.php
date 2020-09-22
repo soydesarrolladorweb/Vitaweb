@@ -2,12 +2,19 @@
 
 class ControladorUsuarios{
 
+
+	/*=============================================
+	INGRESO DE USUARIO
+	=============================================*/
+
     static public function ctrIngresoUsuario(){
 
         if (isset($_POST["ingUsuario"])){
             
             if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
                 preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])){
+
+					$encriptar = crypt($_POST["ingPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
             
                     $tabla = "usuarios";
 
@@ -16,9 +23,15 @@ class ControladorUsuarios{
 
                     $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
-                    if ($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
+                    if ($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
 
-                     $_SESSION["iniciarSesion"] = "ok";
+					 $_SESSION["iniciarSesion"] = "ok";
+					 $_SESSION["iduser"] = $respuesta["iduser"];
+					 $_SESSION["nombre"] = $respuesta["nombre"];
+					 $_SESSION["usuario"] = $respuesta["usuario"];
+					 $_SESSION["foto"] = $respuesta["foto"];
+					 $_SESSION["perfil"] = $respuesta["perfil"];
+
                      
                      echo '<script>
 
@@ -115,18 +128,87 @@ class ControladorUsuarios{
 			
 	
 	}	
+	
+    /*=============================================
+	VALIDAR FIRMA
+	=============================================*/			
+
+
+	$rutaFirma = "";
+				
+
+	if (isset($_FILES["nuevaFirma"]["tmp_name"])){
+
+		list($ancho, $alto) = getimagesize($_FILES["nuevaFirma"]["tmp_name"]);
+
+		$nuevoAncho = 500;
+		$nuevoAlto = 500;
+
+	/*=============================================
+	LE INFORMAMOS DONDE VAMOS A GUARDAR LA FIRMA DEL USUARIO
+	=============================================*/			
+		
+	$directorio = "vistas/img/usuarios/".$_POST["nuevoUsuario"];
 
 	
 
-	
+	/*=============================================
+	DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
+	=============================================*/
 
+					if($_FILES["nuevaFirma"]["type"] == "image/jpeg"){
+
+						/*=============================================
+						GUARDAMOS LA FIRMA EN EL DIRECTORIO
+						=============================================*/
+
+						$aleatorio = mt_rand(100,999);
+
+						$rutaFirma = "vistas/img/usuarios/".$_POST["nuevoUsuario"]."/".$aleatorio.".jpg";
+
+						$origen = imagecreatefromjpeg($_FILES["nuevaFirma"]["tmp_name"]);						
+
+						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+						imagejpeg($destino, $rutaFirma);
+
+					}
+
+					if($_FILES["nuevaFirma"]["type"] == "image/png"){
+
+						/*=============================================
+						GUARDAMOS LA FIRMA EN EL DIRECTORIO
+						=============================================*/
+
+						$aleatorio = mt_rand(100,999);
+
+						$rutaFirma = "vistas/img/usuarios/".$_POST["nuevoUsuario"]."/".$aleatorio.".png";
+
+						$origen = imagecreatefrompng($_FILES["nuevaFirma"]["tmp_name"]);						
+
+						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+						imagepng($destino, $rutaFirma);
+
+					}
+			
+	
+	}
+
+	
 
 				$tabla = "usuarios";
 
+				$encriptar = crypt($_POST["nuevoPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+	    	
 				$datos = array("nombre" => $_POST["nuevoNombre"],
 								"correo" => $_POST["nuevoCorreo"],
 								"usuario" => $_POST["nuevoUsuario"],
-								"password" => $_POST["nuevoPassword"],
+								"password" => $encriptar,
 								"telefono" => $_POST["nuevoTelefono"],
 								"area" => $_POST["nuevaArea"],
 								"perfil" => $_POST["nuevoPerfil"],

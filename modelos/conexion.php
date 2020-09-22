@@ -6,7 +6,7 @@ class Conexion{
 
 		$link = new PDO("mysql:host=localhost;dbname=vitaweb",
 			            "root",
-			            "santagueda17");
+			            "");
 
 		$link->exec("set names utf8");
 
