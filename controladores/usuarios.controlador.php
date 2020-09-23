@@ -25,6 +25,10 @@ class ControladorUsuarios{
 
                     if ($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
 
+						if ($respuesta["estado"] == 1) {
+							
+						
+
 					 $_SESSION["iniciarSesion"] = "ok";
 					 $_SESSION["iduser"] = $respuesta["iduser"];
 					 $_SESSION["nombre"] = $respuesta["nombre"];
@@ -33,11 +37,40 @@ class ControladorUsuarios{
 					 $_SESSION["perfil"] = $respuesta["perfil"];
 
                      
-                     echo '<script>
+                     /*=============================================
+						REGISTRAR FECHA PARA SABER EL ÚLTIMO LOGIN
+						=============================================*/
+
+						date_default_timezone_set('America/Bogota');
+
+						$fecha = date('Y-m-d');
+						$hora = date('H:i:s');
+
+						$fechaActual = $fecha.' '.$hora;
+
+						$item1 = "ultimologin";
+						$valor1 = $fechaActual;
+
+						$item2 = "iduser";
+						$valor2 = $respuesta["iduser"];
+
+						$ultimoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
+
+						if($ultimoLogin == "ok"){
+
+							echo '<script>
 
 								window.location = "inicio";
 
 							</script>';
+
+						}				
+
+					}else {
+						
+						echo '<br>
+						<div class="alert alert-danger">El usuario aún no esta activado</div>';
+					}		
 
                     
                     }else{
@@ -309,7 +342,7 @@ class ControladorUsuarios{
 
 				$ruta = $_POST["fotoActual"];
 
-				if (isset($_FILES["editarFoto"]["tmp_name"])){
+				if (isset($_FILES["editarFoto"]["tmp_name"]) && !empty($_FILES["editarFoto"]["tmp_name"])){
 
 					list($ancho, $alto) = getimagesize($_FILES["editarFoto"]["tmp_name"]);
 			
@@ -391,7 +424,7 @@ class ControladorUsuarios{
 				$rutaFirma = "";
 							
 			
-				if (isset($_FILES["editarFirma"]["tmp_name"])){
+				if (isset($_FILES["editarFirma"]["tmp_name"]) && !empty($_FILES["editarFirma"]["tmp_name"])){
 			
 					list($ancho, $alto) = getimagesize($_FILES["editarFirma"]["tmp_name"]);
 			
@@ -404,15 +437,17 @@ class ControladorUsuarios{
 					
 				$directorio = "vistas/img/usuarios/".$_POST["editarUsuario"];
 
+
+
 				/*=============================================
 					PRIMERO PREGUNTAMOS SI EXISTE OTRA FIRMA EN LA BD
 					=============================================*/
 
-					if(!empty($_POST["firmaActual"])){
+					// if(!empty($_POST["firmaActual"])){
 
-						unlink($_POST["firmaActual"]);
+					// 	unlink($_POST["firmaActual"]);
 
-					}
+					// }
 			
 				/*=============================================
 				DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
