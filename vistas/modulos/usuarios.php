@@ -66,7 +66,7 @@
             foreach ($usuarios as $key => $value) {
             
               echo ' <tr>
-              <td>1</td>
+              <td>'.($key+1).'</td>
               <td>'.$value["nombre"].'</td>
               <td>'.$value["usuario"].'</td>';
 
@@ -313,11 +313,12 @@
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="usuario">Usuario SAP</label>
-                    <input type="text" class="form-control" name="editarUsuario" id="editarUsuario" value="" required="">
+                    <input type="text" class="form-control" name="editarUsuario" id="editarUsuario" value="" readonly>
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="password">Clave</label>
                     <input type="password" class="form-control" name="editarPassword" id="editarPassword" placeholder="Escriba la nueva contraseña" required="">
+                    <input type="hidden" id="passwordActual" name="passwordActual">
                   </div>
                 </div>
 
@@ -371,12 +372,14 @@
                     <input type="file" class="nuevaFirma" name="editarFirma" id="editarFirma">
                     <small>Peso maximo de la firma 2MB</small>
                     <img src="vistas/img/usuarios/default/firma2.png" class="img-thumbnail visualizando" width="100px">
+                    <input type="hidden" name="firmaActual" id="firmaActual">
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="foto">Foto </label><br>
                     <input type="file" class="nuevaFoto"  name="editarFoto" id="editarFoto">
                     <small>Peso maximo de la foto 2MB</small>
                     <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail previsualizar" width="100px">
+                    <input type="hidden" name="fotoActual" id="fotoActual">
                   </div>
                 </div>
               </div>
@@ -399,11 +402,11 @@
 
           </div>
 
-          <!-- <?php
-          // $crearUsuario = new ControladorUsuarios();
-          // $crearUsuario -> ctrCrearUsuario();
+          <?php
+          $editarUsuario = new ControladorUsuarios();
+          $editarUsuario -> ctrEditarUsuario();
 
-          ?> -->
+          ?>
 
         </form>
 

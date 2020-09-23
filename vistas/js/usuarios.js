@@ -102,7 +102,7 @@ $(".nuevaFirma").change(function(){
 	EDITAR USUARIOS
     =============================================*/
     
-    $(".btnEditarUsuario").click(function(){
+    $(document).on("click", ".btnEditarUsuario", function(){
 
         var idUsuario = $(this).attr("idUsuario");
 
@@ -126,6 +126,25 @@ $(".nuevaFirma").change(function(){
                 $("#editarTelefono").val(respuesta["telefono"]);
                 $("#editarArea").html(respuesta["area"]);
                 $("#editarPerfil").html(respuesta["perfil"]);
+                $("#editarArea").val(respuesta["area"]);
+                $("#editarPerfil").val(respuesta["perfil"]);
+                $("#fotoActual").val(respuesta["foto"]);
+                $("#firmaActual").val(respuesta["firma"]);
+
+                $("#passwordActual").val(respuesta["password"]);
+
+                if(respuesta["foto"] != ""){
+                    
+                    $(".previsualizar").attr("src", respuesta["foto"]);
+
+                }
+
+                if(respuesta["firma"] != ""){
+                    
+                    $(".visualizando").attr("src", respuesta["firma"]);
+
+                }
+                
                 
             }
 
