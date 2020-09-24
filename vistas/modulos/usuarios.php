@@ -176,7 +176,7 @@
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="usuario">Usuario SAP</label>
-                    <input type="text" class="form-control" name="nuevoUsuario" id="nuevoUsuario" placeholder="UsuarioSap" required="">
+                    <input type="text" class="form-control" name="nuevoUsuario" placeholder="UsuarioSap" id="nuevoUsuario" required="">
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="password">Clave</label>

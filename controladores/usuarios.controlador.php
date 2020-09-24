@@ -94,7 +94,7 @@ class ControladorUsuarios{
 			preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoPassword"])){
 
 	/*=============================================
-	VALIDAR IMAGEN
+	VALIDAR FOTO
 	=============================================*/		
 
 	$ruta = "";
@@ -108,7 +108,7 @@ class ControladorUsuarios{
 		$nuevoAlto = 500;
 
 	/*=============================================
-	CREAMOS DIRECTORIO DONDE VAMOS A GUARDAR LA FOTO DEL USUARIO
+	CREAMOS DIRECTORIO DONDE VAMOS A GUARDAR LA FOTO Y LA FIRMA
 	=============================================*/			
 		
 	$directorio = "vistas/img/usuarios/".$_POST["nuevoUsuario"];
@@ -182,8 +182,6 @@ class ControladorUsuarios{
 	=============================================*/			
 		
 	$directorio = "vistas/img/usuarios/".$_POST["nuevoUsuario"];
-
-	
 
 	/*=============================================
 	DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
@@ -320,7 +318,7 @@ class ControladorUsuarios{
 
 		$tabla = "usuarios";
 		
-		$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
+		$respuesta = ModeloUsuarios::mdlMostrarUsuarios($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -438,9 +436,8 @@ class ControladorUsuarios{
 				$directorio = "vistas/img/usuarios/".$_POST["editarUsuario"];
 
 
-
 				/*=============================================
-					PRIMERO PREGUNTAMOS SI EXISTE OTRA FIRMA EN LA BD
+					PRIMERO PREGUNTAMOS SI EXISTE OTRA FIRMA EN LA BD - funcion unlink me borra la firma
 					=============================================*/
 
 					// if(!empty($_POST["firmaActual"])){

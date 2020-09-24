@@ -45,7 +45,7 @@ class AjaxUsuarios{
 	}
 
 	/*=============================================
-	VALIDAR NO REPETIR USUARIO
+	CREAMOS EL METODO PARA VALIDAR NO REPETIR USUARIO
 	=============================================*/	
 
 	public $validarUsuario;
@@ -53,7 +53,7 @@ class AjaxUsuarios{
 	public function ajaxValidarUsuario(){
 
 		$item = "usuario";
-		$valor = $this->validarUsuario;
+		$valor = $this -> validarUsuario;
 
 		$respuesta = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
@@ -87,7 +87,7 @@ if(isset($_POST["activarUsuario"])){
 }
 
 /*=============================================
-VALIDAR NO REPETIR USUARIO
+CREAMOS EL OBJETO PARA VALIDAR NO REPETIR USUARIO
 =============================================*/
 
 if(isset( $_POST["validarUsuario"])){
