@@ -98,9 +98,9 @@
 
                 <div class="btn-group">
 
-                  <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["iduser"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fas fa-pencil-alt"></i></button>
+                  <button class="btn btn-warning btnEditarUsuario"idUsuario="'.$value["iduser"].'"data-toggle="modal" data-target="#modalEditarUsuario"><i class="fas fa-pencil-alt"></i></button>
 
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                  <button class="btn btn-danger" idUsuario="'.$value["iduser"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
 
                 </div>
               </td>
@@ -156,7 +156,7 @@
           <div class="modal-body">
             <div class="box-body">
 
-            <!--=============================================
+              <!--=============================================
 	            INICIO DE CLASE CARD BODY
 	            ============================================= -->
 
@@ -165,7 +165,7 @@
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="nombre">Nombre completo</label>
-                    <input type="text" class="form-control" name="nuevoNombre" id="nuevoNombre"  placeholder="Fabian Enrique Barrera Maldonado" required="">
+                    <input type="text" class="form-control" name="nuevoNombre" id="nuevoNombre"  placeholder="Fabian Barrera Maldonado" required="">
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="correo">Email</label>
@@ -215,24 +215,6 @@
                       <option value="Desarrollo Humano">Desarrollo Humano</option>
                     </select>
                   </div>
-
-                  <!-- <div class="form-group col-md-6 ">
-                    <label for="estado">Estatus</label>
-                    <select class="form-control" name="nuevoEstado" id="estado" required="">
-                      <option>Activar Usuario</option>
-                      <option value="0">Desactivar</option>
-                      <option value="1">Activar</option>
-                    </select>
-                  </div> -->
-
-                </div>
-                <div class="row">
-                  <div class="form-group col-md-6 ">
-                    <label for="firma">Firma Digital </label><br>
-                    <input type="file" class="nuevaFirma" name="nuevaFirma" id="nuevaFirma">
-                    <small>Peso maximo de la firma 2MB</small>
-                    <img src="vistas/img/usuarios/default/firma2.png" class="img-thumbnail visualizando" width="100px">
-                  </div>
                   <div class="form-group col-md-6 ">
                     <label for="foto">Foto </label><br>
                     <input type="file" class="nuevaFoto"  name="nuevaFoto" id="nuevaFoto">
@@ -241,9 +223,9 @@
                   </div>
                 </div>
               </div>
-              <!--=============================================
-	            CIERRE DE CLASE CARD BODY
-	            ============================================= -->
+               <!--=============================================
+	             CIERRE DE CLASE CARD BODY
+	             ============================================= -->
 
 
             </div>
@@ -353,37 +335,18 @@
                 </div>
 
                 <div class="row">
-                  <div class="form-group col-md-6 ">
-                    <label for="perfil">Perfil</label>
-                    <select class="form-control" name="editarPerfil" required="">
+                    <div class="form-group col-md-6 ">
+                      <label for="perfil">Perfil</label>
+                      <select class="form-control" name="editarPerfil" required="">
 
-                      <option value="" id="editarPerfil"></option>
-                      <option value="Administrador">Administrador</option>
-                      <option value="Gerente">Gerente</option>
-                      <option value="Dirección Financiera">Dirección Financiera</option>
-                      <option value="Jefe de Area">Jefe de Area</option>
-                      <option value="Desarrollo Humano">Desarrollo Humano</option>
-                    </select>
-                  </div>
-
-                  <!-- <div class="form-group col-md-6 ">
-                    <label for="estado">Estatus</label>
-                    <select class="form-control" name="nuevoEstado" id="estado" required="">
-                      <option>Activar Usuario</option>
-                      <option value="0">Desactivar</option>
-                      <option value="1">Activar</option>
-                    </select>
-                  </div> -->
-
-                </div>
-                <div class="row">
-                  <div class="form-group col-md-6 ">
-                    <label for="firma">Firma Digital </label><br>
-                    <input type="file" class="nuevaFirma" name="editarFirma" id="editarFirma">
-                    <small>Peso maximo de la firma 2MB</small>
-                    <img src="vistas/img/usuarios/default/firma2.png" class="img-thumbnail visualizando" width="100px">
-                    <input type="hidden" name="firmaActual" id="firmaActual">
-                  </div>
+                        <option value="" id="editarPerfil"></option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Dirección Financiera">Dirección Financiera</option>
+                        <option value="Jefe de Area">Jefe de Area</option>
+                        <option value="Desarrollo Humano">Desarrollo Humano</option>
+                      </select>
+                    </div>
                   <div class="form-group col-md-6 ">
                     <label for="foto">Foto </label><br>
                     <input type="file" class="nuevaFoto"  name="editarFoto" id="editarFoto">

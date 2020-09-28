@@ -69,7 +69,7 @@ class ControladorUsuarios{
 					}else {
 						
 						echo '<br>
-						<div class="alert alert-danger">El usuario aún no esta activado</div>';
+						<div class="alert alert-danger">Usuario Inactivo</div>';
 					}		
 
                     
@@ -162,75 +162,6 @@ class ControladorUsuarios{
 	
 	}	
 	
-    /*=============================================
-	VALIDAR FIRMA
-	=============================================*/			
-
-
-	$rutaFirma = "";
-				
-
-	if (isset($_FILES["nuevaFirma"]["tmp_name"])){
-
-		list($ancho, $alto) = getimagesize($_FILES["nuevaFirma"]["tmp_name"]);
-
-		$nuevoAncho = 500;
-		$nuevoAlto = 500;
-
-	/*=============================================
-	LE INFORMAMOS DONDE VAMOS A GUARDAR LA FIRMA DEL USUARIO
-	=============================================*/			
-		
-	$directorio = "vistas/img/usuarios/".$_POST["nuevoUsuario"];
-
-	/*=============================================
-	DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-	=============================================*/
-
-					if($_FILES["nuevaFirma"]["type"] == "image/jpeg"){
-
-						/*=============================================
-						GUARDAMOS LA FIRMA EN EL DIRECTORIO
-						=============================================*/
-
-						$aleatorio = mt_rand(100,999);
-
-						$rutaFirma = "vistas/img/usuarios/".$_POST["nuevoUsuario"]."/".$aleatorio.".jpg";
-
-						$origen = imagecreatefromjpeg($_FILES["nuevaFirma"]["tmp_name"]);						
-
-						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-						imagejpeg($destino, $rutaFirma);
-
-					}
-
-					if($_FILES["nuevaFirma"]["type"] == "image/png"){
-
-						/*=============================================
-						GUARDAMOS LA FIRMA EN EL DIRECTORIO
-						=============================================*/
-
-						$aleatorio = mt_rand(100,999);
-
-						$rutaFirma = "vistas/img/usuarios/".$_POST["nuevoUsuario"]."/".$aleatorio.".png";
-
-						$origen = imagecreatefrompng($_FILES["nuevaFirma"]["tmp_name"]);						
-
-						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-						imagepng($destino, $rutaFirma);
-
-					}
-			
-	
-	}
-
-	
 
 				$tabla = "usuarios";
 
@@ -243,8 +174,7 @@ class ControladorUsuarios{
 								"telefono" => $_POST["nuevoTelefono"],
 								"area" => $_POST["nuevaArea"],
 								"perfil" => $_POST["nuevoPerfil"],
-								"foto" => $ruta,
-								"firma" => $rutaFirma);
+								"foto" => $ruta);
 								
 
 				$respuesta = ModeloUsuarios::mdlIngresarUsuario($tabla, $datos);
@@ -253,21 +183,21 @@ class ControladorUsuarios{
 					
 					echo '<script>
 			
-			swal({
+				swal({
 
 					
-					title: "El usuario ha sido guardado correctamente",
-					text: "",
-					icon: "success",
-					button: "Cerrar",
-					showConfirmButton: true,
-					confirmButtonText: "Cerrar",
-					closeOnConfirm: false
+						title: "El usuario ha sido guardado correctamente",
+						text: "",
+						icon: "success",
+						button: "Cerrar",
+						showConfirmButton: true,
+						confirmButtonText: "Cerrar",
+						closeOnConfirm: false
 							
 					
-				}).then((result)=>{
+					}).then(function(result){
 
-					if(result.value){
+						if(result.value){
 
 						window.location = "usuarios";
 					}	
@@ -283,7 +213,7 @@ class ControladorUsuarios{
 			swal({
 
 					
-					title: "El usuario no puede ir con caracteres especiales",
+					title: "No se permiten caracteres especiales en nombre, usuario y clave.",
 					text: "",
 					icon: "error",
 					button: "Cerrar",
@@ -292,7 +222,7 @@ class ControladorUsuarios{
 					closeOnConfirm: false
 							
 					
-				}).then((result)=>{
+				}).then(function(result){
 
 					if(result.value){
 
@@ -412,85 +342,6 @@ class ControladorUsuarios{
 								}
 						
 				
-				}	
-				
-				/*=============================================
-				VALIDAR FIRMA
-				=============================================*/			
-			
-			
-				$rutaFirma = "";
-							
-			
-				if (isset($_FILES["editarFirma"]["tmp_name"]) && !empty($_FILES["editarFirma"]["tmp_name"])){
-			
-					list($ancho, $alto) = getimagesize($_FILES["editarFirma"]["tmp_name"]);
-			
-					$nuevoAncho = 500;
-					$nuevoAlto = 500;
-			
-				/*=============================================
-				LE INFORMAMOS DONDE VAMOS A GUARDAR LA FIRMA DEL USUARIO
-				=============================================*/			
-					
-				$directorio = "vistas/img/usuarios/".$_POST["editarUsuario"];
-
-
-				/*=============================================
-					PRIMERO PREGUNTAMOS SI EXISTE OTRA FIRMA EN LA BD - funcion unlink me borra la firma
-					=============================================*/
-
-					// if(!empty($_POST["firmaActual"])){
-
-					// 	unlink($_POST["firmaActual"]);
-
-					// }
-			
-				/*=============================================
-				DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-				=============================================*/
-			
-								if($_FILES["editarFirma"]["type"] == "image/jpeg"){
-			
-									/*=============================================
-									GUARDAMOS LA FIRMA EN EL DIRECTORIO
-									=============================================*/
-			
-									$aleatorio = mt_rand(100,999);
-			
-									$rutaFirma = "vistas/img/usuarios/".$_POST["nuevoUsuario"]."/".$aleatorio.".jpg";
-			
-									$origen = imagecreatefromjpeg($_FILES["editarFirma"]["tmp_name"]);						
-			
-									$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-			
-									imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-			
-									imagejpeg($destino, $rutaFirma);
-			
-								}
-			
-								if($_FILES["editarFirma"]["type"] == "image/png"){
-			
-									/*=============================================
-									GUARDAMOS LA FIRMA EN EL DIRECTORIO
-									=============================================*/
-			
-									$aleatorio = mt_rand(100,999);
-			
-									$rutaFirma = "vistas/img/usuarios/".$_POST["editarUsuario"]."/".$aleatorio.".png";
-			
-									$origen = imagecreatefrompng($_FILES["editarFirma"]["tmp_name"]);						
-			
-									$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-			
-									imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-			
-									imagepng($destino, $rutaFirma);
-			
-								}
-						
-				
 				}
 
 				
@@ -518,7 +369,7 @@ class ControladorUsuarios{
 					closeOnConfirm: false
 							
 					
-					}).then((result)=>{
+					}).then(function(result){
 
 					if(result.value){
 
@@ -529,9 +380,9 @@ class ControladorUsuarios{
 					</script>';
 					}
 
-				}else {
+				}else{
 					
-					$encriptar = $passwordActual;
+					$encriptar = $_POST["passwordActual"];
 				}
 
 				$datos = array("nombre" => $_POST["editarNombre"],
@@ -541,39 +392,38 @@ class ControladorUsuarios{
 								"telefono" => $_POST["editarTelefono"],
 								"area" => $_POST["editarArea"],
 								"perfil" => $_POST["editarPerfil"],
-								"foto" => $ruta,
-								"firma" => $rutaFirma);
+								"foto" => $ruta);
 
 				$respuesta = ModeloUsuarios::mdlEditarUsuarios($tabla, $datos);
 				
-				if ($respuesta == "ok"){
+				if($respuesta == "ok"){
 					
 					echo '<script>
 			
-			swal({
+				swal({
 
 					
-					title: "El usuario ha sido editado correctamente",
-					text: "",
-					icon: "success",
-					button: "Cerrar",
-					showConfirmButton: true,
-					confirmButtonText: "Cerrar",
-					closeOnConfirm: false
+						title: "El usuario ha sido editado correctamente",
+						text: "",
+						icon: "success",
+						button: "Cerrar",
+						showConfirmButton: true,
+						confirmButtonText: "Cerrar",
+						closeOnConfirm: false
 							
 					
-				}).then((result)=>{
+					}).then(function(result){
 
-					if(result.value){
+						if(result.value){
 
-						window.location = "usuarios";
-					}	
-				});
+							window.location = "usuarios";
+						}	
+					});
 			
-			</script>';
-			}
+					</script>';
+				}
 
-			}else {
+			}else{
 				
 				echo 
 				'<script>
@@ -581,7 +431,7 @@ class ControladorUsuarios{
 					swal({
 
 					
-					title: "Los campos no pueden ir vacios o llevar caracteres especiales",
+					title: "¡El nombre no puede ir vacío o llevar caracteres especiales!",
 					text: "",
 					icon: "error",
 					button: "Cerrar",
@@ -590,7 +440,7 @@ class ControladorUsuarios{
 					closeOnConfirm: false
 							
 					
-					}).then((result)=>{
+				}).then(function(result) {
 
 					if(result.value){
 
