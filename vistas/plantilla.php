@@ -91,7 +91,7 @@ session_start();
   <script src="vistas/dist/js/demo.js"></script>
   
   <!-- SweetAlert2 -->
-  <script src="vistas/plugins/sweetalertPersonalizado2/sweetalert2.min.js"></script>
+  <script src="vistas/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 
   <!-- page script -->
   <script>

@@ -100,7 +100,7 @@
 
                   <button class="btn btn-warning btnEditarUsuario"idUsuario="'.$value["iduser"].'"data-toggle="modal" data-target="#modalEditarUsuario"><i class="fas fa-pencil-alt"></i></button>
 
-                  <button class="btn btn-danger" idUsuario="'.$value["iduser"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
+                  <button class="btn btn-danger btnEliminarUsuario"idUsuario="'.$value["iduser"].'"fotoUsuario="'.$value["foto"].'"usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
 
                 </div>
               </td>
@@ -386,4 +386,10 @@
       </div>
     </div>
   </div>
+  
+  <?php
+    $borrarUsuario = new ControladorUsuarios();
+    $borrarUsuario -> ctrBorrarUsuario();
+
+  ?>
   

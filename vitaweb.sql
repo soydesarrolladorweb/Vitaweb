@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2020 a las 19:53:11
+-- Tiempo de generación: 29-09-2020 a las 00:44:38
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -216,7 +216,6 @@ CREATE TABLE `usuarios` (
   `estado` int(11) NOT NULL,
   `fecha` timestamp NULL DEFAULT current_timestamp(),
   `foto` text COLLATE utf8_spanish_ci NOT NULL,
-  `firma` text COLLATE utf8_spanish_ci NOT NULL,
   `telefono` bigint(50) DEFAULT NULL,
   `ultimologin` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -225,10 +224,12 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `firma`, `telefono`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', '', '20782', '54321', 'Administrador', 'TI', 1, '2020-09-10 17:48:00', '', '', 3007614919, '2020-09-10 00:00:00'),
-(22, 'Usuario Prueba', 'prueba@vitalis.com.co', '20787', '20787', 'Jefe de Area', 'Operaciones', 0, '2020-09-22 16:11:24', 'vistas/img/usuarios/20787/647.png', 'vistas/img/usuarios/20787/207.png', 3005555555, NULL),
-(23, 'Fabian Barrera M', 'Fabian@vitalis.com.co', '20788', '$2a$07$asxx54ahjppf45sd87a5auDP2eF62QnRQEoxFzyoR7nCQ3rv4Yq4i', 'Gerente', 'Desarrollo de Negocios', 0, '2020-09-22 17:00:55', 'vistas/img/usuarios/20788/836.png', 'vistas/img/usuarios/20788/670.png', 3004444444, NULL);
+INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `ultimologin`) VALUES
+(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'Operaciones', 1, '2020-09-10 17:48:00', 'vistas/img/usuarios/20782/101.jpg', 3007614919, '2020-09-28 17:42:59'),
+(22, 'Maria Prueba', 'prueba@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Jefe de Area', 'Operaciones', 1, '2020-09-22 16:11:24', 'vistas/img/usuarios/20780/578.png', 3005555555, '2020-09-23 17:14:02'),
+(32, 'Ana Pruebas', 'ana.pruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auzGfz9GaOjSPJ5jEDpHii9vSQEEqY1Zm', 'Dirección Financiera', 'Administrativa y Financiera', 1, '2020-09-28 21:27:17', 'vistas/img/usuarios/20900/124.png', 321345678, '2020-09-28 17:28:35'),
+(33, 'Mario Pruebas', 'mariopruebas@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5auQ/NJtQNnAMPFo71ZO28SPo1sLrZVwrq', 'Gerente', 'Comercial', 1, '2020-09-28 22:31:07', 'vistas/img/usuarios/20500/734.png', 3152345678, '2020-09-28 17:38:25'),
+(35, 'Javier Pruebas', 'javier.pruebas@vitalis.com.co', '20600', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Desarrollo Humano', 'Operaciones', 1, '2020-09-28 22:37:41', 'vistas/img/usuarios/20600/143.png', 3212345678, '2020-09-28 17:38:45');
 
 --
 -- Índices para tablas volcadas
@@ -357,7 +358,7 @@ ALTER TABLE `tiposdeingreso`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

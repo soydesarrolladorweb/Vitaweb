@@ -1,18 +1,23 @@
-// SUBIENDO FOTO
 
+
+/*=============================================
+SUBIENDO LA FOTO DEL USUARIO
+=============================================*/
 $(".nuevaFoto").change(function(){
 
     var imagen = this.files[0];
     
 
 
-    // VALIDANDO EL FORMATO DE LA IMAGEN QUE SEA JPG O PNG
+    /*=============================================
+  	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
+  	=============================================*/
 
     if (imagen["type"] != "image/jpeg"  && imagen["type"] != "image/png"){
 
         $(".nuevaFoto").val("");
 
-        swal({
+        swal.fire({
             title: "Error al subir la imagen",
             text: "La imagen debe estar en formato JPG O PNG",
             icon: "error",
@@ -24,7 +29,7 @@ $(".nuevaFoto").change(function(){
 
         $(".nuevaFoto").val("");
 
-        swal({
+        swal.fire({
             title: "Error al subir la imagen",
             text: "La imagen no debe pesar mas de 2MB",
             icon: "error",
@@ -48,56 +53,6 @@ $(".nuevaFoto").change(function(){
 })
 
 
-
-// SUBIENDO FIRMA
-
-// $(".nuevaFirma").change(function(){
-
-//     var firma = this.files[0];
-    
-
-
-    // VALIDANDO EL FORMATO DE LA FIRMA QUE SEA JPG O PNG
-
-//     if (firma["type"] != "image/jpeg"  && firma["type"] != "image/png"){
-
-//         $(".nuevaFirma").val("");
-
-//         swal({
-//             title: "Error al subir la firma",
-//             text: "La imagen debe estar en formato JPG O PNG",
-//             icon: "error",
-//             button: "Cerrar",
-//             confirmButtonText: "Cerrar"
-//         });
-        
-//     }else if(firma["size"] > 2000000){
-
-//         $(".nuevaFoto").val("");
-
-//         swal({
-//             title: "Error al subir la firma",
-//             text: "La imagen no debe pesar mas de 2MB",
-//             icon: "error",
-//             button: "Cerrar",
-//             confirmButtonText: "Cerrar"
-//         });
-
-//     }else{
-
-//         var datosFirma = new FileReader;
-//         datosFirma.readAsDataURL(firma);
-
-//         $(datosFirma).on("load", function(event){
-
-//             var rutaFirma = event.target.result;
-
-//             $(".visualizando").attr("src", rutaFirma);
-
-//         })
-//     }
-// })
-
    /*=============================================
 	EDITAR USUARIOS
     =============================================*/
@@ -107,7 +62,7 @@ $(".nuevaFoto").change(function(){
         var idUsuario = $(this).attr("idUsuario");
 
         var datos = new FormData();
-        datos.append("idUsuario",idUsuario);
+        datos.append("idUsuario", idUsuario);
 
         $.ajax({
 
@@ -137,14 +92,16 @@ $(".nuevaFoto").change(function(){
                     
                     $(".previsualizar").attr("src", respuesta["foto"]);
 
+                }else{
+
+                    $(".previsualizarEditar").attr("src", "vistas/img/usuarios/default/anonymous.png");
+    
                 }
                 
                 
             }
 
-
-
-        })
+        });
     })
 
     /*=============================================
@@ -169,26 +126,28 @@ $(document).on("click", ".btnActivar", function(){
       processData: false,
       success: function(respuesta){
 
-      	if(window.matchMedia("(max-width:767px)").matches){
+      	    if(window.matchMedia("(max-width:767px)").matches){
 		
-      		 swal({
-                title: "El usuario ha sido actualizado",
-                text: "",
-		      	icon: "success",
-		      	confirmButtonText: "¡Cerrar!"
-		    }).then(function(result) {
-		        
-		        	if (result.value) {
+                swal.fire({
+                    icon: 'success',
+                    title: 'El usuario ha sido actualizado',
+                    text: '',
+                    showCloseButton: true,
+                    confirmButtonText: '¡Cerrar!',
 
-		        	window.location = "usuarios";
+                }).then(function(result) {
+                    
+                        if (result.value) {
 
-		        }
+                        window.location = 'usuarios';
+
+                    }
 
 		      });
 
 
-		}
-    }
+		    }
+        }
 
   	})
 
@@ -247,3 +206,36 @@ $("#nuevoUsuario").change(function(){
 
 	})
 })
+
+/*=============================================
+ELIMINAR USUARIO
+=============================================*/
+$(document).on("click", ".btnEliminarUsuario", function(){
+
+    var idUsuario = $(this).attr("idUsuario");
+    var fotoUsuario = $(this).attr("fotoUsuario");
+    var usuario = $(this).attr("usuario");
+
+
+    Swal.fire({
+        title: '¿Está seguro de borrar el usuario?',
+        text: "",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Borrar el usuario!'
+         
+        
+
+    }).then(function(result){
+
+        if(result.value){
+
+            window.location = "index.php?ruta=usuarios&idUsuario="+idUsuario+"&usuario="+usuario+"&fotoUsuario="+fotoUsuario;
+  
+        }
+
+    })
+  
+  })

@@ -24,7 +24,7 @@ class ModeloUsuarios{
         	return $stmt -> fetch();
 
 
-		}else {
+		}else{
 
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 
@@ -35,9 +35,9 @@ class ModeloUsuarios{
 
         
 
-		$stmt -> close();
+			$stmt -> close();
 		
-        $stmt = null;
+        	$stmt = null;
 
 
     }
@@ -135,4 +135,29 @@ class ModeloUsuarios{
 
 	}
 
+	/*=============================================
+	BORRAR USUARIO
+	=============================================*/
+
+	static public function mdlBorrarUsuario($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE iduser = :iduser");
+
+		$stmt-> bindParam("iduser", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
 }    
