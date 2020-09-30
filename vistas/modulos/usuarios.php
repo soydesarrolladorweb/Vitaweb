@@ -169,25 +169,25 @@
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="correo">Email</label>
-                    <input type="email" class="form-control" name="nuevoCorreo" id="nuevoCorreo" placeholder="pasante.ti@vitalis.com.co" required="">
+                    <input type="email" class="form-control" name="nuevoCorreo" id="nuevoCorreo" placeholder="correo@vitalis.com.co" required="">
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="usuario">Usuario SAP</label>
-                    <input type="text" class="form-control" name="nuevoUsuario" placeholder="UsuarioSap" id="nuevoUsuario" required="">
+                    <input type="text" class="form-control" name="nuevoUsuario" placeholder="UsuarioSap - Sin espacios" id="nuevoUsuario" required="">
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="password">Clave</label>
-                    <input type="password" class="form-control" name="nuevoPassword" id="nuevoPassword" placeholder="Alfa numerica min 8 caracteres" minlength="8" required="">
+                    <input type="password" class="form-control" name="nuevoPassword" id="nuevoPassword" placeholder="Clave alfa numerica con min 8 caracteres" minlength="8" required="">
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="form-group col-md-6 ">
                     <label for="telefono">Telefono</label>
-                    <input type="text" class="form-control" name="nuevoTelefono" id="telefono" placeholder="3007614919" required="">
+                    <input type="text" class="form-control" name="nuevoTelefono" id="telefono" placeholder="3007614919 - Sin espacios" required="">
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="area">Área</label>
@@ -309,7 +309,7 @@
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="password">Clave</label>
-                    <input type="password" class="form-control" name="editarPassword" id="editarPassword" placeholder="Escriba la nueva contraseña" minlength="8" required="">
+                    <input type="password" class="form-control" name="editarPassword" id="editarPassword" placeholder="Clave alfa numerica con min 8 caracteres" minlength="8" required="">
                     <input type="hidden" id="passwordActual" name="passwordActual">
                   </div>
                 </div>

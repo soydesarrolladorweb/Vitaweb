@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-09-2020 a las 00:44:38
+-- Tiempo de generación: 01-10-2020 a las 00:24:11
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -225,7 +225,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'Operaciones', 1, '2020-09-10 17:48:00', 'vistas/img/usuarios/20782/101.jpg', 3007614919, '2020-09-28 17:42:59'),
+(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Operaciones', 1, '2020-09-10 17:48:00', 'vistas/img/usuarios/20782/101.jpg', 3007614919, '2020-09-30 17:20:42'),
 (22, 'Maria Prueba', 'prueba@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Jefe de Area', 'Operaciones', 1, '2020-09-22 16:11:24', 'vistas/img/usuarios/20780/578.png', 3005555555, '2020-09-23 17:14:02'),
 (32, 'Ana Pruebas', 'ana.pruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auzGfz9GaOjSPJ5jEDpHii9vSQEEqY1Zm', 'Dirección Financiera', 'Administrativa y Financiera', 1, '2020-09-28 21:27:17', 'vistas/img/usuarios/20900/124.png', 321345678, '2020-09-28 17:28:35'),
 (33, 'Mario Pruebas', 'mariopruebas@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5auQ/NJtQNnAMPFo71ZO28SPo1sLrZVwrq', 'Gerente', 'Comercial', 1, '2020-09-28 22:31:07', 'vistas/img/usuarios/20500/734.png', 3152345678, '2020-09-28 17:38:25'),
@@ -358,7 +358,7 @@ ALTER TABLE `tiposdeingreso`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
