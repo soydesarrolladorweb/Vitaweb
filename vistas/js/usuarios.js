@@ -129,13 +129,16 @@ $(document).on("click", ".btnActivar", function(){
       	    if(window.matchMedia("(max-width:767px)").matches){
 		
                 swal.fire({
-                    icon: 'success',
-                    title: 'El usuario ha sido actualizado',
-                    text: '',
-                    showCloseButton: true,
-                    confirmButtonText: '¡Cerrar!',
 
-                }).then(function(result) {
+                        title: "El usuario ha sido actualizado",
+						text: "",
+						icon: "success",
+						button: "Cerrar",
+						showConfirmButton: true,
+						confirmButtonText: "Cerrar",
+						closeOnConfirm: false
+
+                }).then(function(result){
                     
                         if (result.value) {
 
@@ -224,7 +227,8 @@ $(document).on("click", ".btnEliminarUsuario", function(){
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, Borrar el usuario!'
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Si, Borrar el usuario!',
          
         
 
@@ -239,3 +243,4 @@ $(document).on("click", ".btnEliminarUsuario", function(){
     })
   
   })
+  

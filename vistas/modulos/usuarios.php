@@ -180,7 +180,7 @@
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="password">Clave</label>
-                    <input type="password" class="form-control" name="nuevoPassword" id="nuevoPassword" placeholder="Alfa numerica min 8 caracteres" required="">
+                    <input type="password" class="form-control" name="nuevoPassword" id="nuevoPassword" placeholder="Alfa numerica min 8 caracteres" minlength="8" required="">
                   </div>
                 </div>
 
@@ -309,7 +309,7 @@
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="password">Clave</label>
-                    <input type="password" class="form-control" name="editarPassword" id="editarPassword" placeholder="Escriba la nueva contraseña" required="">
+                    <input type="password" class="form-control" name="editarPassword" id="editarPassword" placeholder="Escriba la nueva contraseña" minlength="8" required="">
                     <input type="hidden" id="passwordActual" name="passwordActual">
                   </div>
                 </div>

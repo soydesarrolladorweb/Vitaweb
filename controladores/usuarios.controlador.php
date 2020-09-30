@@ -23,7 +23,7 @@ class ControladorUsuarios{
 
                     $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
-                    if ($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){
+                    if (is_array($respuesta) && $respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar) {
 
 						if ($respuesta["estado"] == 1) {
 							
@@ -207,7 +207,7 @@ class ControladorUsuarios{
 
 			}
 
-		}else {
+		}else{
 
 			echo '<script>
 			
@@ -237,7 +237,6 @@ class ControladorUsuarios{
 
 		
 		}
-
 	}
 
 
@@ -453,6 +452,8 @@ class ControladorUsuarios{
 			
 				</script>';
 			}
+			
+				
 		}
 
 	}
