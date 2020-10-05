@@ -114,7 +114,7 @@
   </section>
   </div>
 
-  <!-- MODAL AGREGAR TIPO DE INGRESO-->
+  <!-- MODAL Agregar Tipos de Ingreso -->
 
   <div class="modal fade bd-example-modal-lg" tabindex="-1" id="AgregarIngreso" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
@@ -145,7 +145,7 @@
 
                 <div class="row">
                   <div class="form-group col-md-12 ">
-                    <label for="ingreso">Tipo de ingreso</label>
+                    <label for="nombre">Tipo de ingreso</label>
                     <input type="text" class="form-control" name="nuevoIngreso" id="ingreso" placeholder="Tipo de ingreso" required="">
                   </div>
                 </div>
@@ -164,14 +164,6 @@
             <button type="submit" class="btn btn-primary">Guardar Ingreso</button>
 
           </div>
-
-          <?php
-
-            $crearIngreso = new ControladorIngresos();
-            $crearIngreso -> ctrCrearIngreso();
-
-          ?>
-          
         </form>
 
       </div>
