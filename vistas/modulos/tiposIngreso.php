@@ -59,22 +59,24 @@
 
             foreach ($tiposIngresos as $key => $value) {
               
-              echo '<tr>
+              echo
+            '<tr>
 
-              <td>'.($key+1).'</td>
+                <td>'.($key+1).'</td>
 
-              <td>'.$value["ingreso"].'</td>
+                <td>'.$value["ingreso"].'</td>
 
-              <td>
+                <td>
 
-                <div class="btn-group">
+                  <div class="btn-group">
 
-                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn btn-warning btnEditarTipoingreso"idTipoingreso="'.$value["id"].'" data-toggle="modal"data-target="#modalEditarTipoingreso"><i class="fas fa-pencil-alt"></i></button>
+                    
 
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                    <button class="btn btn-danger"><i class="fa fa-times"></i></button>
 
-                </div>
-              </td>
+                  </div>
+                </td>
             </tr>';
 
             }
@@ -147,6 +149,71 @@
 
             $crearIngreso = new ControladorIngresos();
             $crearIngreso -> ctrCrearIngreso();
+
+          ?>
+          
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL EDITAR TIPO DE INGRESO-->
+
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" id="modalEditarTipoingreso" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg" role="document">
+
+      <div class="modal-content">
+
+        <form role="form" action="#" method="POST">
+
+          <!-- CABEZA DEL MODAL -->
+
+          <div class="modal-header" style="background:#20c997; color:white">
+
+            <h5 class="modal-title" id="exampleModalLabel">Editar Tipo de Ingreso</h5>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+
+          </div>
+
+          <!-- CUERPO DEL MODAL -->
+
+          <div class="modal-body">
+            <div class="box-body">
+
+              <div class="card-body">
+
+                <div class="row">
+                  <div class="form-group col-md-12 ">
+                    <label for="ingreso">Tipo de ingreso</label>
+                    <input type="text" class="form-control" name="editarIngreso" id="editarIngreso" required="">
+                    <input type="hidden" name="idTipoingreso" id="idTipoingreso" required="">
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+
+
+            </div>
+          </div>
+
+          <!-- PIE DEL MODAL -->
+
+          <div class="modal-footer justify-content-center">
+
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+
+          </div>
+
+          <?php
+
+            $editarIngreso = new ControladorIngresos();
+            $editarIngreso -> ctrEditarIngreso();
 
           ?>
           

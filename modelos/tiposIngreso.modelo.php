@@ -40,9 +40,9 @@ class ModeloIngresos{
             
             $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
-            $stmt ->bindParam(":".$item, $valor, PDO::PARAM_STR);
+            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
-            $stmt ->execute;
+            $stmt -> execute();
 
             return $stmt ->fetch();
 
@@ -58,6 +58,33 @@ class ModeloIngresos{
         $stmt -> close();
 
 		$stmt = null;
+    }
+
+    /*=============================================
+	EDITAR TIPO DE INGRESO
+    =============================================*/			
+    
+    static public function mdlEditarIngreso($tabla, $datos){
+
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET ingreso = :ingreso WHERE id = :id");
+
+        $stmt->bindParam(":ingreso", $datos["ingreso"], PDO::PARAM_STR);
+        $stmt->bindParam(":id", $datos["id"], PDO::PARAM_STR);
+
+        if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
     }
 
 
