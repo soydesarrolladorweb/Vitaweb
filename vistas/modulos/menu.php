@@ -44,6 +44,13 @@
                 Usuarios
               </p>
             </a>
+            <li class="nav-item">
+            <a href="asignacionFirma" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Asignación de firma
+              </p>
+            </a>
             <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>

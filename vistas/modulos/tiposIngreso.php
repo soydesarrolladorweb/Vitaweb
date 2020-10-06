@@ -50,31 +50,21 @@
 
           <tbody>
 
-            <tr>
+          <?php
 
-              <td>1</td>
+          $item = null;
+          $valor = null;
 
-              <td>Nuevo</td>
+            $tiposIngresos = ControladorIngresos::ctrMostrarTiposingresos($item, $valor);
 
-              <td>
-
-                <div class="btn-group">
-
-                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
-
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-
-                </div>
-              </td>
-            </tr>
-
-
-            <tr>
-
-              <td>2</td>
-
-              <td>Temporal a directo</td>
+            foreach ($tiposIngresos as $key => $value) {
               
+              echo '<tr>
+
+              <td>'.($key+1).'</td>
+
+              <td>'.$value["ingreso"].'</td>
+
               <td>
 
                 <div class="btn-group">
@@ -85,25 +75,13 @@
 
                 </div>
               </td>
-            </tr>
+            </tr>';
 
-            <tr>
+            }
 
-              <td>3</td>
+          ?>
 
-              <td>Reingreso</td>
-              
-              <td>
-
-                <div class="btn-group">
-
-                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
-
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
-
-                </div>
-              </td>
-            </tr>
+            
 
           </tbody>
 

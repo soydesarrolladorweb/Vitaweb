@@ -68,6 +68,18 @@ class ControladorIngresos{
            }
 
         }
-    }
+	}
+	
+	/*=============================================
+	MOSTRAR TIPOS DE INGRESOS
+    =============================================*/	
 
+	static public function ctrMostrarTiposingresos($item, $valor){
+
+		$tabla = "tiposdeingreso";
+
+		$respuesta = ModeloIngresos::mdlMostrarTiposingresos($tabla, $item, $valor);
+
+		return $respuesta;
+	}
 }

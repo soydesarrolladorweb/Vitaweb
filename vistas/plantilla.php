@@ -142,6 +142,7 @@ session_start();
       if (
         $_GET["ruta"] == "inicio" ||
         $_GET["ruta"] == "usuarios" ||
+        $_GET["ruta"] == "asignacionFirma" ||
         $_GET["ruta"] == "administrarsolicitudes" ||
         $_GET["ruta"] == "crear-solicitud" ||
         $_GET["ruta"] == "editar-solicitud" ||
