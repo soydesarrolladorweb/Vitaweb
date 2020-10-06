@@ -4,24 +4,24 @@ class ControladorIngresos{
 
     static public function ctrCrearIngreso(){
 
-        if (isset($_POST["editarIngreso"])){
+        if (isset($_POST["nuevoIngreso"])){
 
-            if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarIngreso"])){
+            if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoIngreso"])){
 
                 $tabla = "tiposdeingreso";
 
-                $datos = $_POST["EditarIngreso"];
+                $datos = $_POST["nuevoIngreso"];
 
-                $respuesta = ModeloIngresos::mdlEditarIngreso($tabla, $datos);
+                $respuesta = ModeloIngresos::mdlCrearIngreso($tabla, $datos);
 
                 if ($respuesta == "ok") {
                     
                     echo '<script>
 			
-				swal.fire({
+					swal.fire({
 
 					
-						title: "El tipo de ingreso ha sido modificado correctamente",
+						title: "El tipo de ingreso ha sido guardado correctamente",
 						text: "",
 						icon: "success",
 						button: "Cerrar",
@@ -103,10 +103,10 @@ class ControladorIngresos{
                     
                     echo '<script>
 			
-				swal.fire({
+					swal.fire({
 
 					
-						title: "El tipo de ingreso ha sido guardado correctamente",
+						title: "El tipo de ingreso ha sido modificado correctamente",
 						text: "",
 						icon: "success",
 						button: "Cerrar",
@@ -154,4 +154,46 @@ class ControladorIngresos{
 
         }
 	}
+
+	/*=============================================
+	ELIMINAR TIPOS DE INGRESOS
+	=============================================*/
+	
+	static public function ctrBorrarIngreso(){
+
+		if (isset($_GET["idTipoingreso"])){
+			
+			$tabla ="tiposdeingreso";
+			$datos =$_GET["idTipoingreso"];
+
+			$respuesta =  ModeloIngresos::mdlBorrarIngreso($tabla, $datos);
+
+			if ($respuesta == "ok") {
+				
+				echo '<script>
+		
+			swal.fire({
+
+				
+				    icon: "success",
+					title: "El tipo de ingreso ha sido borrado correctamente",
+					text: "",
+					button: "Cerrar",
+					showConfirmButton: true,
+					confirmButtonText: "Cerrar",
+						
+				
+				}).then(function(result){
+
+					if(result.value){
+
+						window.location = "tiposIngreso";
+					}	
+				});
+		
+				</script>';
+			}
+		}
+	}
+
 }

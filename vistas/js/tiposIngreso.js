@@ -29,3 +29,34 @@ $(".btnEditarTipoingreso").click(function(){
     })
     
 })
+
+/*=============================================
+	ELIMINAR TIPOS DE INGRESOS
+=============================================*/
+
+$(".btnEliminarTipoingreso").click(function(){
+
+    var idTipoingreso = $(this).attr("idTipoingreso");
+
+    Swal.fire({
+        title: '¿Está seguro de borrar el tipo de ingreso?',
+        text: "",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Si, Borrar el tipo de ingreso!',
+         
+
+    }).then(function(result){
+
+        if(result.value){
+
+            window.location = "index.php?ruta=tiposIngreso&idTipoingreso="+idTipoingreso;
+  
+        }
+
+    })
+
+})

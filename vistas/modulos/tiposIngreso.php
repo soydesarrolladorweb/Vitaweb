@@ -73,7 +73,7 @@
                     <button class="btn btn-warning btnEditarTipoingreso"idTipoingreso="'.$value["id"].'" data-toggle="modal"data-target="#modalEditarTipoingreso"><i class="fas fa-pencil-alt"></i></button>
                     
 
-                    <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                    <button class="btn btn-danger btnEliminarTipoingreso"idTipoingreso="'.$value["id"].'"><i class="fa fa-times"></i></button>
 
                   </div>
                 </td>
@@ -222,3 +222,10 @@
       </div>
     </div>
   </div>
+
+  <?php
+
+    $borrarIngreso = new ControladorIngresos();
+    $borrarIngreso -> ctrBorrarIngreso();
+
+  ?>
