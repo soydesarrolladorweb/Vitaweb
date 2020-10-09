@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-10-2020 a las 15:11:57
+-- Tiempo de generación: 09-10-2020 a las 15:33:15
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -89,6 +89,30 @@ CREATE TABLE `control_documento` (
   `direccion` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `observaciones` varchar(250) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `firmas`
+--
+
+CREATE TABLE `firmas` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `firma` text COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `firmas`
+--
+
+INSERT INTO `firmas` (`id`, `id_usuario`, `firma`, `fecha`) VALUES
+(1, 1, '', '2020-10-08 18:58:50'),
+(2, 2, '', '2020-10-08 18:59:00'),
+(3, 3, '', '2020-10-08 18:59:06'),
+(4, 4, '', '2020-10-08 18:59:13'),
+(5, 5, '', '2020-10-08 18:59:20');
 
 -- --------------------------------------------------------
 
@@ -236,11 +260,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Operaciones', 1, '2020-09-10 17:48:00', 'vistas/img/usuarios/20782/101.jpg', 3007614919, '2020-10-06 14:46:09'),
-(22, 'Maria Prueba', 'prueba@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Jefe de Area', 'Operaciones', 1, '2020-09-22 16:11:24', 'vistas/img/usuarios/20780/578.png', 3005555555, '2020-09-23 17:14:02'),
-(32, 'Ana Pruebas', 'ana.pruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auzGfz9GaOjSPJ5jEDpHii9vSQEEqY1Zm', 'Dirección Financiera', 'Administrativa y Financiera', 1, '2020-09-28 21:27:17', 'vistas/img/usuarios/20900/124.png', 321345678, '2020-09-28 17:28:35'),
-(33, 'Mario Pruebas', 'mariopruebas@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5auQ/NJtQNnAMPFo71ZO28SPo1sLrZVwrq', 'Gerente', 'Comercial', 1, '2020-09-28 22:31:07', 'vistas/img/usuarios/20500/734.png', 3152345678, '2020-09-28 17:38:25'),
-(35, 'Javier Pruebas', 'javier.pruebas@vitalis.com.co', '20600', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Desarrollo Humano', 'Operaciones', 1, '2020-09-28 22:37:41', 'vistas/img/usuarios/20600/143.png', 3212345678, '2020-09-28 17:38:45');
+(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, '2020-10-08 13:47:43'),
+(2, 'Maria pruebas', 'maria@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Gerente', 'Comercial', 1, '2020-10-08 18:49:16', 'vistas/img/usuarios/20780/428.png', 3102212121, NULL),
+(3, 'Javier pruebas', 'javierPruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Dirección Financiera', 'Operaciones', 1, '2020-10-08 18:50:19', 'vistas/img/usuarios/20900/696.png', 3102222222, NULL),
+(4, 'Magreth Angulo', 'magreth.angulo@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5au3aeaogtcEUOK/RtUOxpPOONPHkGI/cq', 'Jefe de Area', 'Alta Dirección', 1, '2020-10-08 18:51:38', 'vistas/img/usuarios/20500/515.png', 3102232323, NULL),
+(5, 'Duvan Pruebas', 'duvan.ti@vitalis.com.co', '20600', '$2a$07$asxx54ahjppf45sd87a5auTORkrD.KY3EqoE65wNdlCJFoiGJ8FyK', 'Desarrollo Humano', 'Desarrollo de Negocios', 1, '2020-10-08 18:53:23', 'vistas/img/usuarios/20600/137.jpg', 3102242424, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -268,6 +292,12 @@ ALTER TABLE `centrocosto`
 -- Indices de la tabla `control_documento`
 --
 ALTER TABLE `control_documento`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `firmas`
+--
+ALTER TABLE `firmas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -336,6 +366,12 @@ ALTER TABLE `control_documento`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `firmas`
+--
+ALTER TABLE `firmas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT de la tabla `horario`
 --
 ALTER TABLE `horario`
@@ -369,7 +405,7 @@ ALTER TABLE `tiposdeingreso`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

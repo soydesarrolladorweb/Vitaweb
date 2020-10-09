@@ -34,7 +34,7 @@
 
       <div class="card-body">
 
-        <table id="" class="table table-bordered table-striped tablaFirmas">
+        <table id="example1" class="table table-bordered table-striped">
         
           <thead>
             <tr>
@@ -52,40 +52,56 @@
 
           <tbody>
 
-          <!-- <?php
+            <tr>
+              <td>1</td>
+              <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>
+              <td>20782</td>
+              <td>2020-07-10 08:54:32</td>
+              <td>
 
-            // $item = null;
-            // $valor = null;
+                <div class="btn-group">
 
-            // $firmas =ControladorFirmas::ctrMostrarFirmas($item, $valor);
+                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
 
-            // foreach ($firmas as $key => $value) {
-              
-            //   echo'<tr>
-            //   <td>'.($key+1).'</td>
-            //   <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>';
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
 
-            //   $item = "iduser";
-            //   $valor = $value["id_usuario"];
-              
-            //   $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
-            //   echo' <td>'.$usuario["usuario"].'</td>
-            //   <td>'.$value["fecha"].'</td>
-            //   <td>
+                </div>
+              </td>
+            </tr>
 
-            //     <div class="btn-group">
+            <tr>
+              <td>2</td>
+              <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>
+              <td>20780</td>
+              <td>2020-07-10 09:01:23</td>
+              <td>
 
-            //       <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
+                <div class="btn-group">
 
-            //       <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
 
-            //     </div>
-            //   </td>
-            // </tr>';
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
 
-            // }
+                </div>
+              </td>
+            </tr>
 
-          ?> -->
+            <tr>
+            <td>3</td>
+              <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>
+              <td>20900</td>
+              <td>2020-07-10 09:32:14</td>
+              <td>
+
+                <div class="btn-group">
+
+                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
+
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+
+                </div>
+              </td>
+            </tr>
 
           </tbody>
 
