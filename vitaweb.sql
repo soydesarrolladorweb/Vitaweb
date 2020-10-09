@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2020 a las 15:33:15
+-- Tiempo de generación: 09-10-2020 a las 17:07:03
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -108,11 +108,11 @@ CREATE TABLE `firmas` (
 --
 
 INSERT INTO `firmas` (`id`, `id_usuario`, `firma`, `fecha`) VALUES
-(1, 1, '', '2020-10-08 18:58:50'),
-(2, 2, '', '2020-10-08 18:59:00'),
-(3, 3, '', '2020-10-08 18:59:06'),
-(4, 4, '', '2020-10-08 18:59:13'),
-(5, 5, '', '2020-10-08 18:59:20');
+(1, 1, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:27'),
+(2, 2, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:41'),
+(3, 3, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:49'),
+(4, 4, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:55'),
+(5, 5, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:59');
 
 -- --------------------------------------------------------
 
@@ -260,7 +260,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, '2020-10-08 13:47:43'),
+(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, '2020-10-09 09:10:32'),
 (2, 'Maria pruebas', 'maria@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Gerente', 'Comercial', 1, '2020-10-08 18:49:16', 'vistas/img/usuarios/20780/428.png', 3102212121, NULL),
 (3, 'Javier pruebas', 'javierPruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Dirección Financiera', 'Operaciones', 1, '2020-10-08 18:50:19', 'vistas/img/usuarios/20900/696.png', 3102222222, NULL),
 (4, 'Magreth Angulo', 'magreth.angulo@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5au3aeaogtcEUOK/RtUOxpPOONPHkGI/cq', 'Jefe de Area', 'Alta Dirección', 1, '2020-10-08 18:51:38', 'vistas/img/usuarios/20500/515.png', 3102232323, NULL),
