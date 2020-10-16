@@ -19,21 +19,39 @@ class TablaFirmas{
 
       $firmas =ControladorFirmas::ctrMostrarFirmas($item, $valor);
 
-      
-      $botones =  "<div class='btn-group'><button class='btn btn-warning'><i class='fas fa-pencil-alt'></i></button><button class='btn btn-danger'><i class='fa fa-times'></i></button></div>";
 
       $datosJson = '{
         "data": [';
 
         for($i =0; $i < count($firmas); $i++){
 
+          /*=============================================
+          TRAEMOS LA FIRMA
+          =============================================*/
+
           $imagen = "<img src='".$firmas[$i]["firma"]."' width='40px'>";
+
+          /*=============================================
+          TRAEMOS EL USUARIO
+          =============================================*/
+
+          $item ="iduser";
+          $valor = $firmas[$i ]["id_usuario"];
+
+          $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+
+          /*=============================================
+          TRAEMOS LAS ACCIONES
+          =============================================*/
+
+          $botones =  "<div class='btn-group'><button class='btn btn-warning btnEditarFirma'idFirma='".$firmas[$i ]["id"]."' data-toggle='modal' data-target='#modalEditarFirma'><i class='fas fa-pencil-alt'></i></button><button class='btn btn-danger btnEliminarFirma'idfirma='".$firmas[$i ]["id"]."' imagen='".$firmas[$i]["firma"]."'><i class='fa fa-times'></i></button></div>";
+
 
           $datosJson .= '[
                 "'.($i+1).'",
                 "'.$imagen.'",
-                "20782",
-                "2020-10-08 13:58:50",
+                "'.$usuario["usuario"].'",
+                "'.$firmas[$i ]["fecha"].'",
                 "'.$botones.'"
               ],';
 

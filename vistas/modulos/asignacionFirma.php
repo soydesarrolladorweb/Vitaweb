@@ -52,40 +52,40 @@
 
           <!-- <tbody> -->
 
-          <!-- <?php
+         <?php
 
-            // $item = null;
-            // $valor = null;
+          $item = null;
+          $valor = null;
 
-            // $firmas =ControladorFirmas::ctrMostrarFirmas($item, $valor);
+           $firmas =ControladorFirmas::ctrMostrarFirmas($item, $valor);
 
-            // foreach ($firmas as $key => $value) {
+            foreach ($firmas as $key => $value) {
               
-            //   echo'<tr>
-            //   <td>'.($key+1).'</td>
-            //   <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>';
+              echo'<tr>
+              <td>'.($key+1).'</td>
+              <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>';
 
-            //   $item = "iduser";
-            //   $valor = $value["id_usuario"];
+              $item = "iduser";
+              $valor = $value["id_usuario"];
               
-            //   $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
-            //   echo' <td>'.$usuario["usuario"].'</td>
-            //   <td>'.$value["fecha"].'</td>
-            //   <td>
+              $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+              echo' <td>'.$usuario["usuario"].'</td>
+              <td>'.$value["fecha"].'</td>
+              <td>
 
-            //     <div class="btn-group">
+                <div class="btn-group">
 
-            //       <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
+                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
 
-            //       <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
 
-            //     </div>
-            //   </td>
-            // </tr>';
+                </div>
+              </td>
+            </tr>';
 
-            // }
+            }
 
-          ?> -->
+          ?>
 
           <!-- </tbody> -->
 
@@ -132,16 +132,27 @@
                     <label for="usuario">Usuario</label>
                     <select class="form-control" name="nuevoUsuario" id="nuevoUsuario" required="">
                       <option>Seleccione el usuario</option>
-                      <option value="">20780</option>
-                      <option value="">20782</option>
-                      <option value="">20900</option>
+
+                      <?php
+
+                        $item = null;
+                        $valor = null;
+
+                        $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+
+                        foreach ($usuario as $key => $value) {
+
+                          echo '<option value="'.$value["iduser"].'">'.$value["usuario"].'</option>';
+                        }
+                      ?>
+
                     </select>
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="firma">Firma</label><br>
-                    <input type="file" name="nuevaFirma" id="nuevaFirma" required="">
+                    <input type="file" name="nuevaFirma" class="nuevaFirma" required="">
                     <small>Peso maximo de la firma 2MB</small>
-                    <img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="100px">
+                    <img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail previsualizar" width="100px">
                   </div>
                 </div>
 
@@ -161,6 +172,12 @@
 
           </div>
         </form>
+
+        <?php
+          $crearFirma = new ControladorFirmas();
+          $crearFirma -> ctrCrearFirma();
+
+        ?>
 
       </div>
     </div>

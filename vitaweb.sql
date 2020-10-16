@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2020 a las 17:07:03
+-- Tiempo de generación: 16-10-2020 a las 16:48:46
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -112,7 +112,8 @@ INSERT INTO `firmas` (`id`, `id_usuario`, `firma`, `fecha`) VALUES
 (2, 2, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:41'),
 (3, 3, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:49'),
 (4, 4, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:55'),
-(5, 5, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:59');
+(5, 5, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:59'),
+(8, 6, '0', '2020-10-14 19:39:24');
 
 -- --------------------------------------------------------
 
@@ -130,14 +131,23 @@ CREATE TABLE `formato` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `horario`
+-- Estructura de tabla para la tabla `horarios`
 --
 
-CREATE TABLE `horario` (
+CREATE TABLE `horarios` (
   `id` int(11) NOT NULL,
-  `descriphorario` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `horario` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `fecha_horario` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `horarios`
+--
+
+INSERT INTO `horarios` (`id`, `horario`, `fecha_horario`) VALUES
+(1, 'Rotativo Trabajara por turnos tendrá recargos y horas extra', '2020-10-16 14:27:02'),
+(2, 'Administrativo Sin recargos ni horas extra', '2020-10-16 14:29:35'),
+(4, 'Administrativo Operativo Siendo administrativo tendrá recargos y horas extra', '2020-10-16 14:47:32');
 
 -- --------------------------------------------------------
 
@@ -260,11 +270,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, '2020-10-09 09:10:32'),
+(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, '2020-10-16 08:45:39'),
 (2, 'Maria pruebas', 'maria@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Gerente', 'Comercial', 1, '2020-10-08 18:49:16', 'vistas/img/usuarios/20780/428.png', 3102212121, NULL),
 (3, 'Javier pruebas', 'javierPruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Dirección Financiera', 'Operaciones', 1, '2020-10-08 18:50:19', 'vistas/img/usuarios/20900/696.png', 3102222222, NULL),
 (4, 'Magreth Angulo', 'magreth.angulo@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5au3aeaogtcEUOK/RtUOxpPOONPHkGI/cq', 'Jefe de Area', 'Alta Dirección', 1, '2020-10-08 18:51:38', 'vistas/img/usuarios/20500/515.png', 3102232323, NULL),
-(5, 'Duvan Pruebas', 'duvan.ti@vitalis.com.co', '20600', '$2a$07$asxx54ahjppf45sd87a5auTORkrD.KY3EqoE65wNdlCJFoiGJ8FyK', 'Desarrollo Humano', 'Desarrollo de Negocios', 1, '2020-10-08 18:53:23', 'vistas/img/usuarios/20600/137.jpg', 3102242424, NULL);
+(5, 'Duvan Pruebas', 'duvan.ti@vitalis.com.co', '20600', '$2a$07$asxx54ahjppf45sd87a5auTORkrD.KY3EqoE65wNdlCJFoiGJ8FyK', 'Desarrollo Humano', 'Desarrollo de Negocios', 1, '2020-10-08 18:53:23', 'vistas/img/usuarios/20600/137.jpg', 3102242424, NULL),
+(6, 'Prueba asignación firma', 'firma@vitalis.com.co', '20601', '$2a$07$asxx54ahjppf45sd87a5auFZA2zB4MTeDYFN/U0jnZXJRGrAjqcXK', 'Jefe de Area', 'Operaciones', 1, '2020-10-14 18:23:54', '', 3214556698, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -301,9 +312,9 @@ ALTER TABLE `firmas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `horario`
+-- Indices de la tabla `horarios`
 --
-ALTER TABLE `horario`
+ALTER TABLE `horarios`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -369,13 +380,13 @@ ALTER TABLE `control_documento`
 -- AUTO_INCREMENT de la tabla `firmas`
 --
 ALTER TABLE `firmas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `horario`
+-- AUTO_INCREMENT de la tabla `horarios`
 --
-ALTER TABLE `horario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `horarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `motivo`
@@ -405,7 +416,7 @@ ALTER TABLE `tiposdeingreso`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
