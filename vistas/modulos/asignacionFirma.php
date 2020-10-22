@@ -37,11 +37,15 @@
         <table id="" class="table table-bordered table-striped tablaFirmas">
         
           <thead>
+
+         
             <tr>
 
               <th style="width: 10px;" >#</th>
-              <th>Firma</th>
+              <th>Imagen</th>
+              <th>Codigo</th>
               <th>Usuario</th>
+              <th>Descripción</th>
               <th>Agregado</th>
               <th>Acciones</th>
 
@@ -50,44 +54,46 @@
 
           </thead>
 
-          <!-- <tbody> -->
+          <!-- <tbody>
 
-         <?php
+          <?php
+            $item = null;
+            $valor = null;
 
-          $item = null;
-          $valor = null;
-
-           $firmas =ControladorFirmas::ctrMostrarFirmas($item, $valor);
+            $firmas = ControladorFirmas::ctrMostrarFirmas($item, $valor);
 
             foreach ($firmas as $key => $value) {
               
-              echo'<tr>
-              <td>'.($key+1).'</td>
-              <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>';
+              echo '<tr>
+                      <td>'.($key+1).'</td>
+                      <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>
+                      <td>'.$value["codigo"].'</td>';
 
-              $item = "iduser";
-              $valor = $value["id_usuario"];
-              
-              $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
-              echo' <td>'.$usuario["usuario"].'</td>
-              <td>'.$value["fecha"].'</td>
-              <td>
+                      $item = "iduser";
+                      $valor = $value ["id_usuario"];
 
-                <div class="btn-group">
+                      $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
-                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
+                      echo' <td>'.$usuario["usuario"].'</td>
+                      <td>'.$value["descripcion"].'</td>
+                      <td>'.$value["fecha"].'</td>
+                      <td>
 
-                  <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                        <div class="btn-group">
 
-                </div>
-              </td>
-            </tr>';
+                          <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
 
+                          <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+
+                        </div>
+                      </td>
+                    </tr>';
             }
-
+          
           ?>
+          </tbody>  -->
 
-          <!-- </tbody> -->
+          
 
         </table>
 
@@ -129,36 +135,35 @@
 
                 <div class="row">
                   <div class="form-group col-md-6 ">
-                    <label for="usuario">Usuario</label>
-                    <select class="form-control" name="nuevoUsuario" id="nuevoUsuario" required="">
+                    <label for="nuevoCodigo">Codigo</label>
+                    <input type="text" class="form-control" name="nuevoCodigo" id="nuevoCodigo" placeholder="Ingresar Codigo" required="">
+                  </div>
+                  <div class="form-group col-md-6 ">
+                    <label for="nuevaDescripcion">Descripción</label>
+                    <input type="password" class="form-control" name="nuevaDescripcion" id="nuevaDescripcion" placeholder="Firma Larga" required="">
+                  </div>
+                </div>
+                <div class="row">
+                <div class="form-group col-md-6 ">
+                    <label for="newUser">Usuario</label>
+                    <select class="form-control" name="newUser" id="newUser" required="">
                       <option>Seleccione el usuario</option>
-
-                      <?php
-
-                        $item = null;
-                        $valor = null;
-
-                        $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
-
-                        foreach ($usuario as $key => $value) {
-
-                          echo '<option value="'.$value["iduser"].'">'.$value["usuario"].'</option>';
-                        }
-                      ?>
-
+                      <option value="">20780</option>
+                      <option value="">20782</option>
+                      <option value="">20900</option>
                     </select>
                   </div>
                   <div class="form-group col-md-6 ">
-                    <label for="firma">Firma</label><br>
-                    <input type="file" name="nuevaFirma" class="nuevaFirma" required="">
+                    <label for="nuevaImagen">Firma</label><br>
+                    <input type="file" name="nuevaImagen" id="nuevaImagen">
                     <small>Peso maximo de la firma 2MB</small>
-                    <img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail previsualizar" width="100px">
+                    <img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="100px">
                   </div>
                 </div>
 
               </div>
               <!-- /.card-body -->
-
+              
 
             </div>
           </div>
@@ -172,12 +177,6 @@
 
           </div>
         </form>
-
-        <?php
-          $crearFirma = new ControladorFirmas();
-          $crearFirma -> ctrCrearFirma();
-
-        ?>
 
       </div>
     </div>

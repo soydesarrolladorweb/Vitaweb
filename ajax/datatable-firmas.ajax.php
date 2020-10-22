@@ -8,70 +8,59 @@ require_once "../modelos/usuarios.modelo.php";
 
 class TablaFirmas{
 
-    /*=============================================
-    MOSTRAR LA TABLA DE FIRMAS
-    =============================================*/
+  /*=============================================
+  MOSTRAR TABLA DE FIRMAS
+  =============================================*/
 
-    public function mostrarTablaFirmas(){
+  public function mostrarTablaFirmas(){
 
-      $item = null;
-      $valor = null;
+    $item = null;
+    $valor = null;
 
-      $firmas =ControladorFirmas::ctrMostrarFirmas($item, $valor);
+    $firmas = ControladorFirmas::ctrMostrarFirmas($item, $valor);
 
+    
+    $botones = "<div class='btn-group'><button class='btn btn-warning'><i class='fas fa-pencil-alt'></i></button><button class='btn btn-danger'><i class='fa fa-times'></i></button></div>";
 
-      $datosJson = '{
-        "data": [';
+    $datosJson = '{
+      "data": [';
 
-        for($i =0; $i < count($firmas); $i++){
+      for($i = 0; $i < count($firmas); $i++){
 
-          /*=============================================
-          TRAEMOS LA FIRMA
-          =============================================*/
+        $imagen = "<img src='".$firmas[$i]["imagen"]."' width='40px'>";
 
-          $imagen = "<img src='".$firmas[$i]["firma"]."' width='40px'>";
+        $item = "iduser";
+        $valor = $firmas[$i]["id_usuario"];
 
-          /*=============================================
-          TRAEMOS EL USUARIO
-          =============================================*/
+        $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
-          $item ="iduser";
-          $valor = $firmas[$i ]["id_usuario"];
-
-          $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
-
-          /*=============================================
-          TRAEMOS LAS ACCIONES
-          =============================================*/
-
-          $botones =  "<div class='btn-group'><button class='btn btn-warning btnEditarFirma'idFirma='".$firmas[$i ]["id"]."' data-toggle='modal' data-target='#modalEditarFirma'><i class='fas fa-pencil-alt'></i></button><button class='btn btn-danger btnEliminarFirma'idfirma='".$firmas[$i ]["id"]."' imagen='".$firmas[$i]["firma"]."'><i class='fa fa-times'></i></button></div>";
-
-
-          $datosJson .= '[
+        $datosJson.='[
                 "'.($i+1).'",
                 "'.$imagen.'",
+                "'.$firmas[$i]["codigo"].'",
                 "'.$usuario["usuario"].'",
-                "'.$firmas[$i ]["fecha"].'",
+                "'.$firmas[$i]["descripcion"].'",
+                "'.$firmas[$i]["fecha"].'",
                 "'.$botones.'"
               ],';
 
-        }
+      }
 
-        $datosJson = substr($datosJson, 0, -1);
-          
-        $datosJson .= '] 
-      
-        }';
+      $datosJson = substr($datosJson, 0, -1);
 
-        echo $datosJson;
+      $datosJson.= ']
+    
+    }';
+    echo $datosJson;
+    
 
-      
-    }
+  }
 
 }
 
-    /*=============================================
-    ACTIVAR LA TABLA DE FIRMAS
-    =============================================*/
-    $activarFirmas = new TablaFirmas();
-    $activarFirmas -> mostrarTablaFirmas();
+/*=============================================
+  ACTIVAR TABLA DE FIRMAS
+  =============================================*/
+  $activarFirmas = new TablaFirmas();
+  $activarFirmas -> mostrarTablaFirmas();
+

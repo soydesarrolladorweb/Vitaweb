@@ -108,7 +108,7 @@ class ControladorUsuarios{
 					$nuevoAlto = 500;
 
 						/*=============================================
-						CREAMOS DIRECTORIO DONDE VAMOS A GUARDAR LA FOTO Y LA FIRMA
+						CREAMOS DIRECTORIO DONDE VAMOS A GUARDAR LA FOTO
 						=============================================*/			
 							
 						$directorio = "vistas/img/usuarios/".$_POST["nuevoUsuario"];

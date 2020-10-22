@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2020 a las 16:48:46
+-- Tiempo de generación: 23-10-2020 a las 00:07:34
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -99,21 +99,23 @@ CREATE TABLE `control_documento` (
 CREATE TABLE `firmas` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `firma` text COLLATE utf8_spanish_ci NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `usuario` text COLLATE utf8_spanish_ci DEFAULT NULL,
+  `codigo` text COLLATE utf8_spanish_ci NOT NULL,
+  `imagen` text COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcion` text COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `firmas`
 --
 
-INSERT INTO `firmas` (`id`, `id_usuario`, `firma`, `fecha`) VALUES
-(1, 1, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:27'),
-(2, 2, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:41'),
-(3, 3, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:49'),
-(4, 4, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:55'),
-(5, 5, 'vistas/img/firmas/default/firma2.png', '2020-10-09 15:05:59'),
-(8, 6, '0', '2020-10-14 19:39:24');
+INSERT INTO `firmas` (`id`, `id_usuario`, `usuario`, `codigo`, `imagen`, `descripcion`, `fecha`) VALUES
+(1, 1, '20782', '101', 'vistas/img/firmas/default/firma2.png', 'Firma Larga', '2020-10-20 20:24:13'),
+(2, 2, '20780', '102', 'vistas/img/firmas/default/firma2.png', 'Firma Larga', '2020-10-20 20:24:13'),
+(3, 3, '20900', '201', 'vistas/img/firmas/default/firma2.png', 'Firma Larga', '2020-10-20 20:24:13'),
+(4, 4, '20500', '501', 'vistas/img/firmas/default/firma2.png', 'Firma Larga', '2020-10-20 20:24:13'),
+(5, 5, '20600', '601', 'vistas/img/firmas/default/firma2.png', 'Firma Larga', '2020-10-20 20:24:13');
 
 -- --------------------------------------------------------
 
@@ -270,12 +272,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, '2020-10-16 08:45:39'),
+(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, '2020-10-22 16:59:24'),
 (2, 'Maria pruebas', 'maria@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Gerente', 'Comercial', 1, '2020-10-08 18:49:16', 'vistas/img/usuarios/20780/428.png', 3102212121, NULL),
 (3, 'Javier pruebas', 'javierPruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Dirección Financiera', 'Operaciones', 1, '2020-10-08 18:50:19', 'vistas/img/usuarios/20900/696.png', 3102222222, NULL),
 (4, 'Magreth Angulo', 'magreth.angulo@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5au3aeaogtcEUOK/RtUOxpPOONPHkGI/cq', 'Jefe de Area', 'Alta Dirección', 1, '2020-10-08 18:51:38', 'vistas/img/usuarios/20500/515.png', 3102232323, NULL),
 (5, 'Duvan Pruebas', 'duvan.ti@vitalis.com.co', '20600', '$2a$07$asxx54ahjppf45sd87a5auTORkrD.KY3EqoE65wNdlCJFoiGJ8FyK', 'Desarrollo Humano', 'Desarrollo de Negocios', 1, '2020-10-08 18:53:23', 'vistas/img/usuarios/20600/137.jpg', 3102242424, NULL),
-(6, 'Prueba asignación firma', 'firma@vitalis.com.co', '20601', '$2a$07$asxx54ahjppf45sd87a5auFZA2zB4MTeDYFN/U0jnZXJRGrAjqcXK', 'Jefe de Area', 'Operaciones', 1, '2020-10-14 18:23:54', '', 3214556698, NULL);
+(6, 'Prueba asignación firma', 'firma@vitalis.com.co', '20601', '$2a$07$asxx54ahjppf45sd87a5auND1/VMhsMBheheFBw1m3SXgZtH9DpC2', 'Jefe de Area', 'Operaciones', 1, '2020-10-14 18:23:54', 'vistas/img/usuarios/20601/658.png', 3214556698, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -380,7 +382,7 @@ ALTER TABLE `control_documento`
 -- AUTO_INCREMENT de la tabla `firmas`
 --
 ALTER TABLE `firmas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `horarios`

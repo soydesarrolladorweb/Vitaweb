@@ -40,7 +40,9 @@
             <tr>
 
               <th style="width: 10px;" >#</th>
-              <th>Firma</th>
+              <th>Imagen</th>
+              <th>Codigo</th>
+              <th>Descripción</th>
               <th>Usuario</th>
               <th>Agregado</th>
               <th>Acciones</th>
@@ -55,6 +57,8 @@
             <tr>
               <td>1</td>
               <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>
+              <td>101</td>
+              <td>Firma Larga</td>
               <td>20782</td>
               <td>2020-07-10 08:54:32</td>
               <td>
@@ -72,8 +76,10 @@
             <tr>
               <td>2</td>
               <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>
+              <td>102</td>
+              <td>Firma Larga</td>
               <td>20780</td>
-              <td>2020-07-10 09:01:23</td>
+              <td>2020-07-10 08:55:19</td>
               <td>
 
                 <div class="btn-group">
@@ -87,10 +93,12 @@
             </tr>
 
             <tr>
-            <td>3</td>
+              <td>3</td>
               <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>
+              <td>203</td>
+              <td>Firma Larga</td>
               <td>20900</td>
-              <td>2020-07-10 09:32:14</td>
+              <td>2020-07-10 08:56:42</td>
               <td>
 
                 <div class="btn-group">
@@ -145,8 +153,18 @@
 
                 <div class="row">
                   <div class="form-group col-md-6 ">
-                    <label for="usuario">Usuario</label>
-                    <select class="form-control" name="nuevoUsuario" id="nuevoUsuario" required="">
+                    <label for="nuevoCodigo">Codigo</label>
+                    <input type="text" class="form-control" name="nuevoCodigo" id="nuevoCodigo" placeholder="Ingresar Codigo" required="">
+                  </div>
+                  <div class="form-group col-md-6 ">
+                    <label for="nuevaDescripcion">Descripción</label>
+                    <input type="password" class="form-control" name="nuevaDescripcion" id="nuevaDescripcion" placeholder="Firma Larga" required="">
+                  </div>
+                </div>
+                <div class="row">
+                <div class="form-group col-md-6 ">
+                    <label for="newUser">Usuario</label>
+                    <select class="form-control" name="newUser" id="newUser" required="">
                       <option>Seleccione el usuario</option>
                       <option value="">20780</option>
                       <option value="">20782</option>
@@ -154,8 +172,8 @@
                     </select>
                   </div>
                   <div class="form-group col-md-6 ">
-                    <label for="firma">Firma</label><br>
-                    <input type="file" name="nuevaFirma" id="nuevaFirma" required="">
+                    <label for="nuevaImagen">Firma</label><br>
+                    <input type="file" name="nuevaImagen" id="nuevaImagen">
                     <small>Peso maximo de la firma 2MB</small>
                     <img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="100px">
                   </div>
@@ -163,7 +181,7 @@
 
               </div>
               <!-- /.card-body -->
-
+              
 
             </div>
           </div>
