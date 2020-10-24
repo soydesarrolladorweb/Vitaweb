@@ -2,16 +2,16 @@
 CARGAR LA TABLA DINAMICA DE FIRMAS
 =============================================*/
 
-$.ajax({
+// $.ajax({
 
-    url: "ajax/datatable-firmas.ajax.php",
-    success:function(respuesta){
+//     url: "ajax/datatable-firmas.ajax.php",
+//     success:function(respuesta){
 
-        console.log("respuesta", respuesta);
-    }
+//         console.log("respuesta", respuesta);
+//     }
 
-})
+// })
 
-$('.tablaFirmas').DataTable( {
-	"ajax": "ajax/datatable-firmas.ajax.php"
-} );
+// $('.tablaFirmas').DataTable( {
+// 	"ajax": "ajax/datatable-firmas.ajax.php"
+// } );
