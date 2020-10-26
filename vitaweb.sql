@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2020 a las 02:40:11
+-- Tiempo de generación: 26-10-2020 a las 23:56:31
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -295,10 +295,7 @@ CREATE TABLE `control_documento` (
 CREATE TABLE `firmas` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `usuario` text COLLATE utf8_spanish_ci DEFAULT NULL,
-  `codigo` text COLLATE utf8_spanish_ci NOT NULL,
   `imagen` text COLLATE utf8_spanish_ci DEFAULT NULL,
-  `descripcion` text COLLATE utf8_spanish_ci DEFAULT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -306,12 +303,9 @@ CREATE TABLE `firmas` (
 -- Volcado de datos para la tabla `firmas`
 --
 
-INSERT INTO `firmas` (`id`, `id_usuario`, `usuario`, `codigo`, `imagen`, `descripcion`, `fecha`) VALUES
-(1, 1, '20782', '101', 'vistas/img/firmas/default/firma2.png', 'Firma Larga', '2020-10-20 20:24:13'),
-(2, 2, '20780', '102', 'vistas/img/firmas/default/firma2.png', 'Firma Larga', '2020-10-20 20:24:13'),
-(3, 3, '20900', '103', 'vistas/img/firmas/default/firma2.png', 'Firma Larga', '2020-10-20 20:24:13'),
-(4, 4, '20500', '104', 'vistas/img/firmas/default/firma2.png', 'Firma Larga', '2020-10-20 20:24:13'),
-(5, 5, '20600', '105', 'vistas/img/firmas/default/firma2.png', 'Firma Larga', '2020-10-20 20:24:13');
+INSERT INTO `firmas` (`id`, `id_usuario`, `imagen`, `fecha`) VALUES
+(1, 20782, 'vistas/img/firmas/20782/121.png', '2020-10-26 22:24:13'),
+(2, 20780, 'vistas/img/firmas/20780/370.png', '2020-10-26 22:55:07');
 
 -- --------------------------------------------------------
 
@@ -468,7 +462,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, '2020-10-23 18:00:47'),
+(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, '2020-10-26 16:12:53'),
 (2, 'Maria pruebas', 'maria@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Gerente', 'Comercial', 1, '2020-10-08 18:49:16', 'vistas/img/usuarios/20780/428.png', 3102212121, NULL),
 (3, 'Javier pruebas', 'javierPruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Dirección Financiera', 'Operaciones', 1, '2020-10-08 18:50:19', 'vistas/img/usuarios/20900/696.png', 3102222222, NULL),
 (4, 'Magreth Angulo', 'magreth.angulo@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5au3aeaogtcEUOK/RtUOxpPOONPHkGI/cq', 'Jefe de Area', 'Alta Dirección', 1, '2020-10-08 18:51:38', 'vistas/img/usuarios/20500/515.png', 3102232323, NULL),
@@ -578,7 +572,7 @@ ALTER TABLE `control_documento`
 -- AUTO_INCREMENT de la tabla `firmas`
 --
 ALTER TABLE `firmas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `horarios`

@@ -40,26 +40,26 @@ class ModeloFirmas{
 	REGISTRO DE FIRMA
     =============================================*/
 
-    // static public function mdlIngresarFirma($tabla, $datos){
+    static public function mdlIngresarFirma($tabla, $datos){
 
-    //     $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_usuario, firma) VALUES (:id_usuario, :firma)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_usuario, imagen) VALUES (:id_usuario, :imagen)");
 
-    //     $stmt->bindParam(":id_usuario", $datos["id_usuario"], PDO::PARAM_INT);
-    //     $stmt->bindParam(":firma", $datos["firma"], PDO::PARAM_INT);
+        $stmt->bindParam(":id_usuario", $datos["id_usuario"], PDO::PARAM_INT);
+        $stmt->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);
 
-    //     if($stmt->execute()){
+        if($stmt->execute()){
 
-    //         return "ok";	
+            return "ok";	
 
-    //    }else{
+       }else{
 
-    //        return "error";
+           return "error";
        
-    //    }
+       }
 
-    //     $stmt->close();
+        $stmt->close();
        
-    //     $stmt = null;
-    // }
+        $stmt = null;
+    }
     
 }

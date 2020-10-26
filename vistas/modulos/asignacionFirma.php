@@ -34,7 +34,7 @@
 
       <div class="card-body">
 
-        <table id="" class="table table-bordered table-striped tablaFirmas">
+        <table id="example1" class="table table-bordered table-striped">
         
           <thead>
 
@@ -43,9 +43,7 @@
 
               <th style="width: 10px;" >#</th>
               <th>Imagen</th>
-              <th>Codigo</th>
               <th>Usuario</th>
-              <th>Descripción</th>
               <th>Agregado</th>
               <th>Acciones</th>
 
@@ -54,7 +52,7 @@
 
           </thead>
 
-          <!-- <tbody>
+          <tbody>
 
           <?php
             $item = null;
@@ -65,17 +63,23 @@
             foreach ($firmas as $key => $value) {
               
               echo '<tr>
-                      <td>'.($key+1).'</td>
-                      <td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>
-                      <td>'.$value["codigo"].'</td>';
+                      <td>'.($key+1).'</td>';
+                      if ($value["imagen"] != ""){
+
+                        echo '<td><img src="'.$value["imagen"].'" class="img-thumbnail" width="40px"></td>';
+        
+                      }else {
+                        
+                        echo'<td><img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="40px"></td>';
+        
+                      }
 
                       $item = "iduser";
                       $valor = $value ["id_usuario"];
 
                       $usuario = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
-                      echo' <td>'.$usuario["usuario"].'</td>
-                      <td>'.$value["descripcion"].'</td>
+                      echo' <td>'.$value["id_usuario"].'</td>
                       <td>'.$value["fecha"].'</td>
                       <td>
 
@@ -91,7 +95,7 @@
             }
           
           ?>
-          </tbody>  -->
+          </tbody> 
 
           
 
@@ -132,32 +136,31 @@
               <div class="card-body">
               
                 <!-- ENTRADA PARA SELECCIONAR EL USUARIO -->
-
-                <div class="row">
-                  <div class="form-group col-md-6 ">
-                    <label for="nuevoCodigo">Codigo</label>
-                    <input type="text" class="form-control" name="nuevoCodigo" id="nuevoCodigo" placeholder="Ingresar Codigo" required="">
-                  </div>
-                  <div class="form-group col-md-6 ">
-                    <label for="nuevaDescripcion">Descripción</label>
-                    <input type="password" class="form-control" name="nuevaDescripcion" id="nuevaDescripcion" placeholder="Firma Larga" required="">
-                  </div>
-                </div>
                 <div class="row">
                 <div class="form-group col-md-6 ">
                     <label for="newUser">Usuario</label>
                     <select class="form-control" name="newUser" id="newUser" required="">
                       <option>Seleccione el usuario</option>
-                      <option value="">20780</option>
-                      <option value="">20782</option>
-                      <option value="">20900</option>
+
+                      <?php
+                      $item = null;
+                      $valor = null;
+
+                      $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+
+                      foreach ($usuarios as $key => $value) {
+
+                        echo '<option value="'.$value["usuario"].'">'.$value["usuario"].'</option>';
+                      }
+
+                      ?>
                     </select>
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="nuevaImagen">Firma</label><br>
-                    <input type="file" name="nuevaImagen" id="nuevaImagen">
+                    <input type="file" class="nuevaImagen" name="nuevaImagen" >
                     <small>Peso maximo de la firma 2MB</small>
-                    <img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail" width="100px">
+                    <img src="vistas/img/firmas/default/firma2.png" class="img-thumbnail visualizar" width="100px">
                   </div>
                 </div>
 
@@ -177,6 +180,13 @@
 
           </div>
         </form>
+
+        <?php
+
+          $crearFirma = new ControladorFirmas();
+          $crearFirma -> ctrCrearFirma();
+
+        ?>
 
       </div>
     </div>
