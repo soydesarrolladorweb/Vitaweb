@@ -5,37 +5,10 @@ require_once "conexion.php";
 class ModeloCentros{
 
     /*=============================================
-	CREAR CENTROS DE COSTO
+	MOSTRAR CENTROS DE COSTO
     =============================================*/
 
-    static public function mdlIngresarCentros($tabla, $datos){
-
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, nombre) VALUES (:codigo, :nombre)");
-
-        $stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_INT);
-        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-        
-        if($stmt->execute()){
-
-            return "ok";	
-
-       }else{
-
-           return "error";
-       
-       }
-
-        $stmt->close();
-       
-        $stmt = null;
-
-    }
-
-    /*=============================================
-	MOSTRAR CENTROS
-	=============================================*/
-
-	static public function mdlMostrarCentros($tabla, $item, $valor){
+    static public function mdlMostrarCentros($tabla, $item, $valor){
 
 
 		if ($item != null) {
@@ -65,6 +38,34 @@ class ModeloCentros{
         	$stmt = null;
 
     }
+
+    /*=============================================
+	CREAR CENTROS
+    =============================================*/
+    
+    static public function mdlIngresarCentros($tabla, $datos){
+
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, nombre) VALUES (:codigo, :nombre)");
+
+        $stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_INT);
+        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+        
+        if($stmt->execute()){
+
+            return "ok";	
+
+       }else{
+
+           return "error";
+       
+       }
+
+        $stmt->close();
+       
+        $stmt = null;
+
+    }
+	
 
     /*=============================================
 	EDITAR CENTROS DE COSTO

@@ -169,7 +169,7 @@ session_start();
         $_GET["ruta"] == "inicio" ||
         $_GET["ruta"] == "usuarios" ||
         $_GET["ruta"] == "asignacionFirma" ||
-        $_GET["ruta"] == "administrarsolicitudes" ||
+        $_GET["ruta"] == "solicitudes" ||
         $_GET["ruta"] == "crear-solicitud" ||
         $_GET["ruta"] == "editar-solicitud" ||
         $_GET["ruta"] == "tiposIngreso" ||

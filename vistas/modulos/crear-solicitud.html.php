@@ -199,8 +199,7 @@
                   </div>
                   <div class="form-group col-md-4 ">
                   <label for="id_usuario"></label>
-                    <input type="text" class="form-control" id="nuevoSolicitante" name="nuevoSolicitante" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
-                    <input type="hidden" name="idSolicitante" value="<?php echo $_SESSION["iduser"]?>">
+                    <input type="text" class="form-control" name="selectId_usuario" id="selectId_usuario" placeholder="Nombre del solicitante">
                     <small id="id_usuarioHelp" class="form-text text-muted text-center">Nombre del solicitante</small>
                   </div>
                 </div>
@@ -286,6 +285,46 @@
                     </div>
              </form>
               </div>
+
+            <!-- /.card -->
+            <!-- Horizontal Form -->
+            <!-- <div class="card card-primary">
+              <div class="card-header" style="background:#20c997;">
+                <h3 class="card-title">ESPACIO EXCLUSIVO PARA DESARROLLO HUMANO</h3>
+              </div> -->
+              <!-- /.card-header -->
+              <!-- form start -->
+              <!-- <form class="form-horizontal">
+                <div class="card-body">
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-10">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                        <label class="form-check-label" for="exampleCheck2">Remember me</label>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- /.card-body -->
+                <!-- <div class="card-footer">
+                  <button type="submit" class="btn btn-info">Sign in</button>
+                  <button type="submit" class="btn btn-default float-right">Cancel</button>
+                </div> -->
+                <!-- /.card-footer -->
+              <!-- </form>
+            </div> -->
             <!-- /.card -->
 
           </div>

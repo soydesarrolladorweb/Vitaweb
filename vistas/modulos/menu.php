@@ -46,34 +46,18 @@
             </a>
             <li class="nav-item">
             <a href="asignacionFirma" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+            <i class="nav-icon fas fa-file-upload"></i>
               <p>
                 Asignación de firma
               </p>
             </a>
-            <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <li class="nav-item">
+            <a href="solicitudes" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
               <p>
                 Solicitudes
-                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview" style="display: none;">
-              <li class="nav-item">
-                <a href="crear-solicitud" class="nav-link">
-                <i class="nav-icon fas fa-file"></i>
-                  <p>Nueva solicitud</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="administrarsolicitudes" class="nav-link">
-                <i class="nav-icon fas fa-copy"></i>
-                  <p>Ver solicitudes</p>
-                </a>
-              </li>
-            </ul>
-          </li>
           <li class="nav-item">
             <a href="tiposIngreso" class="nav-link">
             <i class="nav-icon fas fa-table"></i>
