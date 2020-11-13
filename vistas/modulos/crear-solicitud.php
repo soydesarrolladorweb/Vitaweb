@@ -35,173 +35,232 @@
 
                 <div class="row">
                   <div class="form-group col-md-4 ">
-                  <label for="ciudad"></label>
-                    <select class="form-control" name="selectCiudad" id="selectCiudad" required="">
-                    <option>Seleccione Ciudad/Municipio</option>
-                      <option value="1">Bogotá</option>
-                      <option value="2">Sopo</option>
-                      <option value="2">Medellin</option>
-                      <option value="3">Barranquilla</option>
-                      <option value="4">Cartagena</option>
+                  <label for="id_usuario"></label>
+                    <input type="text" class="form-control" id="nuevoSolicitante" name="nuevoSolicitante" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
+                    <input type="hidden" name="idSolicitante" value="<?php echo $_SESSION["iduser"]?>">
+                    <small id="id_usuarioHelp" class="form-text text-muted text-center">Nombre del solicitante</small>
+                  </div>
+                  <div class="form-group col-md-4 ">
+                    <label for="codigo"></label>
+                      <?php
+
+                        $item = null;
+                        $valor = null;
+
+                        $solicitudes = ControladorSolicitudes::ctrMostrarSolicitudes($item, $valor);
+
+                        if (!$solicitudes){
+                          
+                          echo '<input type="text" class="form-control" id="nuevoCodigo" name="nuevoCodigo" value="10001" readonly>
+                          <small id="codigoHelp" class="form-text text-muted text-center">Codigo solicitud</small>';
+
+
+                        }else{
+                          
+                          foreach ($solicitudes as $key => $value) {
+                            
+                          }
+                          
+                          $codigo = $value["codigo"] + 1;
+
+                            echo '<input type="text" class="form-control" id="nuevoCodigo" name="nuevoCodigo" value="'.$codigo.'" readonly>
+                            <small id="codigoHelp" class="form-text text-muted text-center">Codigo solicitud</small>';
+
+                        }
+
+                      ?>
+                  </div>
+                  <div class="form-group col-md-4 ">
+                    <label for="ciudad"></label>
+                    <select class="form-control" name="nuevaCiudad" id="ciudad" required="">
+                      <option>Seleccione Ciudad/Municipio</option>
+                      <option value="Bogotá">Bogotá</option>
+                      <option value="Sopo">Sopo</option>
+                      <option value="Medellin">Medellin</option>
+                      <option value="Barranquilla">Barranquilla</option>
+                      <option value="Cartagena">Cartagena</option>
+                      <option value="Cali">Cali</option>
+                      <option value="Bucaramanga">Bucaramanga</option>
                     </select>
                     <small id="ciudadHelp" class="form-text text-muted text-center">Seleccione Ciudad/Municipio</small>
                   </div>
-                  <div class="form-group col-md-4 ">
-                    <label for="tipo_ingreso"></label>
-                    <select class="form-control" name="selectTipo_ingreso" id="selectTipo_ingreso" required="">
+                </div>
+                <div class="row">
+                <div class="form-group col-md-4 ">
+                  <label for="tipo_ingreso"></label>
+                    <select class="form-control" name="nuevo_ingreso" id="nuevo_ingreso" required="">
                     <option>Seleccione el tipo de ingreso</option>
-                      <option value="1">Nuevo</option>
-                      <option value="2">Temporal a directo</option>
-                      <option value="2">Reingreso</option>
-                      <option value="3">Reemplazo</option>
-                      <option value="4">Temporal</option>
+                    <?php
+
+                      $item = null;
+                      $valor = null;
+
+                      $traertipoIngreso = ControladorIngresos::ctrMostrarTiposingresos($item, $valor);
+
+                      foreach ($traertipoIngreso as $key => $value) {
+                        
+                        echo'<option value="'.$value["id"].'">'.$value["ingreso"].'</option>';
+
+                      }
+
+                    ?>
                     </select>
                     <small id="tipo_ingresoHelp" class="form-text text-muted text-center">Seleccione el tipo de ingreso</small>
                   </div>
                   <div class="form-group col-md-4 ">
                     <label for="horario"></label>
-                    <select class="form-control" name="selectHorario" id="selectHorario" required="">
-                    <option>Seleccione el horario</option>
-                      <option value="1">Rotativo Trabajara por turnos tendrá recargos y horas extra</option>
-                      <option value="2">Administrativo Sin recargos ni horas extra</option>
-                      <option value="2">Administrativo Operativo Siendo administrativo tendrá recargos y horas extra</option>
+                    <select class="form-control" name="nuevoHorario" id="nuevoHorario" required="">
+                      <option>Seleccione el horario</option>
+                      <?php
+
+                        $item = null;
+                        $valor = null;
+
+                        $traerHorario = ControladorHorarios::ctrMostrarHorarios($item, $valor);
+                        
+                        foreach ($traerHorario as $key => $value) {
+                          
+                          echo'<option value="'.$value["id"].'">'.$value["horario"].'</option>';
+                        }
+                        
+                      ?>
                     </select>
                     <small id="horarioHelp" class="form-text text-muted text-center">Seleccione el horario</small>
                   </div>
-                </div>
-
-
-                <div class="row">
-                <div class="form-group col-md-4 ">
+                  <div class="form-group col-md-4 ">
                     <label for="nombre_ceco"></label>
-                    <select class="form-control" name="selectNombre_ceco" id="selectNombre_ceco" required="">
-                    <option>Seleccione el centro de costo</option>
-                      <option value="1">10101001 PENICILINICO PL1</option>
-                      <option value="2">10101002 PENICILINICO ELU PL1</option>
-                      <option value="2">10101003 MANO DE OBRA DIRECTA PL1</option>
+                    <select class="form-control" name="nuevoNombre_ceco" id="nuevoNombre_ceco" required="">
+                      <option>Seleccione el centro de costo</option>
+                      <?php
+
+                        $item = null;
+                        $valor = null;
+
+                        $traerCecos = ControladorCentros::ctrMostrarCentros($item, $valor);
+                        
+                        foreach ($traerCecos as $key => $value) {
+                          
+                          echo'<option value="'.$value["id"].'">'.$value["codigo"].''.$value["nombre"].'</option>';
+                        }
+                        
+                      ?>
                     </select>
                     <small id="nombre_cecoHelp" class="form-text text-muted text-center">Seleccione el Codigo del centro de costo</small>
                   </div>
+                </div>
+                <div class="row">
                   <div class="form-group col-md-4 ">
                     <label for="area_personal"></label>
-                    <select class="form-control" name="selectArea_personal" id="selectArea_personal" required="">
-                    <option>Seleccione el Area de personal</option>
-                      <option value=">directa">Mano de obra directa</option>
-                      <option value="indirecta">Mano de obra indirecta</option>
-                      <option value="administracion">Administración</option>
-                      <option value="comercial">Comercial</option>
+                    <select class="form-control" name="nuevArea_personal" id="nuevArea_personal" required="">
+                      <option>Seleccione el Area de personal</option>
+                      <option value=">Mano de obra directa">Mano de obra directa</option>
+                      <option value="Mano de obra indirecta">Mano de obra indirecta</option>
+                      <option value="Administración">Administración</option>
+                      <option value="Comercial">Comercial</option>
                     </select>
                     <small id="area_personalHelp" class="form-text text-muted text-center">Seleccione el Area de personal</small>
                   </div>
                   <div class="form-group col-md-4 ">
                     <label for="cargo_solicitado"></label>
-                    <input type="text" class="form-control" name="selectCargo_solicitado" id="selectCargo_solicitado" placeholder="Cargo solicitado" required="">
+                    <input type="text" class="form-control" name="nuevoCargo" id="nuevoCargo" placeholder="Cargo solicitado" required="">
                     <small id="cargo_solicitadoHelp" class="form-text text-muted text-center">Cargo solicitado</small>
                   </div>
-                </div>
-
-                <div class="row">
                   <div class="form-group col-md-4 ">
                     <label for="motivo"></label>
-                    <input type="text" class="form-control" name="selectMotivo" id="selectMotivo" placeholder="Motivo de la solicitud" required="">
+                    <input type="text" class="form-control" name="nuevoMotivo" id="nuevoMotivo" placeholder="Motivo de la solicitud" required="">
                     <small id="motivoHelp" class="form-text text-muted text-center">Motivo de la solicitud</small>
                   </div>
+                </div>
+                <div class="row">
                   <div class="form-group col-md-4 ">
                     <label for="formacion"></label>
-                    <select class="form-control" name="selectFormacion" id="selectFormacion" placeholder="Formación academica" required="">
-                    <option>Seleccione la formación academica</option>
-                      <option value=">bachiller">Bachiller</option>
-                      <option value="tecnico">Tecnico</option>
-                      <option value="tecnologo">Tecnologo</option>
-                      <option value="profesional">Profesional</option>
-                      <option value="posgrado">Posgrado</option>
-                      <option value="otros">Otros</option>
+                    <select class="form-control" name="nuevaFormacion" id="nuevaFormacion" placeholder="Formación academica" required="">
+                      <option>Seleccione la formación academica</option>
+                      <option value=">Bachiller">Bachiller</option>
+                      <option value="Tecnico">Tecnico</option>
+                      <option value="Tecnologo">Tecnologo</option>
+                      <option value="Profesional">Profesional</option>
+                      <option value="Posgrado">Posgrado</option>
+                      <option value="Otros">Otros</option>
                     </select>
                     <small id="formacionHelp" class="form-text text-muted text-center">Seleccione la formación academica</small>
                   </div>
                   <div class="form-group col-md-4 ">
                     <label for="otra_formacion"></label>
-                    <input type="text" class="form-control" name="selectOtraformacion" id="selectOtraformacion" placeholder="Otra formación academica">
+                    <input type="text" class="form-control" name="otraformacion" id="otraformacion" placeholder="Otra formación academica">
                     <small id="otraHelp" class="form-text text-muted text-center">Formación adicional si aplica</small>
                   </div>
-                </div>
-
-                <div class="row">
                   <div class="form-group col-md-4 ">
                     <label for="genero"></label>
-                    <select class="form-control" name="selectFormacion" id="selectFormacion" required="">
+                    <select class="form-control" name="nuevoGenero" id="nuevoGenero" required="">
                       <option>Seleccione el genero</option>
-                      <option value=">masculino">Masculino</option>
-                      <option value="femenino">Femenino</option>
-                      <option value="indiferente">Indiferente</option>
+                      <option value=">Masculino">Masculino</option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Indiferente">Indiferente</option>
                     </select>
                     <small id="generoHelp" class="form-text text-muted text-center">Seleccione el genero</small>
                   </div>
-                  <div class="form-group col-md-4 ">
-                    <label for="exp_lab"></label>
-                    <select class="form-control" name="selectExp_lab" id="selectExp_lab" required="">
-                      <option>Requiere experiencia laboral</option>
-                      <option value=">si">Si</option>
-                      <option value="no">No</option>
-                    </select>
-                    <small id="generoHelp" class="form-text text-muted text-center">Requiere experiencia laboral</small>
-                  </div>
-                  <div class="form-group col-md-4 ">
-                    <label for="tiempo_exp"></label>
-                    <input type="email" class="form-control" name="selectTiempo_exp" id="selectTiempo_exp" placeholder="Ejemplo: 12 Meses" required="">
-                    <small id="tiempo_expHelp" class="form-text text-muted text-center">Tiempo de experiencia</small>
-                  </div>
                 </div>
 
                 <div class="row">
-                  <div class="form-group col-md-8 ">
-                    <label for="experiencia_en"></label>
-                    <textarea class="form-control" rows="2" placeholder="Requiere experiencia en:"></textarea>
-                    <small id="experiencia_enHelp" class="form-text text-muted text-center">"Requiere experiencia en</small>
+                  <div class="form-group col-md-4 ">
+                    <label for="exp_lab"></label>
+                    <select class="form-control" name="nuevaExp_lab" id="nuevaExp_lab" required="">
+                      <option>Requiere experiencia laboral</option>
+                      <option value=">Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                    <small id="exp_labHelp" class="form-text text-muted text-center">Requiere experiencia laboral</small>
+                  </div>
+                  <div class="form-group col-md-4 ">
+                    <label for="tiempo_exp"></label>
+                    <input type="text" class="form-control" name="nuevoTiempo_exp" id="nuevoTiempo_exp" placeholder="Ejemplo: 12 Meses" required="">
+                    <small id="tiempo_expHelp" class="form-text text-muted text-center">Tiempo de experiencia</small>
                   </div>
 
                   <div class="form-group col-md-4 ">
-                    <label for="ciudad_labor"></label>
-                    <select class="form-control" name="selectCiudad_labor" id="selectCiudad_labor" required="">
-                    <option>Ciudad/Municipio donde laborará</option>
-                      <option value="1">Bogotá</option>
-                      <option value="2">Sopo</option>
-                      <option value="2">Medellin</option>
-                      <option value="3">Barranquilla</option>
-                      <option value="4">Cartagena</option>
-                    </select>
-                    <small id="ciudadHelp" class="form-text text-muted text-center">Ciudad/Municipio donde laborará</small>
+                    <label for="experiencia_en"></label>
+                    <textarea class="form-control" rows="2" placeholder="Requiere experiencia en:"></textarea>
+                    <small id="experiencia_enHelp" class="form-text text-muted text-center">"Requiere experiencia en</small>
                   </div>
                 </div>
 
                 <div class="row">
                 <div class="form-group col-md-4 ">
-                    <label for="tipo_salario"></label>
-                    <select class="form-control" name="selectTipo_salario" id="selectTipo_salario" required="">
+                <label for="ciudad_labor"></label>
+                    <select class="form-control" name="nuevaciudadLabor" id="nuevaciudadLabor" required="">
+                      <option>Ciudad/Municipio donde laborará</option>
+                      <option value="Bogotá">Bogotá</option>
+                      <option value="Sopo">Sopo</option>
+                      <option value="Medellin">Medellin</option>
+                      <option value="Barranquilla">Barranquilla</option>
+                      <option value="Cartagena">Cartagena</option>
+                      <option value="Cali">Cali</option>
+                      <option value="Bucaramanga">Bucaramanga</option>
+                    </select>
+                    <small id="ciudad_laborHelp" class="form-text text-muted text-center">Ciudad/Municipio donde laborará</small>
+                  </div>
+                  <div class="form-group col-md-4 ">
+                  <label for="tipo_salario"></label>
+                    <select class="form-control" name="nuevoSalario" id="nuevoSalario" required="">
                     <option>Seleccione la asignación salarial</option>
-                      <option value="smlv">Salario minimo legal vigente</option>
-                      <option value="smi">Salario minimo integral</option>
-                      <option value="smv">Salario minimo VITALIS S.A.C.I.</option>
-                      <option value="monto_salario">Otro</option>
+                      <option value="Salario minimo legal vigente">Salario minimo legal vigente</option>
+                      <option value="Salario minimo integral">Salario minimo integral</option>
+                      <option value="Salario minimo VITALIS S.A.C.I.">Salario minimo VITALIS S.A.C.I.</option>
+                      <option value="Otro">Otro</option>
                     </select>
-                    <small id="ciudadHelp" class="form-text text-muted text-center">Seleccione la asignación salarial</small>
+                    <small id="tipo_salarioHelp" class="form-text text-muted text-center">Seleccione la asignación salarial</small>
                   </div>
                   <div class="form-group col-md-4 ">
-                  <label for="tipo_contrato"></label>
-                    <select class="form-control" name="selectTipo_contrato" id="selectTipo_contrato" required="">
-                    <option>Seleccione el tipo de contrato</option>
-                      <option value="fijo">Fijo a tres meses</option>
-                      <option value="indefinido">Indefinido</option>
-                      <option value="aprendizaje">Aprendizaje</option>
-                      <option value="Otra_duración">Otra duración</option>
+                    <label for="tipo_contrato"></label>
+                    <select class="form-control" name="nuevoTipo_contrato" id="nuevoTipo_contrato" required="">
+                     <option>Seleccione el tipo de contrato</option>
+                      <option value="Fijo a tres meses">Fijo a tres meses</option>
+                      <option value="Indefinido">Indefinido</option>
+                      <option value="Aprendizaje">Aprendizaje</option>
+                      <option value="Otra duración">Otra duración</option>
                     </select>
-                    <small id="ciudadHelp" class="form-text text-muted text-center">Seleccione el tipo de contrato</small>
-                  </div>
-                  <div class="form-group col-md-4 ">
-                  <label for="id_usuario"></label>
-                    <input type="text" class="form-control" id="nuevoSolicitante" name="nuevoSolicitante" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
-                    <input type="hidden" name="idSolicitante" value="<?php echo $_SESSION["iduser"]?>">
-                    <small id="id_usuarioHelp" class="form-text text-muted text-center">Nombre del solicitante</small>
+                    <small id="tipo_contratoHelp" class="form-text text-muted text-center">Seleccione el tipo de contrato</small>
                   </div>
                 </div>
 
@@ -263,21 +322,27 @@
 
                     <div class="row">
                     <div class="form-group col-md-4">
-                      <label for="observaciones"></label>
+                      <label for="pc_observaciones"></label>
                       <textarea class="form-control" rows="2" placeholder="ESPECIFICACIONES PARA EL PC"></textarea>
                     </div>
 
                     <div class="form-group col-md-4">
-                      <label for="observaciones"></label>
+                      <label for="tel_observaciones"></label>
                       <textarea class="form-control" rows="2" placeholder="ESPECIFICACIONES PARA EL TELEFONO"></textarea>
                     </div>
 
                     <div class="form-group col-md-4">
-                      <label for="observaciones"></label>
+                      <label for="correo_observaciones"></label>
                       <textarea class="form-control" rows="2" placeholder="ESPECIFICACIONES PARA EL CORREO"></textarea>
                     </div>
                   </div>
-  
+
+                  <div class="row">
+                  <div class="form-group col-md-12">
+                    <label for="ti_observaciones"></label>
+                    <textarea class="form-control" rows="2" placeholder="OBSERVACIONES GENERALES PARA TI"></textarea>
+                  </div>
+                </div>
                 </div>
                 <!-- /.card-body -->
 

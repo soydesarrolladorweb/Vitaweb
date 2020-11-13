@@ -39,6 +39,7 @@
             <tr>
 
               <th style="width: 10px;" >#</th>
+              <th>Codigo</th>
               <th>Ciudad</th>
               <th>Fecha</th>
               <th>Solicitante</th>
@@ -57,6 +58,7 @@
 
             <tr>
               <td>1</td>
+              <td>0001</td>
               <td>Bogotá</td>
               <td>2020-14-09 15:05:32</td>
               <td>Javier Perez</td>
@@ -78,6 +80,7 @@
 
             <tr>
               <td>2</td>
+              <td>0002</td>
               <td>Medellin</td>
               <td>2020-13-10 10:49:54</td>
               <td>Santiago Torres</td>
@@ -100,6 +103,7 @@
 
             <tr>
               <td>3</td>
+              <td>0003</td>
               <td>Bogotá</td>
               <td>2020-03-11 14:27:41</td>
               <td>Maria Pruebas</td>
