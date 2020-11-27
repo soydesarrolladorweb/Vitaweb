@@ -36,7 +36,7 @@
                 <div class="row">
                   <div class="form-group col-md-4 ">
                   <label for="id_usuario"></label>
-                    <input type="text" class="form-control" id="nuevoSolicitante" name="nuevoSolicitante" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
+                    <input type="text" class="form-control" id="nuevoSolicitante" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
                     <input type="hidden" name="idSolicitante" value="<?php echo $_SESSION["iduser"]?>">
                     <small id="id_usuarioHelp" class="form-text text-muted text-center">Nombre del solicitante</small>
                   </div>
@@ -145,7 +145,7 @@
                         
                       ?>
                     </select>
-                    <small id="nombre_cecoHelp" class="form-text text-muted text-center">Seleccione el Codigo del centro de costo</small>
+                    <small id="nombre_cecoHelp" class="form-text text-muted text-center">Seleccione el centro de costo</small>
                   </div>
                 </div>
                 <div class="row">
@@ -174,14 +174,13 @@
                 <div class="row">
                   <div class="form-group col-md-4 ">
                     <label for="formacion"></label>
-                    <select class="form-control" name="nuevaFormacion" id="nuevaFormacion" placeholder="Formación academica" required="">
+                    <select class="form-control" name="nuevaFormacion" id="nuevaFormacion" placeholder="Formación academica">
                       <option>Seleccione la formación academica</option>
                       <option value=">Bachiller">Bachiller</option>
                       <option value="Tecnico">Tecnico</option>
                       <option value="Tecnologo">Tecnologo</option>
                       <option value="Profesional">Profesional</option>
                       <option value="Posgrado">Posgrado</option>
-                      <option value="Otros">Otros</option>
                     </select>
                     <small id="formacionHelp" class="form-text text-muted text-center">Seleccione la formación academica</small>
                   </div>
@@ -220,7 +219,7 @@
 
                   <div class="form-group col-md-4 ">
                     <label for="experiencia_en"></label>
-                    <textarea class="form-control" rows="2" placeholder="Requiere experiencia en:"></textarea>
+                    <textarea class="form-control" rows="2" placeholder="Requiere experiencia en:" required=""></textarea>
                     <small id="experiencia_enHelp" class="form-text text-muted text-center">"Requiere experiencia en</small>
                   </div>
                 </div>
@@ -242,32 +241,43 @@
                   </div>
                   <div class="form-group col-md-4 ">
                   <label for="tipo_salario"></label>
-                    <select class="form-control" name="nuevoSalario" id="nuevoSalario" required="">
+                    <select class="form-control" name="nuevoSalario" id="nuevoSalario">
                     <option>Seleccione la asignación salarial</option>
                       <option value="Salario minimo legal vigente">Salario minimo legal vigente</option>
                       <option value="Salario minimo integral">Salario minimo integral</option>
                       <option value="Salario minimo VITALIS S.A.C.I.">Salario minimo VITALIS S.A.C.I.</option>
-                      <option value="Otro">Otro</option>
                     </select>
                     <small id="tipo_salarioHelp" class="form-text text-muted text-center">Seleccione la asignación salarial</small>
                   </div>
                   <div class="form-group col-md-4 ">
-                    <label for="tipo_contrato"></label>
-                    <select class="form-control" name="nuevoTipo_contrato" id="nuevoTipo_contrato" required="">
+                  <label for="otro_salario"></label>
+                    <input type="text" class="form-control" name="otroSalario" id="otroSalario" placeholder="Otro salario si aplica">
+                    <small id="otraHelp" class="form-text text-muted text-center">Otro salario si aplica</small>
+                  </div>
+                </div>
+
+                <div class="row">
+                <div class="form-group col-md-4">
+                <label for="tipo_contrato"></label>
+                    <select class="form-control" name="nuevoTipo_contrato" id="nuevoTipo_contrato">
                      <option>Seleccione el tipo de contrato</option>
                       <option value="Fijo a tres meses">Fijo a tres meses</option>
                       <option value="Indefinido">Indefinido</option>
                       <option value="Aprendizaje">Aprendizaje</option>
-                      <option value="Otra duración">Otra duración</option>
                     </select>
                     <small id="tipo_contratoHelp" class="form-text text-muted text-center">Seleccione el tipo de contrato</small>
+                </div>
+                <div class="form-group col-md-4 ">
+                  <label for="otra_duracion"></label>
+                    <input type="text" class="form-control" name="otra_duracion" id="otra_duracion" placeholder="Otro tipo de contrato si aplica">
+                    <small id="otraHelp" class="form-text text-muted text-center">Otro tipo de contrato si aplica</small>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="form-group col-md-12">
                     <label for="observaciones"></label>
-                    <textarea class="form-control" rows="2" placeholder="OBSERVACIONES"></textarea>
+                    <textarea class="form-control" rows="2" name="observaciones" id="observaciones" placeholder="OBSERVACIONES"></textarea>
                   </div>
                 </div>
                 
@@ -323,24 +333,24 @@
                     <div class="row">
                     <div class="form-group col-md-4">
                       <label for="pc_observaciones"></label>
-                      <textarea class="form-control" rows="2" placeholder="ESPECIFICACIONES PARA EL PC"></textarea>
+                      <textarea class="form-control" rows="2" name="pc_observaciones" id="pc_observaciones" placeholder="ESPECIFICACIONES PARA EL PC"></textarea>
                     </div>
 
                     <div class="form-group col-md-4">
                       <label for="tel_observaciones"></label>
-                      <textarea class="form-control" rows="2" placeholder="ESPECIFICACIONES PARA EL TELEFONO"></textarea>
+                      <textarea class="form-control" rows="2" name="tel_observaciones" id="tel_observaciones" placeholder="ESPECIFICACIONES PARA EL TELEFONO"></textarea>
                     </div>
 
                     <div class="form-group col-md-4">
                       <label for="correo_observaciones"></label>
-                      <textarea class="form-control" rows="2" placeholder="ESPECIFICACIONES PARA EL CORREO"></textarea>
+                      <textarea class="form-control" rows="2" name="correo_observaciones" id="correo_observaciones" placeholder="ESPECIFICACIONES PARA EL CORREO"></textarea>
                     </div>
                   </div>
 
                   <div class="row">
                   <div class="form-group col-md-12">
                     <label for="ti_observaciones"></label>
-                    <textarea class="form-control" rows="2" placeholder="OBSERVACIONES GENERALES PARA TI"></textarea>
+                    <textarea class="form-control" rows="2" name="ti_observaciones" id="ti_observaciones" placeholder="OBSERVACIONES GENERALES PARA TI"></textarea>
                   </div>
                 </div>
                 </div>
@@ -350,6 +360,13 @@
                       <button type="submit" class="btn btn-primary">Guardar solicitud</button>
                     </div>
              </form>
+
+             <?php
+
+             $guardarSolicitud = new ControladorSolicitudes();
+             $guardarSolicitud -> ctrCrearSolicitud();
+             
+             ?>
               </div>
             <!-- /.card -->
 

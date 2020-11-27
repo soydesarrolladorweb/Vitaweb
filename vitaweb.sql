@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2020 a las 05:05:41
+-- Tiempo de generación: 27-11-2020 a las 07:25:21
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -330,7 +330,7 @@ CREATE TABLE `solicitud` (
   `otra_formacion` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `genero` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `fecha_estado` timestamp NOT NULL DEFAULT current_timestamp(),
-  `exp_lab` tinyint(4) NOT NULL DEFAULT 0,
+  `exp_lab` text COLLATE utf8_spanish_ci DEFAULT NULL,
   `tiempo_exp` text COLLATE utf8_spanish_ci NOT NULL,
   `ciudad_labor` text COLLATE utf8_spanish_ci NOT NULL,
   `tipo_salario` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
@@ -351,17 +351,16 @@ CREATE TABLE `solicitud` (
   `nombre_candidato` text COLLATE utf8_spanish_ci NOT NULL,
   `usuario_sap` varchar(11) COLLATE utf8_spanish_ci NOT NULL,
   `experiencia_en` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
-  `ti_pc` tinyint(4) DEFAULT NULL,
+  `ti_pc` text COLLATE utf8_spanish_ci DEFAULT NULL,
   `pc_observaciones` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `ti_telefono` tinyint(4) DEFAULT NULL,
+  `ti_telefono` text COLLATE utf8_spanish_ci DEFAULT NULL,
   `tel_observaciones` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `ti_correo` tinyint(4) DEFAULT NULL,
+  `ti_correo` text COLLATE utf8_spanish_ci DEFAULT NULL,
   `correo_observaciones` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `ti_observaciones` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
   `permisos` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
   `codigo` int(11) NOT NULL,
   `nombre_ceco` text COLLATE utf8_spanish_ci NOT NULL,
-  `nombre_solicitante` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `firma_solicitante` text COLLATE utf8_spanish_ci NOT NULL,
   `nombre_director` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `firma_director` text COLLATE utf8_spanish_ci NOT NULL,
@@ -427,6 +426,7 @@ CREATE TABLE `usuarios` (
   `fecha` timestamp NULL DEFAULT current_timestamp(),
   `foto` text COLLATE utf8_spanish_ci NOT NULL,
   `telefono` bigint(50) DEFAULT NULL,
+  `solicitudes` int(11) DEFAULT NULL,
   `ultimologin` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -434,13 +434,13 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, '2020-11-12 22:18:05'),
-(2, 'Maria pruebas', 'maria@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Gerente', 'Comercial', 1, '2020-10-08 18:49:16', 'vistas/img/usuarios/20780/428.png', 3102212121, NULL),
-(3, 'Javier pruebas', 'javierPruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Dirección Financiera', 'Operaciones', 1, '2020-10-08 18:50:19', 'vistas/img/usuarios/20900/696.png', 3102222222, NULL),
-(4, 'Magreth Angulo', 'magreth.angulo@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5au3aeaogtcEUOK/RtUOxpPOONPHkGI/cq', 'Jefe de Area', 'Alta Dirección', 1, '2020-10-08 18:51:38', 'vistas/img/usuarios/20500/515.png', 3102232323, NULL),
-(5, 'Duvan Pruebas', 'duvan.ti@vitalis.com.co', '20600', '$2a$07$asxx54ahjppf45sd87a5auTORkrD.KY3EqoE65wNdlCJFoiGJ8FyK', 'Desarrollo Humano', 'Desarrollo de Negocios', 1, '2020-10-08 18:53:23', 'vistas/img/usuarios/20600/137.jpg', 3102242424, NULL),
-(6, 'Prueba asignación firma', 'firma@vitalis.com.co', '20601', '$2a$07$asxx54ahjppf45sd87a5auND1/VMhsMBheheFBw1m3SXgZtH9DpC2', 'Jefe de Area', 'Operaciones', 1, '2020-10-14 18:23:54', 'vistas/img/usuarios/20601/931.png', 3214556698, NULL);
+INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `solicitudes`, `ultimologin`) VALUES
+(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, 2, '2020-11-26 23:25:34'),
+(2, 'Maria pruebas', 'maria@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Gerente', 'Comercial', 1, '2020-10-08 18:49:16', 'vistas/img/usuarios/20780/428.png', 3102212121, NULL, NULL),
+(3, 'Javier pruebas', 'javierPruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Dirección Financiera', 'Operaciones', 1, '2020-10-08 18:50:19', 'vistas/img/usuarios/20900/696.png', 3102222222, NULL, NULL),
+(4, 'Magreth Angulo', 'magreth.angulo@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5au3aeaogtcEUOK/RtUOxpPOONPHkGI/cq', 'Jefe de Area', 'Alta Dirección', 1, '2020-10-08 18:51:38', 'vistas/img/usuarios/20500/515.png', 3102232323, NULL, NULL),
+(5, 'Duvan Pruebas', 'duvan.ti@vitalis.com.co', '20600', '$2a$07$asxx54ahjppf45sd87a5auTORkrD.KY3EqoE65wNdlCJFoiGJ8FyK', 'Desarrollo Humano', 'Desarrollo de Negocios', 1, '2020-10-08 18:53:23', 'vistas/img/usuarios/20600/137.jpg', 3102242424, NULL, NULL),
+(6, 'Prueba asignación firma', 'firma@vitalis.com.co', '20601', '$2a$07$asxx54ahjppf45sd87a5auND1/VMhsMBheheFBw1m3SXgZtH9DpC2', 'Jefe de Area', 'Operaciones', 1, '2020-10-14 18:23:54', 'vistas/img/usuarios/20601/931.png', 3214556698, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
