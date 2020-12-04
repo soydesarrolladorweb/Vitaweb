@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2020 a las 07:25:21
+-- Tiempo de generación: 04-12-2020 a las 13:55:51
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -368,6 +368,13 @@ CREATE TABLE `solicitud` (
   `firma_df` text COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `solicitud`
+--
+
+INSERT INTO `solicitud` (`id`, `ciudad`, `fecha`, `formacion`, `otra_formacion`, `genero`, `fecha_estado`, `exp_lab`, `tiempo_exp`, `ciudad_labor`, `tipo_salario`, `monto_salario`, `tipo_contrato`, `otra_duracion`, `observaciones`, `id_usuario`, `motivo`, `cargo_solicitado`, `area_personal`, `codigo_ceco`, `horario`, `tipo_ingreso`, `estatus`, `fecha_recepcion`, `fecha_contratacion`, `nombre_candidato`, `usuario_sap`, `experiencia_en`, `ti_pc`, `pc_observaciones`, `ti_telefono`, `tel_observaciones`, `ti_correo`, `correo_observaciones`, `ti_observaciones`, `permisos`, `codigo`, `nombre_ceco`, `firma_solicitante`, `nombre_director`, `firma_director`, `nombre_df`, `firma_df`) VALUES
+(5, 'Bogotá', '2020-12-02', 'Tecnologo', '', 'Indiferente', '2020-12-02 22:57:05', 'Si', '6 Meses', 'Bogotá', 'Seleccione la asignación salarial', '2000000', 'Indefinido', '', 'Observaciones generales', 20782, 'Proyecto aplicación web', 'Analista y Desarrollador de Software', 'Administración', '', 'Administrativo Sin recargos ni horas extra', 'Nuevo', '', '2020-12-02 22:57:05', '0000-00-00', '', '', '', 'on', 'Observaciones pc', 'on', 'Observaciones teléfono.', 'on', 'Observaciones correo', 'Observaciones generales TI.', '', 10001, '5', '', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -435,7 +442,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `solicitudes`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, 2, '2020-11-26 23:25:34'),
+(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, 0, '2020-12-02 17:15:57'),
 (2, 'Maria pruebas', 'maria@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Gerente', 'Comercial', 1, '2020-10-08 18:49:16', 'vistas/img/usuarios/20780/428.png', 3102212121, NULL, NULL),
 (3, 'Javier pruebas', 'javierPruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Dirección Financiera', 'Operaciones', 1, '2020-10-08 18:50:19', 'vistas/img/usuarios/20900/696.png', 3102222222, NULL, NULL),
 (4, 'Magreth Angulo', 'magreth.angulo@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5au3aeaogtcEUOK/RtUOxpPOONPHkGI/cq', 'Jefe de Area', 'Alta Dirección', 1, '2020-10-08 18:51:38', 'vistas/img/usuarios/20500/515.png', 3102232323, NULL, NULL),
@@ -527,7 +534,7 @@ ALTER TABLE `horarios`
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tics`

@@ -37,7 +37,7 @@
                   <div class="form-group col-md-4 ">
                   <label for="id_usuario"></label>
                     <input type="text" class="form-control" id="nuevoSolicitante" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
-                    <input type="hidden" name="idSolicitante" value="<?php echo $_SESSION["iduser"]?>">
+                    <input type="hidden" name="idSolicitante" value="<?php echo $_SESSION["usuario"]?>">
                     <small id="id_usuarioHelp" class="form-text text-muted text-center">Nombre del solicitante</small>
                   </div>
                   <div class="form-group col-md-4 ">
@@ -99,7 +99,7 @@
 
                       foreach ($traertipoIngreso as $key => $value) {
                         
-                        echo'<option value="'.$value["id"].'">'.$value["ingreso"].'</option>';
+                        echo'<option value="'.$value["ingreso"].'">'.$value["ingreso"].'</option>';
 
                       }
 
@@ -120,7 +120,7 @@
                         
                         foreach ($traerHorario as $key => $value) {
                           
-                          echo'<option value="'.$value["id"].'">'.$value["horario"].'</option>';
+                          echo'<option value="'.$value["horario"].'">'.$value["horario"].'</option>';
                         }
                         
                       ?>
@@ -153,7 +153,7 @@
                     <label for="area_personal"></label>
                     <select class="form-control" name="nuevArea_personal" id="nuevArea_personal" required="">
                       <option>Seleccione el Area de personal</option>
-                      <option value=">Mano de obra directa">Mano de obra directa</option>
+                      <option value="Mano de obra directa">Mano de obra directa</option>
                       <option value="Mano de obra indirecta">Mano de obra indirecta</option>
                       <option value="Administración">Administración</option>
                       <option value="Comercial">Comercial</option>
@@ -206,7 +206,7 @@
                     <label for="exp_lab"></label>
                     <select class="form-control" name="nuevaExp_lab" id="nuevaExp_lab" required="">
                       <option>Requiere experiencia laboral</option>
-                      <option value=">Si">Si</option>
+                      <option value="Si">Si</option>
                       <option value="No">No</option>
                     </select>
                     <small id="exp_labHelp" class="form-text text-muted text-center">Requiere experiencia laboral</small>
@@ -246,6 +246,7 @@
                       <option value="Salario minimo legal vigente">Salario minimo legal vigente</option>
                       <option value="Salario minimo integral">Salario minimo integral</option>
                       <option value="Salario minimo VITALIS S.A.C.I.">Salario minimo VITALIS S.A.C.I.</option>
+                      <option value="Otro">Otro</option>
                     </select>
                     <small id="tipo_salarioHelp" class="form-text text-muted text-center">Seleccione la asignación salarial</small>
                   </div>
@@ -300,33 +301,33 @@
                         <h4>PC</h4>
                         <div class="form-group col-md-4">
                           <input type="radio" name="pc" id="pc_Si">
-                          <label for="pc_Si">SI</label>
+                          <label for="pc_Si" value="SI">SI</label>
                           <br>
 
                           <input type="radio" name="pc" id="pc_No">
-                          <label for="pc_No">NO</label>                      
+                          <label for="pc_No" value="NO">NO</label>                      
                         </div>
 
                       
                         <h4>Teléfono</h4>
                         <div class="form-group col-md-3">
                           <input type="radio" name="telefono" id="tel_Si">
-                          <label for="tel_Si">SI</label>
+                          <<label for="pc_Si" value="SI">SI</label>
                           <br>
 
                           <input type="radio" name="telefono" id="tel_No">
-                          <label for="tel_No">NO</label>
+                          <label for="pc_No" value="NO">NO</label>
                       </div>
 
                       
                         <h4>Correo</h4>
                         <div class="form-group col-md-2">
                           <input type="radio" name="correo" id="correoSi">
-                          <label for="correoSi">SI</label>
+                          <label for="pc_Si" value="SI">SI</label>
                             <br>
 
                           <input type="radio" name="correo" id="correoNo">
-                          <label for="correoNo">NO</label>
+                          <label for="pc_No" value="NO">NO</label>
                       </div>
                     </div>
 
