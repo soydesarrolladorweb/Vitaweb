@@ -39,7 +39,7 @@ class ModeloSolicitudes{
 
     static public function mdlIngresarSolicitud($tabla, $datos){
 
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_usuario, ciudad, formacion, otra_formacion, genero, exp_lab, tiempo_exp, ciudad_labor, tipo_salario, monto_salario, tipo_contrato, otra_duracion, observaciones, motivo, cargo_solicitado, area_personal, tipo_ingreso, horario, nombre_ceco, ti_pc, pc_observaciones, ti_telefono, tel_observaciones, ti_correo, correo_observaciones, ti_observaciones) VALUES (:codigo, :id_usuario, :ciudad, :formacion, :otra_formacion, :genero, :exp_lab, :tiempo_exp, :ciudad_labor, :tipo_salario, :monto_salario, :tipo_contrato, :otra_duracion, :observaciones, :motivo, :cargo_solicitado, :area_personal, :tipo_ingreso, :horario, :nombre_ceco, :ti_pc, :pc_observaciones, :ti_telefono, :tel_observaciones, :ti_correo, :correo_observaciones, :ti_observaciones)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_usuario, ciudad, formacion, otra_formacion, genero, exp_lab, tiempo_exp, ciudad_labor, tipo_salario, monto_salario, tipo_contrato, otra_duracion, observaciones, motivo, cargo_solicitado, area_personal, tipo_ingreso, horario, nombre_ceco, ti_pc, pc_observaciones, ti_telefono, tel_observaciones, ti_correo, correo_observaciones, codigo_ceco, ti_observaciones) VALUES (:codigo, :id_usuario, :ciudad, :formacion, :otra_formacion, :genero, :exp_lab, :tiempo_exp, :ciudad_labor, :tipo_salario, :monto_salario, :tipo_contrato, :otra_duracion, :observaciones, :motivo, :cargo_solicitado, :area_personal, :tipo_ingreso, :horario, :nombre_ceco, :ti_pc, :pc_observaciones, :ti_telefono, :tel_observaciones, :ti_correo, :correo_observaciones, :codigo_ceco, :ti_observaciones)");
 
         $stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_INT);
         $stmt->bindParam(":id_usuario", $datos["id_usuario"], PDO::PARAM_INT);
@@ -67,6 +67,7 @@ class ModeloSolicitudes{
         $stmt->bindParam(":tel_observaciones", $datos["tel_observaciones"], PDO::PARAM_STR);
         $stmt->bindParam(":ti_correo", $datos["ti_correo"], PDO::PARAM_STR);
         $stmt->bindParam(":correo_observaciones", $datos["correo_observaciones"], PDO::PARAM_STR);
+        $stmt->bindParam(":codigo_ceco", $datos["codigo_ceco"], PDO::PARAM_STR);
         $stmt->bindParam(":ti_observaciones", $datos["ti_observaciones"], PDO::PARAM_STR);
 		
 

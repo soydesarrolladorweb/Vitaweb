@@ -39,13 +39,13 @@
             <tr>
 
               <th style="width: 10px;" >#</th>
-              <th>Codigo</th>
+              <th>Codigo Solicitud</th>
               <th>Ciudad</th>
               <th>Fecha</th>
               <th>Solicitante</th>
               <th>Tipo de ingreso</th>
-              <th>Area</th>
               <th>Cargo</th>
+              <th>Motivo</th>
               <th>Estatus</th>
               <th>Acciones</th>
 
@@ -56,72 +56,51 @@
 
           <tbody>
 
-            <tr>
-              <td>1</td>
-              <td>0001</td>
-              <td>Bogotá</td>
-              <td>2020-14-09 15:05:32</td>
-              <td>Javier Perez</td>
-              <td>Nuevo</td>
-              <td>Comercial</td>
-              <td>Vendedor</td>
-              <td><button class="btn btn-primary btn-xs">SOLICITADO</button></td>
-              <td>
+            <?php
 
-                <div class="btn-group">
+              $item = null;
+              $valor = null;
 
-                  <button class="btn btn-info"><i class="fas fa-eye"></i></button>
+              $respuesta = ControladorSolicitudes::ctrMostrarSolicitudes($item, $valor);
 
-                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
+              foreach ($respuesta as $key => $value) {
+                
+                 echo '
+                 <tr>
+                 <td>'.($key+1).'</td>
+                 <td>'.$value["codigo"].'</td>
+                 <td>'.$value["ciudad"].'</td>
+                 <td>'.$value["fecha"].'</td>';
 
-                </div>
-              </td>
-            </tr>
+                 $itemUsuario = "usuario";
+                 $valorUsuario = $value["id_usuario"];
 
-            <tr>
-              <td>2</td>
-              <td>0002</td>
-              <td>Medellin</td>
-              <td>2020-13-10 10:49:54</td>
-              <td>Santiago Torres</td>
-              <td>Reingreso</td>
-              <td>Administrativa</td>
-              <td>Asistente comercial</td>
-              <td><button class="btn btn-primary btn-xs">SOLICITADO</button></td>
-              <td>
+                 $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
 
-                <div class="btn-group">
+                 echo '<td>'.$respuestaUsuario["nombre"].'</td>
 
-                  <button class="btn btn-info"><i class="fas fa-eye"></i></button>
+                 <td>'.$value["tipo_ingreso"].'</td>
+                 <td>'.$value["cargo_solicitado"].'</td>
+                 <td>'.$value["motivo"].'</td>
+                 <td><button class="btn btn-primary btn-xs">SOLICITADO</button></td>
+                 <td>
+   
+                   <div class="btn-group">
+   
+                     <button class="btn btn-info"><i class="fas fa-eye"></i></button>
+   
+                     <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
+   
+                   </div>
+                 </td>
+               </tr>
 
-                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
+                 ';   
 
-                </div>
-              </td>
-            </tr>
-
-
-            <tr>
-              <td>3</td>
-              <td>0003</td>
-              <td>Bogotá</td>
-              <td>2020-03-11 14:27:41</td>
-              <td>Maria Pruebas</td>
-              <td>Nuevo</td>
-              <td>Operaciones</td>
-              <td>Asistente</td>
-              <td><button class="btn btn-success btn-xs">APROBADO</button></td>
-              <td>
-
-                <div class="btn-group">
-
-                  <button class="btn btn-info"><i class="fas fa-eye"></i></button>
-
-                  <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
-
-                </div>
-              </td>
-            </tr>
+              }
+            
+            ?>
+            
 
           </tbody>
 

@@ -51,7 +51,7 @@
 
                         if (!$solicitudes){
                           
-                          echo '<input type="text" class="form-control" id="nuevoCodigo" name="nuevoCodigo" value="10001" readonly>
+                          echo '<input type="text" class="form-control" id="nuevoCodigo" name="nuevoCodigo" value="1" readonly>
                           <small id="codigoHelp" class="form-text text-muted text-center">Codigo solicitud</small>';
 
 
@@ -128,9 +128,33 @@
                     <small id="horarioHelp" class="form-text text-muted text-center">Seleccione el horario</small>
                   </div>
                   <div class="form-group col-md-4 ">
+                    <label for="codigo_ceco"></label>
+                    <select class="form-control" name="nuevoCodigo_ceco" id="codigo_ceco" required="">
+                      <option>Seleccione el codigo del centro de costo</option>
+                      <?php
+
+                        $item = null;
+                        $valor = null;
+
+                        $traerCodigo = ControladorCentros::ctrMostrarCentros($item, $valor);
+                        
+                        foreach ($traerCodigo as $key => $value) {
+                          
+                          echo'<option value="'.$value["codigo"].'">'.$value["codigo"].' '.$value["nombre"].'</option>';
+                        }
+                        
+                      ?>
+                    </select>
+                    <small id="codigo_cecoHelp" class="form-text text-muted text-center">Seleccione el codigo del centro de costo</small>
+                  </div>
+                </div>
+
+                
+                <div class="row">
+                  <div class="form-group col-md-4 ">
                     <label for="nombre_ceco"></label>
-                    <select class="form-control" name="nuevoNombre_ceco" id="nuevoNombre_ceco" required="">
-                      <option>Seleccione el centro de costo</option>
+                    <select class="form-control" name="nuevoNombre_ceco" id="nombre_ceco" required="">
+                      <option>Agregue el nombre del centro de costo</option>
                       <?php
 
                         $item = null;
@@ -140,139 +164,139 @@
                         
                         foreach ($traerCecos as $key => $value) {
                           
-                          echo'<option value="'.$value["id"].'">'.$value["codigo"].''.$value["nombre"].'</option>';
+                          echo'<option value="'.$value["nombre"].'">'.$value["nombre"].'</option>';
                         }
                         
                       ?>
                     </select>
-                    <small id="nombre_cecoHelp" class="form-text text-muted text-center">Seleccione el centro de costo</small>
+                    <small id="nombre_cecoHelp" class="form-text text-muted text-center">Agregue el nombre del centro de costo</small>
                   </div>
+                <div class="form-group col-md-4 ">
+                <label for="area_personal"></label>
+                <select class="form-control" name="nuevArea_personal" id="nuevArea_personal" required="">
+                    <option>Seleccione el Area de personal</option>
+                    <option value="Mano de obra directa">Mano de obra directa</option>
+                    <option value="Mano de obra indirecta">Mano de obra indirecta</option>
+                    <option value="Administración">Administración</option>
+                    <option value="Comercial">Comercial</option>
+                </select>
+                <small id="area_personalHelp" class="form-text text-muted text-center">Seleccione el Area de personal</small>
                 </div>
-                <div class="row">
-                  <div class="form-group col-md-4 ">
-                    <label for="area_personal"></label>
-                    <select class="form-control" name="nuevArea_personal" id="nuevArea_personal" required="">
-                      <option>Seleccione el Area de personal</option>
-                      <option value="Mano de obra directa">Mano de obra directa</option>
-                      <option value="Mano de obra indirecta">Mano de obra indirecta</option>
-                      <option value="Administración">Administración</option>
-                      <option value="Comercial">Comercial</option>
-                    </select>
-                    <small id="area_personalHelp" class="form-text text-muted text-center">Seleccione el Area de personal</small>
-                  </div>
-                  <div class="form-group col-md-4 ">
-                    <label for="cargo_solicitado"></label>
-                    <input type="text" class="form-control" name="nuevoCargo" id="nuevoCargo" placeholder="Cargo solicitado" required="">
-                    <small id="cargo_solicitadoHelp" class="form-text text-muted text-center">Cargo solicitado</small>
-                  </div>
-                  <div class="form-group col-md-4 ">
-                    <label for="motivo"></label>
-                    <input type="text" class="form-control" name="nuevoMotivo" id="nuevoMotivo" placeholder="Motivo de la solicitud" required="">
-                    <small id="motivoHelp" class="form-text text-muted text-center">Motivo de la solicitud</small>
-                  </div>
+                <div class="form-group col-md-4 ">
+                <label for="cargo_solicitado"></label>
+                <input type="text" class="form-control" name="nuevoCargo" id="nuevoCargo" placeholder="Cargo solicitado" required="">
+                <small id="cargo_solicitadoHelp" class="form-text text-muted text-center">Cargo solicitado</small>
                 </div>
+            </div>
+
+                            
                 <div class="row">
-                  <div class="form-group col-md-4 ">
+                <div class="form-group col-md-4 ">
+                <label for="motivo"></label>
+                <input type="text" class="form-control" name="nuevoMotivo" id="nuevoMotivo" placeholder="Motivo de la solicitud" required="">
+                <small id="motivoHelp" class="form-text text-muted text-center">Motivo de la solicitud</small>
+                </div>
+                    <div class="form-group col-md-4 ">
                     <label for="formacion"></label>
                     <select class="form-control" name="nuevaFormacion" id="nuevaFormacion" placeholder="Formación academica">
-                      <option>Seleccione la formación academica</option>
-                      <option value=">Bachiller">Bachiller</option>
-                      <option value="Tecnico">Tecnico</option>
-                      <option value="Tecnologo">Tecnologo</option>
-                      <option value="Profesional">Profesional</option>
-                      <option value="Posgrado">Posgrado</option>
+                        <option>Seleccione la formación academica</option>
+                        <option value=">Bachiller">Bachiller</option>
+                        <option value="Tecnico">Tecnico</option>
+                        <option value="Tecnologo">Tecnologo</option>
+                        <option value="Profesional">Profesional</option>
+                        <option value="Posgrado">Posgrado</option>
                     </select>
                     <small id="formacionHelp" class="form-text text-muted text-center">Seleccione la formación academica</small>
-                  </div>
-                  <div class="form-group col-md-4 ">
+                    </div>
+                    <div class="form-group col-md-4 ">
                     <label for="otra_formacion"></label>
                     <input type="text" class="form-control" name="otraformacion" id="otraformacion" placeholder="Otra formación academica">
                     <small id="otraHelp" class="form-text text-muted text-center">Formación adicional si aplica</small>
-                  </div>
-                  <div class="form-group col-md-4 ">
-                    <label for="genero"></label>
-                    <select class="form-control" name="nuevoGenero" id="nuevoGenero" required="">
-                      <option>Seleccione el genero</option>
-                      <option value=">Masculino">Masculino</option>
-                      <option value="Femenino">Femenino</option>
-                      <option value="Indiferente">Indiferente</option>
-                    </select>
-                    <small id="generoHelp" class="form-text text-muted text-center">Seleccione el genero</small>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="form-group col-md-4 ">
-                    <label for="exp_lab"></label>
-                    <select class="form-control" name="nuevaExp_lab" id="nuevaExp_lab" required="">
-                      <option>Requiere experiencia laboral</option>
-                      <option value="Si">Si</option>
-                      <option value="No">No</option>
-                    </select>
-                    <small id="exp_labHelp" class="form-text text-muted text-center">Requiere experiencia laboral</small>
-                  </div>
-                  <div class="form-group col-md-4 ">
-                    <label for="tiempo_exp"></label>
-                    <input type="text" class="form-control" name="nuevoTiempo_exp" id="nuevoTiempo_exp" placeholder="Ejemplo: 12 Meses" required="">
-                    <small id="tiempo_expHelp" class="form-text text-muted text-center">Tiempo de experiencia</small>
-                  </div>
-
-                  <div class="form-group col-md-4 ">
-                    <label for="experiencia_en"></label>
-                    <textarea class="form-control" rows="2" placeholder="Requiere experiencia en:" required=""></textarea>
-                    <small id="experiencia_enHelp" class="form-text text-muted text-center">"Requiere experiencia en</small>
-                  </div>
+                    </div>
                 </div>
 
                 <div class="row">
                 <div class="form-group col-md-4 ">
-                <label for="ciudad_labor"></label>
-                    <select class="form-control" name="nuevaciudadLabor" id="nuevaciudadLabor" required="">
-                      <option>Ciudad/Municipio donde laborará</option>
-                      <option value="Bogotá">Bogotá</option>
-                      <option value="Sopo">Sopo</option>
-                      <option value="Medellin">Medellin</option>
-                      <option value="Barranquilla">Barranquilla</option>
-                      <option value="Cartagena">Cartagena</option>
-                      <option value="Cali">Cali</option>
-                      <option value="Bucaramanga">Bucaramanga</option>
+                    <label for="genero"></label>
+                    <select class="form-control" name="nuevoGenero" id="nuevoGenero" required="">
+                        <option>Seleccione el genero</option>
+                        <option value=">Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Indiferente">Indiferente</option>
                     </select>
-                    <small id="ciudad_laborHelp" class="form-text text-muted text-center">Ciudad/Municipio donde laborará</small>
-                  </div>
-                  <div class="form-group col-md-4 ">
-                  <label for="tipo_salario"></label>
-                    <select class="form-control" name="nuevoSalario" id="nuevoSalario">
-                    <option>Seleccione la asignación salarial</option>
-                      <option value="Salario minimo legal vigente">Salario minimo legal vigente</option>
-                      <option value="Salario minimo integral">Salario minimo integral</option>
-                      <option value="Salario minimo VITALIS S.A.C.I.">Salario minimo VITALIS S.A.C.I.</option>
-                      <option value="Otro">Otro</option>
+                    <small id="generoHelp" class="form-text text-muted text-center">Seleccione el genero</small>
+                    </div>
+                    <div class="form-group col-md-4 ">
+                    <label for="exp_lab"></label>
+                    <select class="form-control" name="nuevaExp_lab" id="nuevaExp_lab" required="">
+                        <option>Requiere experiencia laboral</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
                     </select>
-                    <small id="tipo_salarioHelp" class="form-text text-muted text-center">Seleccione la asignación salarial</small>
-                  </div>
-                  <div class="form-group col-md-4 ">
-                  <label for="otro_salario"></label>
-                    <input type="text" class="form-control" name="otroSalario" id="otroSalario" placeholder="Otro salario si aplica">
-                    <small id="otraHelp" class="form-text text-muted text-center">Otro salario si aplica</small>
-                  </div>
+                    <small id="exp_labHelp" class="form-text text-muted text-center">Requiere experiencia laboral</small>
+                    </div>
+
+                    <div class="form-group col-md-4 ">
+                    <label for="tiempo_exp"></label>
+                    <input type="text" class="form-control" name="nuevoTiempo_exp" id="nuevoTiempo_exp" placeholder="Ejemplo: 12 Meses" required="">
+                    <small id="tiempo_expHelp" class="form-text text-muted text-center">Tiempo de experiencia</small>
+                    </div>
                 </div>
 
                 <div class="row">
+                    <div class="form-group col-md-4 ">
+                        <label for="experiencia_en"></label>
+                        <textarea class="form-control" rows="2" placeholder="Requiere experiencia en:" required=""></textarea>
+                        <small id="experiencia_enHelp" class="form-text text-muted text-center">"Requiere experiencia en</small>
+                    </div>
+                    <div class="form-group col-md-4 ">
+                    <label for="ciudad_labor"></label>
+                    <select class="form-control" name="nuevaciudadLabor" id="nuevaciudadLabor" required="">
+                        <option>Ciudad/Municipio donde laborará</option>
+                        <option value="Bogotá">Bogotá</option>
+                        <option value="Sopo">Sopo</option>
+                        <option value="Medellin">Medellin</option>
+                        <option value="Barranquilla">Barranquilla</option>
+                        <option value="Cartagena">Cartagena</option>
+                        <option value="Cali">Cali</option>
+                        <option value="Bucaramanga">Bucaramanga</option>
+                    </select>
+                    <small id="ciudad_laborHelp" class="form-text text-muted text-center">Ciudad/Municipio donde laborará</small>
+                    </div>
+                    <div class="form-group col-md-4 ">
+                    <label for="tipo_salario"></label>
+                    <select class="form-control" name="nuevoSalario" id="nuevoSalario">
+                    <option>Seleccione la asignación salarial</option>
+                        <option value="Salario minimo legal vigente">Salario minimo legal vigente</option>
+                        <option value="Salario minimo integral">Salario minimo integral</option>
+                        <option value="Salario minimo VITALIS S.A.C.I.">Salario minimo VITALIS S.A.C.I.</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <small id="tipo_salarioHelp" class="form-text text-muted text-center">Seleccione la asignación salarial</small>
+                    </div>  
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-4 ">
+                        <label for="otro_salario"></label>
+                        <input type="text" class="form-control" name="otroSalario" id="otroSalario" placeholder="Otro salario si aplica">
+                        <small id="otraHelp" class="form-text text-muted text-center">Otro salario si aplica</small>
+                    </div>
                 <div class="form-group col-md-4">
                 <label for="tipo_contrato"></label>
                     <select class="form-control" name="nuevoTipo_contrato" id="nuevoTipo_contrato">
-                     <option>Seleccione el tipo de contrato</option>
-                      <option value="Fijo a tres meses">Fijo a tres meses</option>
-                      <option value="Indefinido">Indefinido</option>
-                      <option value="Aprendizaje">Aprendizaje</option>
+                        <option>Seleccione el tipo de contrato</option>
+                        <option value="Fijo a tres meses">Fijo a tres meses</option>
+                        <option value="Indefinido">Indefinido</option>
+                        <option value="Aprendizaje">Aprendizaje</option>
                     </select>
                     <small id="tipo_contratoHelp" class="form-text text-muted text-center">Seleccione el tipo de contrato</small>
                 </div>
                 <div class="form-group col-md-4 ">
-                  <label for="otra_duracion"></label>
+                    <label for="otra_duracion"></label>
                     <input type="text" class="form-control" name="otra_duracion" id="otra_duracion" placeholder="Otro tipo de contrato si aplica">
                     <small id="otraHelp" class="form-text text-muted text-center">Otro tipo de contrato si aplica</small>
-                  </div>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -300,34 +324,25 @@
                     <div class="row">
                         <h4>PC</h4>
                         <div class="form-group col-md-4">
-                          <input type="radio" name="pc" id="pc_Si">
-                          <label for="pc_Si" value="SI">SI</label>
+                          <input type="radio" name="ti_pc" value="si">Si
                           <br>
-
-                          <input type="radio" name="pc" id="pc_No">
-                          <label for="pc_No" value="NO">NO</label>                      
+                          <input type="radio" name="ti_pc" value="no">No                      
                         </div>
 
                       
                         <h4>Teléfono</h4>
                         <div class="form-group col-md-3">
-                          <input type="radio" name="telefono" id="tel_Si">
-                          <<label for="pc_Si" value="SI">SI</label>
+                        <input type="radio" name="ti_telefono" value="si">Si
                           <br>
-
-                          <input type="radio" name="telefono" id="tel_No">
-                          <label for="pc_No" value="NO">NO</label>
+                          <input type="radio" name="ti_telefono" value="no">No 
                       </div>
 
                       
                         <h4>Correo</h4>
                         <div class="form-group col-md-2">
-                          <input type="radio" name="correo" id="correoSi">
-                          <label for="pc_Si" value="SI">SI</label>
-                            <br>
-
-                          <input type="radio" name="correo" id="correoNo">
-                          <label for="pc_No" value="NO">NO</label>
+                        <input type="radio" name="ti_correo" value="si">Si
+                          <br>
+                          <input type="radio" name="ti_correo" value="no">No 
                       </div>
                     </div>
 

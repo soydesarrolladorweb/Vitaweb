@@ -35,7 +35,7 @@
 
 			foreach ($totalsolicitudes as $key => $value) {
 
-				array_push($totalsolicitudes, $value["cantidad"]);
+				array_push($totalsolicitudes, $value["id_usuario"]);
 				
 				var_dump($totalsolicitudes);
 			}
@@ -81,14 +81,15 @@
 				"tipo_ingreso" => $_POST["nuevo_ingreso"],
 				"horario" => $_POST["nuevoHorario"],
 				"nombre_ceco" => $_POST["nuevoNombre_ceco"],
-				"ti_pc" => $_POST["pc"],
+				"ti_pc" => $_POST["ti_pc"],
 				"pc_observaciones" => $_POST["pc_observaciones"],
-				"ti_telefono" => $_POST["telefono"],
+				"ti_telefono" => $_POST["ti_telefono"],
 				"tel_observaciones" => $_POST["tel_observaciones"],
-				"ti_correo" => $_POST["correo"],
+				"ti_correo" => $_POST["ti_correo"],
 				"correo_observaciones" => $_POST["correo_observaciones"],
+				"codigo_ceco" => $_POST["nuevoCodigo_ceco"],
 				"ti_observaciones" => $_POST["ti_observaciones"]);
-
+				
 				$respuesta = ModeloSolicitudes::mdlIngresarSolicitud($tabla, $datos);
 				
 				if ($respuesta == "ok"){
