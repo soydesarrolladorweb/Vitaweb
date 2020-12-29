@@ -67,7 +67,7 @@
 				"formacion" => $_POST["nuevaFormacion"],
 				"otra_formacion" => $_POST["otraformacion"],
 				"genero" => $_POST["nuevoGenero"],
-				"exp_lab" => $_POST["nuevaExp_lab"],
+				"experiencia_en" => $_POST["nuevaExp_lab"],
 				"tiempo_exp" => $_POST["nuevoTiempo_exp"],
 				"ciudad_labor" => $_POST["nuevaciudadLabor"],
 				"tipo_salario" => $_POST["nuevoSalario"],

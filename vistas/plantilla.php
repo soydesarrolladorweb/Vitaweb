@@ -215,6 +215,7 @@ session_start();
   <script src="vistas/js/firmas.js"></script>  
   <script src="vistas/js/horarios.js"></script>
   <script src="vistas/js/centroCostos.js"></script>
+  <script src="vistas/js/solicitudes.js"></script>
  
 
 </body>

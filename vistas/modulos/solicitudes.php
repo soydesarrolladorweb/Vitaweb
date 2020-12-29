@@ -89,7 +89,9 @@
    
                      <button class="btn btn-info"><i class="fas fa-eye"></i></button>
    
-                     <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i></button>
+                     <button class="btn btn-warning btnEditarSolicitud" idSolicitud="'.$value["id"].'"><i class="fas fa-pencil-alt"></i></button>
+
+                     <button class="btn btn-danger"><i class="fa fa-times"></i></button>
    
                    </div>
                  </td>

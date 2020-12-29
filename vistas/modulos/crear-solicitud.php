@@ -200,7 +200,7 @@
                     <label for="formacion"></label>
                     <select class="form-control" name="nuevaFormacion" id="nuevaFormacion" placeholder="Formación academica">
                         <option>Seleccione la formación academica</option>
-                        <option value=">Bachiller">Bachiller</option>
+                        <option value="Bachiller">Bachiller</option>
                         <option value="Tecnico">Tecnico</option>
                         <option value="Tecnologo">Tecnologo</option>
                         <option value="Profesional">Profesional</option>
@@ -246,7 +246,7 @@
                 <div class="row">
                     <div class="form-group col-md-4 ">
                         <label for="experiencia_en"></label>
-                        <textarea class="form-control" rows="2" placeholder="Requiere experiencia en:" required=""></textarea>
+                        <textarea class="form-control" rows="2"  name="nuevaExp_lab" id="nuevaExp_lab" placeholder="Requiere experiencia en:" required=""></textarea>
                         <small id="experiencia_enHelp" class="form-text text-muted text-center">"Requiere experiencia en</small>
                     </div>
                     <div class="form-group col-md-4 ">

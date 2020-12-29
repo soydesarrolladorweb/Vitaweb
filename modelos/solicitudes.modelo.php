@@ -39,7 +39,7 @@ class ModeloSolicitudes{
 
     static public function mdlIngresarSolicitud($tabla, $datos){
 
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_usuario, ciudad, formacion, otra_formacion, genero, exp_lab, tiempo_exp, ciudad_labor, tipo_salario, monto_salario, tipo_contrato, otra_duracion, observaciones, motivo, cargo_solicitado, area_personal, tipo_ingreso, horario, nombre_ceco, ti_pc, pc_observaciones, ti_telefono, tel_observaciones, ti_correo, correo_observaciones, codigo_ceco, ti_observaciones) VALUES (:codigo, :id_usuario, :ciudad, :formacion, :otra_formacion, :genero, :exp_lab, :tiempo_exp, :ciudad_labor, :tipo_salario, :monto_salario, :tipo_contrato, :otra_duracion, :observaciones, :motivo, :cargo_solicitado, :area_personal, :tipo_ingreso, :horario, :nombre_ceco, :ti_pc, :pc_observaciones, :ti_telefono, :tel_observaciones, :ti_correo, :correo_observaciones, :codigo_ceco, :ti_observaciones)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_usuario, ciudad, formacion, otra_formacion, genero, experiencia_en, tiempo_exp, ciudad_labor, tipo_salario, monto_salario, tipo_contrato, otra_duracion, observaciones, motivo, cargo_solicitado, area_personal, tipo_ingreso, horario, nombre_ceco, ti_pc, pc_observaciones, ti_telefono, tel_observaciones, ti_correo, correo_observaciones, codigo_ceco, ti_observaciones) VALUES (:codigo, :id_usuario, :ciudad, :formacion, :otra_formacion, :genero, :experiencia_en, :tiempo_exp, :ciudad_labor, :tipo_salario, :monto_salario, :tipo_contrato, :otra_duracion, :observaciones, :motivo, :cargo_solicitado, :area_personal, :tipo_ingreso, :horario, :nombre_ceco, :ti_pc, :pc_observaciones, :ti_telefono, :tel_observaciones, :ti_correo, :correo_observaciones, :codigo_ceco, :ti_observaciones)");
 
         $stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_INT);
         $stmt->bindParam(":id_usuario", $datos["id_usuario"], PDO::PARAM_INT);
@@ -47,7 +47,7 @@ class ModeloSolicitudes{
         $stmt->bindParam(":formacion", $datos["formacion"], PDO::PARAM_STR);
         $stmt->bindParam(":otra_formacion", $datos["otra_formacion"], PDO::PARAM_STR);
         $stmt->bindParam(":genero", $datos["genero"], PDO::PARAM_STR);
-        $stmt->bindParam(":exp_lab", $datos["exp_lab"], PDO::PARAM_STR);
+        $stmt->bindParam(":experiencia_en", $datos["experiencia_en"], PDO::PARAM_STR);
         $stmt->bindParam(":tiempo_exp", $datos["tiempo_exp"], PDO::PARAM_STR);
         $stmt->bindParam(":ciudad_labor", $datos["ciudad_labor"], PDO::PARAM_STR);
         $stmt->bindParam(":tipo_salario", $datos["tipo_salario"], PDO::PARAM_STR);
