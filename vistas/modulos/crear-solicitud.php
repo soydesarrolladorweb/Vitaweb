@@ -321,47 +321,64 @@
                 </div>
                 <div class="card-body">
                   
-                    <div class="row">
+                 
+                <div class="row col-md-12">
+                        <div class="pc col">
                         <h4>PC</h4>
-                        <div class="form-group col-md-4">
-                          <input type="radio" name="ti_pc" value="si">Si
-                          <br>
-                          <input type="radio" name="ti_pc" value="no">No                      
+                          <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="ti_pc_0" name="ti_pc" value="Si" class="custom-control-input">
+                          <label class="custom-control-label" for="ti_pc_0">Si</label>
+                        </div>
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="ti_pc_1" name="ti_pc" value="No" class="custom-control-input">
+                            <label class="custom-control-label" for="ti_pc_1">No</label>
+                          </div>     
+                        </div>
+                      
+                        
+                        <div class="pc col">
+                        <h4>Teléfono</h4>
+                          <div class="col-sm-1 custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="ti_telefono_0" name="ti_telefono" value="Si" class="custom-control-input">
+                          <label class="custom-control-label" for="ti_telefono_0">Si</label>
+                        </div>
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="ti_telefono_1" name="ti_telefono" value="No" class="custom-control-input">
+                            <label class="custom-control-label" for="ti_telefono_1">No</label>
+                          </div>     
                         </div>
 
-                      
-                        <h4>Teléfono</h4>
-                        <div class="form-group col-md-3">
-                        <input type="radio" name="ti_telefono" value="si">Si
-                          <br>
-                          <input type="radio" name="ti_telefono" value="no">No 
-                      </div>
-
-                      
+                        <div class="pc col">
                         <h4>Correo</h4>
-                        <div class="form-group col-md-2">
-                        <input type="radio" name="ti_correo" value="si">Si
-                          <br>
-                          <input type="radio" name="ti_correo" value="no">No 
-                      </div>
-                    </div>
+                          <div class="col-sm-1 custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="ti_correo_0" name="ti_correo" value="Si" class="custom-control-input">
+                          <label class="custom-control-label" for="ti_correo_0">Si</label>
+                        </div>
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="ti_correo_1" name="ti_correo" value="No" class="custom-control-input">
+                            <label class="custom-control-label" for="ti_correo_1">No</label>
+                          </div>     
+                        </div>
+                   </div>
 
+                      
+                        
                     <div class="row">
-                    <div class="form-group col-md-4">
-                      <label for="pc_observaciones"></label>
-                      <textarea class="form-control" rows="2" name="pc_observaciones" id="pc_observaciones" placeholder="ESPECIFICACIONES PARA EL PC"></textarea>
-                    </div>
+                      <div class="form-group col-md-4">
+                        <label for="pc_observaciones"></label>
+                        <textarea class="form-control" rows="2" name="pc_observaciones" id="pc_observaciones" placeholder="ESPECIFICACIONES PARA EL PC"></textarea>
+                      </div>
 
-                    <div class="form-group col-md-4">
-                      <label for="tel_observaciones"></label>
-                      <textarea class="form-control" rows="2" name="tel_observaciones" id="tel_observaciones" placeholder="ESPECIFICACIONES PARA EL TELEFONO"></textarea>
-                    </div>
+                      <div class="form-group col-md-4">
+                        <label for="tel_observaciones"></label>
+                        <textarea class="form-control" rows="2" name="tel_observaciones" id="tel_observaciones" placeholder="ESPECIFICACIONES PARA EL TELEFONO"></textarea>
+                      </div>
 
-                    <div class="form-group col-md-4">
-                      <label for="correo_observaciones"></label>
-                      <textarea class="form-control" rows="2" name="correo_observaciones" id="correo_observaciones" placeholder="ESPECIFICACIONES PARA EL CORREO"></textarea>
-                    </div>
-                  </div>
+                      <div class="form-group col-md-4">
+                        <label for="correo_observaciones"></label>
+                        <textarea class="form-control" rows="2" name="correo_observaciones" id="correo_observaciones" placeholder="ESPECIFICACIONES PARA EL CORREO"></textarea>
+                      </div>
+                   </div>
 
                   <div class="row">
                   <div class="form-group col-md-12">
