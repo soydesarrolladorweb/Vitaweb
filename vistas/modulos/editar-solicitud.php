@@ -71,20 +71,20 @@
                   <div class="row">
                     <div class="form-group col-md-4 ">
                       <label for="id_usuario"></label>
-                      <input type="text" class="form-control" id="nuevoSolicitante" value="<?php echo $usuario["nombre"]; ?>" readonly>
-                      <input type="hidden" name="idSolicitante" value="<?php echo $usuario["usuario"]; ?>">
+                      <input type="text" class="form-control" id="editarSolicitante" value="<?php echo $usuario["nombre"]; ?>" readonly>
+                      <input type="hidden" name="idSolicitante" value="<?php echo $usuario["usuario"]; ?>" readonly="">
                       <small id="id_usuarioHelp" class="form-text text-muted text-center">Nombre del solicitante</small>
                     </div>
 
                     <div class="form-group col-md-4 ">
                       <label for="codigo"></label>
-                      <input type="text" class="form-control" id="nuevoCodigo" name="editarCodigo" value="<?php echo $solicitud["codigo"]; ?>" readonly>
+                      <input type="text" class="form-control" id="editarCodigo" name="editarCodigo" value="<?php echo $solicitud["codigo"]; ?>" readonly>
                       <small id="codigoHelp" class="form-text text-muted text-center">Codigo solicitud</small>
                     </div>
 
                     <div class="form-group col-md-4 ">
                       <label for="ciudad"></label>
-                      <select class="form-control" name="nuevaCiudad" id="ciudad" required="">
+                      <select class="form-control" name="editarCiudad" id="editarCiudad" required="">
                         <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["ciudad"] ?></option>
                         <option value="Bogotá">Bogotá</option>
                         <option value="Sopo">Sopo</option>
@@ -100,7 +100,7 @@
                   <div class="row">
                     <div class="form-group col-md-4 ">
                       <label for="tipo_ingreso"></label>
-                      <select class="form-control" name="nuevo_ingreso" id="nuevo_ingreso" required="">
+                      <select class="form-control" name="editar_ingreso" id="editar_ingreso" required="">
                         <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["tipo_ingreso"] ?></option>
 
                         <?php
@@ -121,7 +121,7 @@
                     </div>
                     <div class="form-group col-md-4 ">
                       <label for="horario"></label>
-                      <select class="form-control" name="nuevoHorario" id="nuevoHorario" required="">
+                      <select class="form-control" name="editarHorario" id="editarHorario" required="">
                         <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["horario"] ?></option>
                         <?php
 
@@ -141,7 +141,7 @@
                     </div>
                     <div class="form-group col-md-4 ">
                       <label for="codigo_ceco"></label>
-                      <select class="form-control" name="nuevoCodigo_ceco" id="codigo_ceco" required="">
+                      <select class="form-control" name="editarCodigo_ceco" id="editarCodigo_ceco" required="">
                         <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["codigo_ceco"] ?></option>
                         <?php
 
@@ -165,7 +165,7 @@
                   <div class="row">
                     <div class="form-group col-md-4 ">
                       <label for="nombre_ceco"></label>
-                      <select class="form-control" name="nuevoNombre_ceco" id="nombre_ceco" required="">
+                      <select class="form-control" name="editarNombre_ceco" id="editarNombre_ceco" required="">
                         <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["nombre_ceco"] ?></option>
                         <?php
 
@@ -185,7 +185,7 @@
                     </div>
                     <div class="form-group col-md-4 ">
                       <label for="area_personal"></label>
-                      <select class="form-control" name="nuevArea_personal" id="nuevArea_personal" required="">
+                      <select class="form-control" name="editarArea_personal" id="editarArea_personal" required="">
                         <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["area_personal"] ?></option>
                         <option value="Mano de obra directa">Mano de obra directa</option>
                         <option value="Mano de obra indirecta">Mano de obra indirecta</option>
@@ -196,7 +196,7 @@
                     </div>
                     <div class="form-group col-md-4 ">
                       <label for="cargo_solicitado"></label>
-                      <input type="text" class="form-control" name="nuevoCargo" id="nuevoCargo" placeholder="Cargo solicitado" value="<?php echo $solicitud["cargo_solicitado"]; ?>" required="">
+                      <input type="text" class="form-control" name="editarCargo" id="editarCargo" placeholder="Cargo solicitado" value="<?php echo $solicitud["cargo_solicitado"]; ?>" required="">
                       <small id="cargo_solicitadoHelp" class="form-text text-muted text-center">Cargo solicitado</small>
                     </div>
                   </div>
@@ -205,7 +205,7 @@
                   <div class="row">
                     <div class="form-group col-md-4 ">
                       <label for="motivo"></label>
-                      <input type="text" class="form-control" name="nuevoMotivo" id="nuevoMotivo" placeholder="Motivo de la solicitud" value="<?php echo $solicitud["motivo"]; ?>" required="">
+                      <input type="text" class="form-control" name="editarMotivo" id="editarMotivo" placeholder="Motivo de la solicitud" value="<?php echo $solicitud["motivo"]; ?>" required="">
                       <small id="motivoHelp" class="form-text text-muted text-center">Motivo de la solicitud</small>
                     </div>
                     <div class="form-group col-md-4 ">
