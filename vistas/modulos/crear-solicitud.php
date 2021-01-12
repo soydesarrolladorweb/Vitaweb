@@ -322,45 +322,37 @@
                 <div class="card-body">
                   
                  
-                <div class="row col-md-12">
-                        <div class="pc col">
-                        <h4>PC</h4>
-                          <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="ti_pc_0" name="ti_pc" value="Si" class="custom-control-input">
-                          <label class="custom-control-label" for="ti_pc_0">Si</label>
-                        </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="ti_pc_1" name="ti_pc" value="No" class="custom-control-input">
-                            <label class="custom-control-label" for="ti_pc_1">No</label>
-                          </div>     
-                        </div>
-                      
-                        
-                        <div class="pc col">
-                        <h4>Teléfono</h4>
-                          <div class="col-sm-1 custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="ti_telefono_0" name="ti_telefono" value="Si" class="custom-control-input">
-                          <label class="custom-control-label" for="ti_telefono_0">Si</label>
-                        </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="ti_telefono_1" name="ti_telefono" value="No" class="custom-control-input">
-                            <label class="custom-control-label" for="ti_telefono_1">No</label>
-                          </div>     
-                        </div>
-
-                        <div class="pc col">
-                        <h4>Correo</h4>
-                          <div class="col-sm-1 custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="ti_correo_0" name="ti_correo" value="Si" class="custom-control-input">
-                          <label class="custom-control-label" for="ti_correo_0">Si</label>
-                        </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="ti_correo_1" name="ti_correo" value="No" class="custom-control-input">
-                            <label class="custom-control-label" for="ti_correo_1">No</label>
-                          </div>     
-                        </div>
-                   </div>
-
+                <div class="row">
+                    <div class="form-group col-md-4 ">
+                    <label for="ti_pc"></label>
+                    <select class="form-control" name="ti_pc" id="ti_pc" required="">
+                        <option>El cargo requiere computador</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <small id="tipo_contratoHelp" class="form-text text-muted text-center">Seleccione si requiere computador</small>
+                    </div>
+                <div class="form-group col-md-4">
+                <label for="tipo_contrato"></label>
+                <select class="form-control" name="ti_telefono" id="ti_telefono" required="">
+                        <option>El cargo requiere teléfono</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <small id="tipo_contratoHelp" class="form-text text-muted text-center">Seleccione si requiere teléfono</small>
+                </div>
+                <div class="form-group col-md-4 ">
+                <label for="tipo_contrato"></label>
+                    <select class="form-control" name="ti_correo" id="ti_correo" required="">
+                        <option>El cargo requiere correo</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <small id="tipo_contratoHelp" class="form-text text-muted text-center">Seleccione si requiere correo</small>
+                    </div>
+                </div>
+                   
+                   
                       
                         
                     <div class="row">

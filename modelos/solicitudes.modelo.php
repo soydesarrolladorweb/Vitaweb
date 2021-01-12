@@ -90,7 +90,7 @@ class ModeloSolicitudes{
 	EDITAR SOLICITUD
     =============================================*/			
     
-    static public function mdlEditarSolicitud($tabla, $datos){
+    static public function mdlEditarSolicitud($tabla, $item, $valor, $datos){
 
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_usuario = :id_usuario, ciudad = :ciudad, formacion = :formacion, otra_formacion = :otra_formacion, genero = :genero, experiencia_en = :experiencia_en, tiempo_exp = :tiempo_exp, ciudad_labor = :ciudad_labor, tipo_salario = :tipo_salario, monto_salario = :monto_salario, tipo_contrato = :tipo_contrato, otra_duracion = :otra_duracion, observaciones = :observaciones, motivo = :motivo, cargo_solicitado = :cargo_solicitado, area_personal = :area_personal, tipo_ingreso = :tipo_ingreso, horario = :horario, nombre_ceco = :nombre_ceco, ti_pc = :ti_pc, pc_observaciones = :pc_observaciones, ti_telefono = :ti_telefono, tel_observaciones = :tel_observaciones, ti_correo = :ti_correo, correo_observaciones = :correo_observaciones, codigo_ceco = :codigo_ceco, ti_observaciones = :ti_observaciones WHERE codigo = :codigo");
 

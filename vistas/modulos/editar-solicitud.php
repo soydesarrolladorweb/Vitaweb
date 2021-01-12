@@ -84,8 +84,8 @@
 
                     <div class="form-group col-md-4 ">
                       <label for="ciudad"></label>
-                      <select class="form-control" name="editarCiudad" id="editarCiudad" required="">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["ciudad"] ?></option>
+                      <select class="form-control" name="editarCiudad" required="">
+                        <option value="<?php echo $solicitud["ciudad"]; ?>"><?php echo $solicitud["ciudad"] ?></option>
                         <option value="Bogotá">Bogotá</option>
                         <option value="Sopo">Sopo</option>
                         <option value="Medellin">Medellin</option>
@@ -100,8 +100,8 @@
                   <div class="row">
                     <div class="form-group col-md-4 ">
                       <label for="tipo_ingreso"></label>
-                      <select class="form-control" name="editar_ingreso" id="editar_ingreso" required="">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["tipo_ingreso"] ?></option>
+                      <select class="form-control" name="editar_ingreso" required="">
+                        <option value="<?php echo $solicitud["tipo_ingreso"]; ?>"><?php echo $solicitud["tipo_ingreso"] ?></option>
 
                         <?php
 
@@ -112,7 +112,7 @@
 
                         foreach ($traertipoIngreso as $key => $value) {
 
-                          echo '<option value="' . $value["id"] . '">' . $value["ingreso"] . '</option>';
+                          echo '<option value="' . $value["ingreso"] . '">' . $value["ingreso"] . '</option>';
                         }
 
                         ?>
@@ -122,7 +122,7 @@
                     <div class="form-group col-md-4 ">
                       <label for="horario"></label>
                       <select class="form-control" name="editarHorario" id="editarHorario" required="">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["horario"] ?></option>
+                        <option value="<?php echo $solicitud["horario"]; ?>"><?php echo $solicitud["horario"] ?></option>
                         <?php
 
                         $item = null;
@@ -142,7 +142,7 @@
                     <div class="form-group col-md-4 ">
                       <label for="codigo_ceco"></label>
                       <select class="form-control" name="editarCodigo_ceco" id="editarCodigo_ceco" required="">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["codigo_ceco"] ?></option>
+                        <option value="<?php echo $solicitud["codigo_ceco"]; ?>"><?php echo $solicitud["codigo_ceco"] ?></option>
                         <?php
 
                         $item = null;
@@ -166,7 +166,7 @@
                     <div class="form-group col-md-4 ">
                       <label for="nombre_ceco"></label>
                       <select class="form-control" name="editarNombre_ceco" id="editarNombre_ceco" required="">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["nombre_ceco"] ?></option>
+                        <option value="<?php echo $solicitud["nombre_ceco"]; ?>"><?php echo $solicitud["nombre_ceco"] ?></option>
                         <?php
 
                         $item = null;
@@ -186,7 +186,7 @@
                     <div class="form-group col-md-4 ">
                       <label for="area_personal"></label>
                       <select class="form-control" name="editarArea_personal" id="editarArea_personal" required="">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["area_personal"] ?></option>
+                        <option value="<?php echo $solicitud["area_personal"]; ?>"><?php echo $solicitud["area_personal"] ?></option>
                         <option value="Mano de obra directa">Mano de obra directa</option>
                         <option value="Mano de obra indirecta">Mano de obra indirecta</option>
                         <option value="Administración">Administración</option>
@@ -209,9 +209,9 @@
                       <small id="motivoHelp" class="form-text text-muted text-center">Motivo de la solicitud</small>
                     </div>
                     <div class="form-group col-md-4 ">
-                      <label for="formacion"></label>
-                      <select class="form-control" name="nuevaFormacion" id="nuevaFormacion" placeholder="Formación academica">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["formacion"] ?></option>
+                      <label for="editarFormacion"></label>
+                      <select class="form-control" name="editarFormacion">
+                        <option value="<?php echo $solicitud["formacion"]; ?>"><?php echo $solicitud["formacion"] ?></option>
                         <option value=">Bachiller">Bachiller</option>
                         <option value="Tecnico">Tecnico</option>
                         <option value="Tecnologo">Tecnologo</option>
@@ -222,7 +222,7 @@
                     </div>
                     <div class="form-group col-md-4 ">
                       <label for="otra_formacion"></label>
-                      <input type="text" class="form-control" name="otraformacion" id="otraformacion" placeholder="Otra formación academica" value="<?php echo $solicitud["otra_formacion"]; ?>">
+                      <input type="text" class="form-control" name="editarOtraformacion" id="editarOtraformacion" placeholder="Otra formación academica" value="<?php echo $solicitud["otra_formacion"]; ?>">
                       <small id="otraHelp" class="form-text text-muted text-center">Formación adicional si aplica</small>
                     </div>
                   </div>
@@ -230,8 +230,8 @@
                   <div class="row">
                     <div class="form-group col-md-4 ">
                       <label for="genero"></label>
-                      <select class="form-control" name="nuevoGenero" id="nuevoGenero" required="">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["genero"] ?></option>
+                      <select class="form-control" name="editarGenero" required="">
+                        <option value="<?php echo $solicitud["genero"]; ?>"><?php echo $solicitud["genero"] ?></option>
                         <option value=">Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
                         <option value="Indiferente">Indiferente</option>
@@ -240,8 +240,8 @@
                     </div>
                     <div class="form-group col-md-4 ">
                       <label for="exp_lab"></label>
-                      <select class="form-control" name="nuevaExp_lab" id="nuevaExp_lab" required="">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["exp_lab"] ?></option>
+                      <select class="form-control" name="editarExp_lab" required="">
+                        <option value="<?php echo $solicitud["exp_lab"]; ?>"><?php echo $solicitud["exp_lab"] ?></option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                       </select>
@@ -250,7 +250,7 @@
 
                     <div class="form-group col-md-4 ">
                       <label for="tiempo_exp"></label>
-                      <input type="text" class="form-control" name="nuevoTiempo_exp" id="nuevoTiempo_exp" placeholder="Ejemplo: 12 Meses" value="<?php echo $solicitud["tiempo_exp"]; ?>" required="">
+                      <input type="text" class="form-control" name="editarTiempo_exp" id="editarTiempo_exp" value="<?php echo $solicitud["tiempo_exp"]; ?>" required="">
                       <small id="tiempo_expHelp" class="form-text text-muted text-center">Tiempo de experiencia</small>
                     </div>
                   </div>
@@ -258,13 +258,13 @@
                   <div class="row">
                     <div class="form-group col-md-4 ">
                       <label for="experiencia_en"></label>
-                      <input type="text" class="form-control" rows="2" value="<?php echo $solicitud["experiencia_en"]; ?>">
+                      <input type="text" class="form-control" rows="2"  name="editarExperiencia_en" id="editarExperiencia_en" value="<?php echo $solicitud["experiencia_en"]; ?>">
                       <small id="experiencia_enHelp" class="form-text text-muted text-center">"Requiere experiencia en</small>
                     </div>
                     <div class="form-group col-md-4 ">
                       <label for="ciudad_labor"></label>
-                      <select class="form-control" name="nuevaciudadLabor" id="nuevaciudadLabor" required="">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["ciudad_labor"] ?></option>
+                      <select class="form-control" name="editarciudadLabor" required="">
+                        <option value="<?php echo $solicitud["ciudad_labor"]; ?>"><?php echo $solicitud["ciudad_labor"] ?></option>
                         <option value="Bogotá">Bogotá</option>
                         <option value="Sopo">Sopo</option>
                         <option value="Medellin">Medellin</option>
@@ -277,8 +277,8 @@
                     </div>
                     <div class="form-group col-md-4 ">
                       <label for="tipo_salario"></label>
-                      <select class="form-control" name="nuevoSalario" id="nuevoSalario">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["tipo_salario"] ?></option>
+                      <select class="form-control" name="editarSalario">
+                        <option value="<?php echo $solicitud["tipo_salario"]; ?>"><?php echo $solicitud["tipo_salario"] ?></option>
                         <option value="Salario minimo legal vigente">Salario minimo legal vigente</option>
                         <option value="Salario minimo integral">Salario minimo integral</option>
                         <option value="Salario minimo VITALIS S.A.C.I.">Salario minimo VITALIS S.A.C.I.</option>
@@ -291,13 +291,13 @@
                   <div class="row">
                     <div class="form-group col-md-4 ">
                       <label for="otro_salario"></label>
-                      <input type="text" class="form-control" name="otroSalario" id="otroSalario" value="<?php echo $solicitud["monto_salario"]; ?>">
+                      <input type="text" class="form-control" name="editar_otroSalario" id="editar_otroSalario" value="<?php echo $solicitud["monto_salario"]; ?>">
                       <small id="otraHelp" class="form-text text-muted text-center">Otro salario si aplica</small>
                     </div>
                     <div class="form-group col-md-4">
                       <label for="tipo_contrato"></label>
-                      <select class="form-control" name="nuevoTipo_contrato" id="nuevoTipo_contrato">
-                        <option value="<?php echo $solicitud["id"]; ?>"><?php echo $solicitud["tipo_contrato"] ?></option>
+                      <select class="form-control" name="editarTipo_contrato">
+                        <option value="<?php echo $solicitud["tipo_contrato"]; ?>"><?php echo $solicitud["tipo_contrato"] ?></option>
                         <option value="Fijo a tres meses">Fijo a tres meses</option>
                         <option value="Indefinido">Indefinido</option>
                         <option value="Aprendizaje">Aprendizaje</option>
@@ -306,7 +306,7 @@
                     </div>
                     <div class="form-group col-md-4 ">
                       <label for="otra_duracion"></label>
-                      <input type="text" class="form-control" name="otra_duracion" id="otra_duracion" value="<?php echo $solicitud["otra_duracion"]; ?>">
+                      <input type="text" class="form-control" name="editar_otra_duracion" id="editar_otra_duracion" value="<?php echo $solicitud["otra_duracion"]; ?>">
                       <small id="otraHelp" class="form-text text-muted text-center">Otro tipo de contrato si aplica</small>
                     </div>
                   </div>
@@ -314,7 +314,7 @@
                   <div class="row">
                     <div class="form-group col-md-12">
                       <label for="observaciones"></label>
-                      <input type="text" class="form-control" rows="2" value="<?php echo $solicitud["observaciones"]; ?>">
+                      <input type="text" class="form-control" rows="2" name="editarObservaciones" id="editarObservaciones" value="<?php echo $solicitud["observaciones"]; ?>">
                     </div>
                   </div>
 
@@ -333,67 +333,61 @@
               </div>
               <div class="card-body">
 
-              <div class="row col-md-12">
-                        <div class="pc col">
-                        <h4>PC</h4>
-                          <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="ti_pc_0" name="ti_pc" class="custom-control-input" value="<?php echo $solicitud["ti_pc"]; ?>">
-                          <label class="custom-control-label" for="ti_pc_0">Si</label>
-                        </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="ti_pc_1" name="ti_pc" class="custom-control-input" value="<?php echo $solicitud["ti_pc"]; ?>">
-                            <label class="custom-control-label" for="ti_pc_1">No</label>
-                          </div>     
-                        </div>
-                      
-                        
-                        <div class="pc col">
-                        <h4>Teléfono</h4>
-                          <div class="col-sm-1 custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="ti_telefono_0" name="ti_telefono" class="custom-control-input" value="<?php echo $solicitud["ti_telefono"]; ?>">
-                          <label class="custom-control-label" for="ti_telefono_0">Si</label>
-                        </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="ti_telefono_1" name="ti_telefono" class="custom-control-input" value="<?php echo $solicitud["ti_telefono"]; ?>">
-                            <label class="custom-control-label" for="ti_telefono_1">No</label>
-                          </div>     
-                        </div>
-
-                        <div class="pc col">
-                        <h4>Correo</h4>
-                          <div class="col-sm-1 custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="ti_correo_0" name="ti_correo" class="custom-control-input" value="<?php echo $solicitud["ti_correo"]; ?>">
-                          <label class="custom-control-label" for="ti_correo_0">Si</label>
-                        </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="ti_correo_1" name="ti_correo" class="custom-control-input" value="<?php echo $solicitud["ti_correo"]; ?>">
-                            <label class="custom-control-label" for="ti_correo_1">No</label>
-                          </div>     
-                        </div>
-                   </div>
+              <div class="row">
+                    <div class="form-group col-md-4 ">
+                    <label for="ti_pc"></label>
+                    <select class="form-control" name="editar_ti_pc" required="">
+                    <option value="<?php echo $solicitud["ti_pc"]; ?>"><?php echo $solicitud["ti_pc"] ?></option>
+                        <option>El cargo requiere computador</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <small id="tipo_contratoHelp" class="form-text text-muted text-center">Seleccione si requiere computador</small>
+                    </div>
+                <div class="form-group col-md-4">
+                <label for="tipo_contrato"></label>
+                <select class="form-control" name="editar_ti_telefono" required="">
+                <option value="<?php echo $solicitud["ti_telefono"]; ?>"><?php echo $solicitud["ti_telefono"] ?></option>
+                        <option>El cargo requiere teléfono</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <small id="tipo_contratoHelp" class="form-text text-muted text-center">Seleccione si requiere teléfono</small>
+                </div>
+                <div class="form-group col-md-4 ">
+                <label for="tipo_contrato"></label>
+                    <select class="form-control" name="editar_ti_correo" required="">
+                    <option value="<?php echo $solicitud["ti_correo"]; ?>"><?php echo $solicitud["ti_correo"] ?></option>
+                        <option>El cargo requiere correo</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <small id="tipo_contratoHelp" class="form-text text-muted text-center">Seleccione si requiere correo</small>
+                    </div>
+                </div>
 
 
                 <div class="row">
                   <div class="form-group col-md-4">
                     <label for="pc_observaciones"></label>
-                    <input type="text" class="form-control" rows="2" value="<?php echo $solicitud["pc_observaciones"]; ?>">
+                    <input type="text" class="form-control" rows="2" name="editar_pc_observaciones" placeholder="ESPECIFICACIONES PARA EL PC" value="<?php echo $solicitud["pc_observaciones"]; ?>">
                   </div>
 
                   <div class="form-group col-md-4">
                     <label for="tel_observaciones"></label>
-                    <input type="text" class="form-control" rows="2" value="<?php echo $solicitud["tel_observaciones"]; ?>">
+                    <input type="text" class="form-control" rows="2"  name="editar_tel_observaciones" placeholder="ESPECIFICACIONES PARA EL TELEFONO" value="<?php echo $solicitud["tel_observaciones"]; ?>">
                   </div>
 
                   <div class="form-group col-md-4">
                     <label for="correo_observaciones"></label>
-                    <input type="text" class="form-control" rows="2" value="<?php echo $solicitud["correo_observaciones"]; ?>">
+                    <input type="text" class="form-control" rows="2" name="editar_correo_observaciones" placeholder="ESPECIFICACIONES PARA EL CORREO"  value="<?php echo $solicitud["correo_observaciones"]; ?>">
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="form-group col-md-12">
                     <label for="ti_observaciones"></label>
-                    <input type="text" class="form-control" rows="2" value="<?php echo $solicitud["ti_observaciones"]; ?>">
+                    <input type="text" class="form-control" rows="2" name="editar_ti_observaciones" placeholder="OBSERVACIONES GENERALES PARA TI" value="<?php echo $solicitud["ti_observaciones"]; ?>">
                   </div>
                 </div>
               </div>
