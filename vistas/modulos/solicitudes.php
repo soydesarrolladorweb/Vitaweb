@@ -91,7 +91,7 @@
    
                      <button class="btn btn-warning btnEditarSolicitud" idSolicitud="'.$value["id"].'"><i class="fas fa-pencil-alt"></i></button>
 
-                     <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                     <button class="btn btn-danger btnEliminarSolicitud"idTiposolicitud="'.$value["id"].'"codigoUnico="'.$value["codigo"].'"><i class="fa fa-times"></i></button>
    
                    </div>
                  </td>
@@ -112,3 +112,10 @@
   </div>
   </section>
   </div>
+
+  <?php
+
+    $borrarSolicitud = new ControladorSolicitudes();
+    $borrarSolicitud -> ctrBorrarSolicitud();
+
+  ?>

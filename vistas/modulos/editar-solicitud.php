@@ -212,7 +212,7 @@
                       <label for="editarFormacion"></label>
                       <select class="form-control" name="editarFormacion">
                         <option value="<?php echo $solicitud["formacion"]; ?>"><?php echo $solicitud["formacion"] ?></option>
-                        <option value=">Bachiller">Bachiller</option>
+                        <option value="Bachiller">Bachiller</option>
                         <option value="Tecnico">Tecnico</option>
                         <option value="Tecnologo">Tecnologo</option>
                         <option value="Profesional">Profesional</option>

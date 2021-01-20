@@ -36,7 +36,7 @@
                 <div class="row">
                   <div class="form-group col-md-4 ">
                   <label for="id_usuario"></label>
-                    <input type="text" class="form-control" id="nuevoSolicitante" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
+                    <input type="text" class="form-control" id="idSolicitante" value="<?php echo $_SESSION["nombre"]; ?>" readonly>
                     <input type="hidden" name="idSolicitante" value="<?php echo $_SESSION["usuario"]?>">
                     <small id="id_usuarioHelp" class="form-text text-muted text-center">Nombre del solicitante</small>
                   </div>
@@ -228,7 +228,7 @@
                     </div>
                     <div class="form-group col-md-4 ">
                     <label for="exp_lab"></label>
-                    <select class="form-control" name="nuevaExp_lab" id="nuevaExp_lab" required="">
+                    <select class="form-control" name="nuevoTiempoExp_lab" id="nuevoTiempoExp_lab" required="">
                         <option>Requiere experiencia laboral</option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
@@ -246,7 +246,7 @@
                 <div class="row">
                     <div class="form-group col-md-4 ">
                         <label for="experiencia_en"></label>
-                        <textarea class="form-control" rows="2"  name="nuevaExp_lab" id="nuevaExp_lab" placeholder="Requiere experiencia en:" required=""></textarea>
+                        <textarea class="form-control" rows="2"  name="nuevaExperiencia_en" id="nuevaExperiencia_en" placeholder="Requiere experiencia en:" required=""></textarea>
                         <small id="experiencia_enHelp" class="form-text text-muted text-center">"Requiere experiencia en</small>
                     </div>
                     <div class="form-group col-md-4 ">

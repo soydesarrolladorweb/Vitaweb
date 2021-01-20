@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-01-2021 a las 00:06:32
+-- Tiempo de generación: 20-01-2021 a las 15:52:29
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -280,7 +280,8 @@ CREATE TABLE `firmas` (
 --
 
 INSERT INTO `firmas` (`id`, `id_usuario`, `imagen`, `fecha`) VALUES
-(1, 20782, 'vistas/img/firmas/20782/601.png', '2020-10-30 17:22:09');
+(1, 20782, 'vistas/img/firmas/20782/601.png', '2020-10-30 17:22:09'),
+(2, 20780, 'vistas/img/firmas/20780/424.png', '2021-01-15 17:15:35');
 
 -- --------------------------------------------------------
 
@@ -373,11 +374,13 @@ CREATE TABLE `solicitud` (
 --
 
 INSERT INTO `solicitud` (`id`, `ciudad`, `fecha`, `formacion`, `otra_formacion`, `genero`, `fecha_estado`, `exp_lab`, `tiempo_exp`, `ciudad_labor`, `tipo_salario`, `monto_salario`, `tipo_contrato`, `otra_duracion`, `observaciones`, `id_usuario`, `motivo`, `cargo_solicitado`, `area_personal`, `codigo_ceco`, `horario`, `tipo_ingreso`, `estatus`, `fecha_recepcion`, `fecha_contratacion`, `nombre_candidato`, `usuario_sap`, `experiencia_en`, `ti_pc`, `pc_observaciones`, `ti_telefono`, `tel_observaciones`, `ti_correo`, `correo_observaciones`, `ti_observaciones`, `permisos`, `codigo`, `nombre_ceco`, `firma_solicitante`, `nombre_director`, `firma_director`, `nombre_df`, `firma_df`) VALUES
-(1, 'Medellin', '2020-12-21 12:28:30', '>Bachiller', '', 'Indiferente', '2020-12-21 17:28:30', 'Si', '18 Meses', 'Medellin', 'Salario minimo VITALIS S.A.C.I.', '', 'Indefinido', '', '', 20782, 'Punto Nuevo', 'Vendedor', 'Comercial', '10103004', 'Administrativo Sin recargos ni horas extra', 'Reemplazo', '', '2020-12-21 17:28:30', '0000-00-00', '', '', '', 'Si', 'sdfghjk', 'No', 'dfghj', 'Si', 'dfghjk', 'asdfghjkl', '', 1, 'ALTECH', '', '', '', '', ''),
-(2, 'Barranquilla', '2020-12-22 08:37:53', '>Bachiller', '', 'Indiferente', '2020-12-22 13:37:53', 'Si', '24 Meses', 'Barranquilla', 'Otro', '2000000', 'Indefinido', '', 'Observaciones departe del jefe del área\r\n', 20782, 'Punto Nuevo', 'Vendedor', 'Comercial', '10102004', 'Administrativo Operativo Siendo administrativo tendrá recargos y horas extra', 'Reingreso', '', '2020-12-22 13:37:53', '0000-00-00', '', '', '', 'No', 'Observaciones pc', 'No', 'Observaciones Teléfono', 'No', 'Observaciones Correo', 'Observaciones TI', '', 2, 'ADMINISTRACION PL2', '', '', '', '', ''),
+(1, 'Bogotá', '2020-12-21 12:28:30', 'Tecnologo', '', 'Indiferente', '2020-12-21 17:28:30', 'Si', '18 Meses', 'Bogotá', 'Otro', '2000000', 'Indefinido', '', 'Pruebas de edición', 20782, 'Punto Nuevo', 'Ingeniero de software', 'Administración', '10102004', 'Administrativo Sin recargos ni horas extra', 'Nuevo', '', '2020-12-21 17:28:30', '0000-00-00', '', '', 'Ingenieria de requerimientos, analisis para el modelaje de datos y desarrollo en varios lenguajes de programación orientado a objetos.', 'Si', 'Pruebas de edición', 'No', 'Pruebas de edición', 'Si', 'Pruebas de edición', 'Pruebas de edición', '', 1, 'ADMINISTRACION PL2', '', '', '', '', ''),
+(2, 'Barranquilla', '2020-12-22 08:37:53', 'Bachiller', '', 'Indiferente', '2020-12-22 13:37:53', 'Si', '24 Meses', 'Barranquilla', 'Otro', '2000000', 'Indefinido', '', 'Observaciones departe del jefe del área', 20782, 'Punto Nuevo', 'Vendedor', 'Comercial', '10102004', 'Administrativo Operativo Siendo administrativo tendrá recargos y horas extra', 'Reingreso', '', '2020-12-22 13:37:53', '0000-00-00', '', '', '', 'No', 'Observaciones pc', 'No', 'Observaciones Teléfono', 'No', 'Observaciones Correo', 'Observaciones TI', '', 2, 'ADMINISTRACION PL2', '', '', '', '', ''),
 (3, 'Sopo', '2020-12-22 08:39:51', 'Profesional', '', 'Indiferente', '2020-12-22 13:39:51', 'Si', '36 Meses', 'Sopo', 'Otro', '4000000', 'Indefinido', '', '', 20782, 'Ampliación de infraestructura', 'Ingeniero Químico', 'Mano de obra directa', '10101003', 'Rotativo Trabajara por turnos tendrá recargos y horas extra', 'Nuevo', '', '2020-12-22 13:39:51', '0000-00-00', '', '', '', 'No', '', 'No', '', 'No', '', '', '', 3, 'MANO DE OBRA DIRECTA PL1', '', '', '', '', ''),
 (4, 'Cartagena', '2020-12-29 13:24:38', 'Posgrado', 'Doctorado en pruebas', 'Indiferente', '2020-12-29 18:24:38', 'Si', '48 Meses', 'Cartagena', 'Otro', '5000000', 'Indefinido', '', 'Observaciones departe del jefe del área', 20782, 'Solicitud de prueba', 'Prueba', 'Mano de obra indirecta', '10103009', 'Administrativo Sin recargos ni horas extra', 'Temporal', '', '2020-12-29 18:24:38', '0000-00-00', '', '', 'Solicitud de prueba', 'No', 'Observaciones pc', 'No', 'Observaciones Teléfono', 'No', 'Observaciones Correo', 'Observaciones TI', '', 4, 'ADMINISTRACION PL4', '', '', '', '', ''),
-(5, 'Bogotá', '2021-01-07 19:57:22', 'Posgrado', 'Maestria', 'Indiferente', '2021-01-08 00:57:22', 'Si', '36 Meses', 'Bogotá', 'Otro', '2000000', 'Indefinido', '', 'Pruebas de edición', 20782, 'Reemplazo por vacaciones', 'Pruebas de edición', 'Administración', '10101005', 'Rotativo Trabajara por turnos tendrá recargos y horas extra', 'Nuevo', '', '2021-01-08 00:57:22', '0000-00-00', '', '', 'Si', 'Si', 'Pruebas de edición', 'No', 'Pruebas de edición', 'Si', 'Pruebas de edición', 'Pruebas de edición', '', 5, 'ADMINISTRACION PL1', '', '', '', '', '');
+(5, 'Bogotá', '2021-01-07 19:57:22', 'Posgrado', 'Maestria', 'Indiferente', '2021-01-08 00:57:22', 'Si', '36 Meses', 'Bogotá', 'Otro', '2000000', 'Indefinido', '', 'Pruebas de edición', 20782, 'Reemplazo por vacaciones', 'Pruebas de edición', 'Administración', '10101005', 'Rotativo Trabajara por turnos tendrá recargos y horas extra', 'Nuevo', '', '2021-01-08 00:57:22', '0000-00-00', '', '', 'Si', 'Si', 'Pruebas de edición', 'No', 'Pruebas de edición', 'Si', 'Pruebas de edición', 'Pruebas de edición', '', 5, 'ADMINISTRACION PL1', '', '', '', '', ''),
+(6, 'Cali', '2021-01-15 13:20:25', 'Tecnologo', 'Ninguna', 'Indiferente', '2021-01-15 18:20:25', 'Si', '36 Meses', 'Cali', 'Otro', '3500000', 'Indefinido', 'Ninguno', 'Observaciones FB', 20782, 'Prueba6 Motivo Solicitud', 'Prueba6', 'Mano de obra directa', '10301007', 'Administrativo Operativo Siendo administrativo tendrá recargos y horas extra', 'Temporal', '', '2021-01-15 18:20:25', '0000-00-00', '', '', 'Observaciones FB', 'Si', 'Observaciones FB PC', 'No', 'Observaciones FB PHONE', 'Si', 'Observaciones FB EMAIL', 'Observaciones FB TI', '', 6, 'MANTENIMIENTO CALIDAD', '', '', '', '', ''),
+(9, 'Cartagena', '2021-01-18 14:09:11', 'Profesional', 'Ninguna', 'Indiferente', '2021-01-18 19:09:11', 'Si', '38 Meses', 'Cartagena', 'Otro', '5000000', 'Fijo a tres meses', 'Ninguno', 'Prueba Dato7', 20782, 'Prueba Dato 7', 'Prueba Dato', 'Mano de obra directa', '10102002', 'Administrativo Sin recargos ni horas extra', 'Nuevo', '', '2021-01-18 19:09:11', '0000-00-00', '', '', 'Prueba Dato7', 'Si', 'Prueba Dato7', 'Si', 'Prueba Dato7', 'Si', 'Prueba Dato7', 'Prueba Dato7', '', 7, 'MANO DE OBRA DIRECTA PL2', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -438,6 +441,7 @@ CREATE TABLE `usuarios` (
   `foto` text COLLATE utf8_spanish_ci NOT NULL,
   `telefono` bigint(50) DEFAULT NULL,
   `solicitudes` int(11) DEFAULT NULL,
+  `ultima_solicitud` int(11) DEFAULT NULL,
   `ultimologin` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -445,13 +449,13 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `solicitudes`, `ultimologin`) VALUES
-(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, 0, '2021-01-12 08:17:00'),
-(2, 'Maria pruebas', 'maria@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Gerente', 'Comercial', 1, '2020-10-08 18:49:16', 'vistas/img/usuarios/20780/428.png', 3102212121, NULL, NULL),
-(3, 'Javier pruebas', 'javierPruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Dirección Financiera', 'Operaciones', 1, '2020-10-08 18:50:19', 'vistas/img/usuarios/20900/696.png', 3102222222, NULL, NULL),
-(4, 'Magreth Angulo', 'magreth.angulo@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5au3aeaogtcEUOK/RtUOxpPOONPHkGI/cq', 'Jefe de Area', 'Alta Dirección', 1, '2020-10-08 18:51:38', 'vistas/img/usuarios/20500/515.png', 3102232323, NULL, NULL),
-(5, 'Duvan Pruebas', 'duvan.ti@vitalis.com.co', '20600', '$2a$07$asxx54ahjppf45sd87a5auTORkrD.KY3EqoE65wNdlCJFoiGJ8FyK', 'Desarrollo Humano', 'Desarrollo de Negocios', 1, '2020-10-08 18:53:23', 'vistas/img/usuarios/20600/137.jpg', 3102242424, NULL, NULL),
-(6, 'Prueba asignación firma', 'firma@vitalis.com.co', '20601', '$2a$07$asxx54ahjppf45sd87a5auND1/VMhsMBheheFBw1m3SXgZtH9DpC2', 'Jefe de Area', 'Operaciones', 1, '2020-10-14 18:23:54', 'vistas/img/usuarios/20601/931.png', 3214556698, NULL, NULL);
+INSERT INTO `usuarios` (`iduser`, `nombre`, `correo`, `usuario`, `password`, `perfil`, `area`, `estado`, `fecha`, `foto`, `telefono`, `solicitudes`, `ultima_solicitud`, `ultimologin`) VALUES
+(1, 'Fabian Barrera', 'pasante.ti@vitalis.com.co', '20782', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'Administrador', 'Administrativa y Financiera', 1, '2020-10-08 18:47:31', 'vistas/img/usuarios/20782/654.jpg', 3012764644, 0, NULL, '2021-01-20 09:50:46'),
+(2, 'Maria pruebas', 'maria@vitalis.com.co', '20780', '$2a$07$asxx54ahjppf45sd87a5auJnyEWu2I/LGrsdLfMawEZGMwUWnuJ6a', 'Gerente', 'Comercial', 1, '2020-10-08 18:49:16', 'vistas/img/usuarios/20780/428.png', 3102212121, NULL, NULL, NULL),
+(3, 'Javier pruebas', 'javierPruebas@vitalis.com.co', '20900', '$2a$07$asxx54ahjppf45sd87a5auNGiMUhuUlqQq8VydYmBpTcUEAvNN2Fe', 'Dirección Financiera', 'Operaciones', 1, '2020-10-08 18:50:19', 'vistas/img/usuarios/20900/696.png', 3102222222, NULL, NULL, NULL),
+(4, 'Magreth Angulo', 'magreth.angulo@vitalis.com.co', '20500', '$2a$07$asxx54ahjppf45sd87a5au3aeaogtcEUOK/RtUOxpPOONPHkGI/cq', 'Jefe de Area', 'Alta Dirección', 1, '2020-10-08 18:51:38', 'vistas/img/usuarios/20500/515.png', 3102232323, NULL, NULL, NULL),
+(5, 'Duvan Pruebas', 'duvan.ti@vitalis.com.co', '20600', '$2a$07$asxx54ahjppf45sd87a5auTORkrD.KY3EqoE65wNdlCJFoiGJ8FyK', 'Desarrollo Humano', 'Desarrollo de Negocios', 1, '2020-10-08 18:53:23', 'vistas/img/usuarios/20600/137.jpg', 3102242424, NULL, NULL, NULL),
+(6, 'Prueba asignación firma', 'firma@vitalis.com.co', '20601', '$2a$07$asxx54ahjppf45sd87a5auND1/VMhsMBheheFBw1m3SXgZtH9DpC2', 'Jefe de Area', 'Operaciones', 1, '2020-10-14 18:23:54', 'vistas/img/usuarios/20601/931.png', 3214556698, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -526,7 +530,7 @@ ALTER TABLE `control_documento`
 -- AUTO_INCREMENT de la tabla `firmas`
 --
 ALTER TABLE `firmas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `horarios`
@@ -538,7 +542,7 @@ ALTER TABLE `horarios`
 -- AUTO_INCREMENT de la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `tics`

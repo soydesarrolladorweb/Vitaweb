@@ -37,7 +37,7 @@
 
 				array_push($totalsolicitudes, $value["id_usuario"]);
 				
-				var_dump($totalsolicitudes);
+				// var_dump($totalsolicitudes);
 			}
 
 			$tablaUsuarios = "usuarios";
@@ -67,7 +67,8 @@
 				"formacion" => $_POST["nuevaFormacion"],
 				"otra_formacion" => $_POST["otraformacion"],
 				"genero" => $_POST["nuevoGenero"],
-				"experiencia_en" => $_POST["nuevaExp_lab"],
+				"experiencia_en" => $_POST["nuevaExperiencia_en"],
+				"exp_lab" => $_POST["nuevoTiempoExp_lab"],
 				"tiempo_exp" => $_POST["nuevoTiempo_exp"],
 				"ciudad_labor" => $_POST["nuevaciudadLabor"],
 				"tipo_salario" => $_POST["nuevoSalario"],
@@ -197,12 +198,57 @@
 				});
 			
 				</script>';
-			}
+				}
 			}
 
 		}
 
 	}
+
+
+	/*=============================================
+	BORRAR SOLICITUD
+	=============================================*/
+
+	static public function ctrBorrarSolicitud(){
+
+		if(isset($_GET["codigoUnico"])){
+			
+			$tabla ="solicitud";
+			$datos = $_GET["codigoUnico"];
+
+			$respuesta =ModeloSolicitudes::mdlBorrarSolicitud($tabla, $datos);
+
+			if($respuesta == "ok"){
+					
+				echo '<script>
+		
+			swal.fire({
+
+				
+				    icon: "success",
+					title: "La solicitud ha sido borrada correctamente",
+					text: "",
+					button: "Cerrar",
+					showConfirmButton: true,
+					confirmButtonText: "Cerrar",
+						
+				
+				}).then(function(result){
+
+					if(result.value){
+
+						window.location = "solicitudes";
+					}	
+				});
+		
+				</script>';
+
+			}
+
+		}
+	}
+
 	
 	
 }  
