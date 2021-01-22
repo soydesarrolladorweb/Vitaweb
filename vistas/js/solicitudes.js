@@ -43,4 +43,16 @@ $(document).on("click", ".btnEliminarSolicitud", function(){
     })
   
   })
+
+/*=============================================
+IMPRIMIR SOLICITUD
+=============================================*/
+
+$(document).on("click", ".btnImprimirSolicitud", function(){
+
+	var codigoFormulario = $(this).attr("codigoFormulario");
+
+	window.open("extensiones/tcpdf/pdf/pdf.php", "_blank");
+
+})
   

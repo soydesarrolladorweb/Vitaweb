@@ -87,7 +87,11 @@
    
                    <div class="btn-group">
    
-                     <button class="btn btn-info"><i class="fas fa-eye"></i></button>
+                     <button class="btn btn-info btnImprimirSolicitud" codigoFormulario="'.$value["codigo"].'">
+                     
+                      <i class="fas fa-eye"></i>
+                     
+                     </button>
    
                      <button class="btn btn-warning btnEditarSolicitud" idSolicitud="'.$value["id"].'"><i class="fas fa-pencil-alt"></i></button>
 
