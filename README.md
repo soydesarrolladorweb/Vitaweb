@@ -1,4 +1,5 @@
 # Vitaweb
-Hola, en este repositorio esta el proyecto para la etapa practica de mis
-estudios como tecnologo en analisis y desarrollo de software
-Aplicación web para la solicitud de personal para la empresa VITALIS S.A.C.I.
+ * Desarrollo de un sistema web (CRM) para la adquisición de personal.
+ * La API web se desarrolló en: Plantilla ADMIN LTE, PHP 7, JavaScript, SweetAlert2, JSON, AJAX,
+   JQERY, PHPMailer y TCPDF para los reportes.
+# ![](vistas/img/vitalisWeb.png)
